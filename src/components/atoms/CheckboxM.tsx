@@ -1,5 +1,4 @@
-import { Checkbox, CheckboxGroup } from "@chakra-ui/react";
-import  CustomCheckbox  from "./CustomCheckbox";
+import { Checkbox } from "@chakra-ui/react";
 export function CheckboxM() {
     return (    
         <>

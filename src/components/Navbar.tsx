@@ -1,7 +1,7 @@
 import mericos_logo from "../assets/Vector.png";
 import mericos_text from "../assets/Mericos.png";
 import hamburger_img from "../assets/hamburguer.png";
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 export function Navbar() {
 	return (
