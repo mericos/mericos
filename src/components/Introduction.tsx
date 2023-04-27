@@ -1,6 +1,6 @@
-import { Box, Button, Flex, Heading, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { ButtonM } from "./atoms/ButtonM";
-import { MenuM } from "./molecules/MenuM";
+import { Dropdown } from "./molecules/Dropdown";
 
 export function Introduction() {
     return (
@@ -17,7 +17,7 @@ export function Introduction() {
 					</Text>
 					<Img src={food1} /> */}
 					<ButtonM text="Button" />
-					<MenuM/>
+					<Dropdown/>
 					{/* <Menu>
 						<MenuButton as={Button}>
 							Actions

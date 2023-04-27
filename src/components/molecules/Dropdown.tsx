@@ -1,8 +1,8 @@
 import { Button, Image, Menu, MenuButton } from "@chakra-ui/react";
-import { MenuListM } from "./MenuListM";
+import { DropdownList} from "./DropdownList";
 import carret_downImg from "../../assets/caret-downw.svg";
 
-export function MenuM() {
+export function Dropdown() {
 	return (
 		<>
 			<Menu>
@@ -14,7 +14,7 @@ export function MenuM() {
 				>
 					Opcoes
 				</MenuButton>
-				<MenuListM></MenuListM>
+				<DropdownList/>
 			</Menu>
 		</>
 	);
