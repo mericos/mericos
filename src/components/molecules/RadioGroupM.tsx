@@ -7,8 +7,8 @@ export function RadioGroupM() {
 	return (
 		<>
 			<RadioGroup onChange={setValue} value={value}>
-				<SwitchM text=" " value={"checked"}></SwitchM>
-				<SwitchM text=" " value={"unched"}></SwitchM>
+				<SwitchM text=" " value={"checked"}/>
+				<SwitchM text=" " value={"unched"}/>
 			</RadioGroup>
 		</>
 	);

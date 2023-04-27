@@ -1,9 +1,6 @@
-import { Box, Flex, Heading, Img, Text } from "@chakra-ui/react";
-import food1 from "../assets/food1.png";
+import { Box, Button, Flex, Heading, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { ButtonM } from "./atoms/ButtonM";
-import { CheckboxM } from "./atoms/CheckboxM";
-import { SwitchM } from "./atoms/SwitchM";
-import { RadioGroupM } from "./molecules/RadioGroupM";
+import { MenuM } from "./molecules/MenuM";
 
 export function Introduction() {
     return (
@@ -19,9 +16,20 @@ export function Introduction() {
 						clientes.{" "}
 					</Text>
 					<Img src={food1} /> */}
-					<ButtonM text="Button"></ButtonM>
-					{/* <CheckboxM></CheckboxM> */}
-					<RadioGroupM></RadioGroupM>
+					<ButtonM text="Button" />
+					<MenuM/>
+					{/* <Menu>
+						<MenuButton as={Button}>
+							Actions
+						</MenuButton>
+						<MenuList>
+							<MenuItem>Download</MenuItem>
+							<MenuItem>Create a Copy</MenuItem>
+							<MenuItem>Mark as Draft</MenuItem>
+							<MenuItem>Delete</MenuItem>
+							<MenuItem>Attend a Workshop</MenuItem>
+						</MenuList>
+					</Menu> */}
 				</Flex>
 			</Box>
 		</>

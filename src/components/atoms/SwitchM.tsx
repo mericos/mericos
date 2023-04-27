@@ -1,16 +1,15 @@
-import { Radio, RadioGroup } from "@chakra-ui/react";
-import { useState } from "react";
+import { Radio } from "@chakra-ui/react";
 
 interface RadioProps {
-    value: string;
-    text: string;
+	value: string;
+	text: string;
 }
 
-export function SwitchM({value, text}:RadioProps) {
+export function SwitchM({ value, text }: RadioProps) {
 	return (
 		<>
-            <Radio colorScheme="customColors.primary" value={ value }>
-                { text }
+			<Radio colorScheme="customColors.primary" value={value}>
+				{text}
 			</Radio>
 		</>
 	);
