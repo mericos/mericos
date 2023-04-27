@@ -2,6 +2,8 @@ import { Box, Flex, Heading, Img, Text } from "@chakra-ui/react";
 import food1 from "../assets/food1.png";
 import { ButtonM } from "./atoms/ButtonM";
 import { CheckboxM } from "./atoms/CheckboxM";
+import { SwitchM } from "./atoms/SwitchM";
+import { RadioGroupM } from "./molecules/RadioGroupM";
 
 export function Introduction() {
     return (
@@ -18,7 +20,8 @@ export function Introduction() {
 					</Text>
 					<Img src={food1} /> */}
 					<ButtonM text="Button"></ButtonM>
-					<CheckboxM></CheckboxM>
+					{/* <CheckboxM></CheckboxM> */}
+					<RadioGroupM></RadioGroupM>
 				</Flex>
 			</Box>
 		</>
