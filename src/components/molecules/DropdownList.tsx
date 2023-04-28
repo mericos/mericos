@@ -6,6 +6,7 @@ export function DropdownList() {
 		<>
 			<MenuList bg={"customColors.primary.500"}>
 				<DropdownItemM text="Option1" />
+				<DropdownItemM text="Option2" />
 			</MenuList>
 		</>
 	);
