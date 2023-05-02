@@ -33,7 +33,6 @@ const customColors = {
 export const customTheme = extendTheme({
 	colors: {
 		customColors,
-		// primary: "#E85D04",
 	},
 	fontSizes: {
 		sub_heading_size: "2.441rem",
