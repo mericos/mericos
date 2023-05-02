@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: built_titling_sb
+font link: https://www.fontspring.com/fonts/typodermic/built-titling
+font author: Typodermic
+font author site: http://typodermicfonts.com/
+Slogan Font: Questrial-Regular.otf
+
+icon designer: Sebastian Langer
+icon designer link: /sebastian.langer.330
+        
+{"bg":"#E87D22","icon":"#762A0C","font":"#ffffff","slogan":"#ffffff"}
+      
