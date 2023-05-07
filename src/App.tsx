@@ -10,7 +10,7 @@ export function App() {
 		<>
 			<ChakraProvider theme={customTheme}>
 				<Flex fontFamily={"Roboto"} justifyContent="center">
-					<Box width="24.37rem">
+					<Box width="full">
 						<Introduction />
 					</Box>
 				</Flex>
