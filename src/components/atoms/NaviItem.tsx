@@ -8,6 +8,6 @@ interface NavItemProps {
 
 export function NavItem (props: NavItemProps) {
     return(
-        <Link href={props.link} color={props.color}>{props.text}</Link>
+        <Link href={props.link} color={props.color} textDecor={"underline"}>{props.text}</Link>
     )
 }
