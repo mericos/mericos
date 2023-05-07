@@ -1,5 +1,5 @@
-import mericos_logo from "../assets/logo/only-logo.svg";
-import mericos_logo_white from "../assets/logo/only-logo-white.svg";
+import mericosLogo from "../assets/logo/only-logo.svg";
+import mericosLogoWhite from "../assets/logo/only-logo-white.svg";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -10,11 +10,13 @@ interface NavbarProps {
 }
 
 export function Navbar(props: NavbarProps) {
+	const isPrimaryType = props.type === "primary";
 	const properties = {
-		primaryColor: !props.type || props.type === "primary" ? "customColors.primary.500" : "white",
-		background: !props.type || props.type === "primary"? "FFFFFF" : "customColors.primary.500",
-		image: !props.type || props.type === "primary"? mericos_logo :  mericos_logo_white,
-	}
+	primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
+	background: isPrimaryType ? "FFFFFF" : "customColors.primary.500",
+	image: isPrimaryType ? mericosLogo : mericosLogoWhite,
+	};
+	const rightSide = props.size === "phone" ? (<HamburgerIcon color={properties.primaryColor} boxSize={6}/>) : "under construction"
 	return (
 		<Box bg={properties.background}>
 			<Flex
@@ -31,7 +33,7 @@ export function Navbar(props: NavbarProps) {
 					<img src={properties.image} alt="mericos-logo" />
 					<Text fontSize={"1rem"} color={properties.primaryColor} >Mericos</Text>
 				</Flex>
-				<HamburgerIcon color={properties.primaryColor} boxSize={6}/>
+				{rightSide}
 			</Flex>
 		</Box>
 	);
