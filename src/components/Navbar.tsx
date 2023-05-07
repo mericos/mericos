@@ -1,29 +1,38 @@
-import mericos_logo from "../assets/Vector.png";
-import mericos_text from "../assets/Mericos.png";
-import hamburger_img from "../assets/hamburguer.png";
-import { Flex } from "@chakra-ui/react";
+import mericos_logo from "../assets/logo/only-logo.svg";
+import mericos_logo_white from "../assets/logo/only-logo-white.svg";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
-export function Navbar() {
+interface NavbarProps {
+	type? : "primary" | "secondary",
+	size: "phone" | "laptop" | "universal",
+	navigationState: "authenticated" |"not_authenticated" | "goBack",
+}
+
+export function Navbar(props: NavbarProps) {
+	const properties = {
+		primaryColor: !props.type || props.type === "primary" ? "customColors.primary.500" : "white",
+		background: !props.type || props.type === "primary"? "FFFFFF" : "customColors.primary.500",
+		image: !props.type || props.type === "primary"? mericos_logo :  mericos_logo_white,
+	}
 	return (
-		<>
-			<header>
+		<Box bg={properties.background}>
+			<Flex
+				padding={"0.65rem"}
+				direction={"row"}
+				alignItems={"center"}
+				justifyContent={"space-between"}
+			>
 				<Flex
-					padding={"0.65rem"}
-					direction={"row"}
+					className="logo"
 					alignItems={"center"}
-					justifyContent={"space-between"}
+					gap={"0.625rem"}
 				>
-					<Flex
-						className="logo"
-						alignItems={"center"}
-						gap={"0.625rem"}
-					>
-						<img src={mericos_logo} alt="mericos-logo" />
-						<img src={mericos_text} alt="mericos-text" />
-					</Flex>
-					<img src={hamburger_img} alt="hamburguer-menu" />
+					<img src={properties.image} alt="mericos-logo" />
+					<Text fontSize={"1rem"} color={properties.primaryColor} >Mericos</Text>
 				</Flex>
-			</header>
-		</>
+				<HamburgerIcon color={properties.primaryColor} boxSize={6}/>
+			</Flex>
+		</Box>
 	);
 }
