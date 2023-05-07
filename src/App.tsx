@@ -4,14 +4,12 @@ import { Introduction } from "./components/Introduction";
 import { customTheme } from "./style/customTheme";
 
 export function App() {
-	
-
 	return (
 		<>
 			<ChakraProvider theme={customTheme}>
 				<Flex fontFamily={"Roboto"} justifyContent="center">
-					<Box width="full">
-						<Introduction />
+					<Box width="full" maxWidth={"4xl"} >
+						<Introduction  />
 					</Box>
 				</Flex>
 			</ChakraProvider>
