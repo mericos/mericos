@@ -1,13 +1,27 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, useBreakpointValue } from "@chakra-ui/react";
 import { ButtonM } from "./atoms/ButtonM";
 import { Dropdown } from "./molecules/Dropdown";
+import { Navbar } from "./Navbar";
 
 export function Introduction() {
+	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
+		{
+		base: 'phone',
+		md: 'laptop',
+		xl: "universal"
+		},
+		{
+		// Breakpoint to use when mediaqueries cannot be used, such as in server-side rendering
+		// (Defaults to 'base')
+		fallback: 'md',
+		}, 
+	) ?? "phone"
 	return (
 		<>
-			<Box padding={"2.5rem 1.25rem"}>
+			<Navbar type={"secondary"} size={size} navigationState={"authenticated"} />
+			<Box padding={"2.5rem 1.25rem"} >
 				<Heading size={"xl"} fontFamily={"Roboto"} color={"primary"}>
-					Mericos
+					Mericos {size}
 				</Heading>
 				<Flex gap={"1.25rem"}>
 					{/* <Text>
