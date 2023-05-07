@@ -19,7 +19,7 @@ export function Introduction() {
 	return (
 		<Box width="full" align="center" >
 			<Navbar type={"secondary"} size={size} navigationState={"authenticated"} />
-			<Box  maxWidth={"4xl"} padding={"2.5rem 1.25rem"}>
+			<Box  maxWidth={"8xl"} padding={"2.5rem 1.25rem"}>
 				<Heading size={"xl"} fontFamily={"Roboto"} color={"primary"}>
 					Mericos {size}
 				</Heading>

@@ -72,6 +72,7 @@ export function Navbar(props: NavbarProps) {
         direction="row"
         alignItems="start"
         justifyContent="space-between"
+        maxWidth={"8xl"}
       >
         {props.navigationState !== "goBack" ? (
           <>
