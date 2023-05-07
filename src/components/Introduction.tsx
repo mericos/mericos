@@ -7,7 +7,7 @@ export function Introduction() {
 	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
 		{
 		base: 'phone',
-		md: 'laptop',
+		sm: 'laptop',
 		xl: "universal"
 		},
 		{
