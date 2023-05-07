@@ -8,9 +8,7 @@ export function App() {
 		<>
 			<ChakraProvider theme={customTheme}>
 				<Flex fontFamily={"Roboto"} justifyContent="center">
-					<Box width="full" maxWidth={"4xl"} >
 						<Introduction  />
-					</Box>
 				</Flex>
 			</ChakraProvider>
 		</>

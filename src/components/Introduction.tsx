@@ -17,9 +17,9 @@ export function Introduction() {
 		}, 
 	) ?? "phone"
 	return (
-		<>
+		<Box width="full" align="center" >
 			<Navbar type={"secondary"} size={size} navigationState={"authenticated"} />
-			<Box padding={"2.5rem 1.25rem"} >
+			<Box  maxWidth={"4xl"} padding={"2.5rem 1.25rem"}>
 				<Heading size={"xl"} fontFamily={"Roboto"} color={"primary"}>
 					Mericos {size}
 				</Heading>
@@ -34,6 +34,6 @@ export function Introduction() {
 					<Dropdown />
 				</Flex>
 			</Box>
-		</>
+		</Box>
 	);
 }
