@@ -2,6 +2,7 @@ import mericosLogo from "../assets/logo/only-logo.svg";
 import mericosLogoWhite from "../assets/logo/only-logo-white.svg";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { NavItem } from "./atoms/NaviItem";
 
 interface NavbarProps {
 	type? : "primary" | "secondary",
@@ -33,7 +34,8 @@ export function Navbar(props: NavbarProps) {
 					<img src={properties.image} alt="mericos-logo" />
 					<Text fontSize={"1rem"} color={properties.primaryColor} >Mericos</Text>
 				</Flex>
-				{rightSide}
+				{/* {rightSide} */}
+				<NavItem text="Menu" link="" color={properties.primaryColor}/>
 			</Flex>
 		</Box>
 	);
