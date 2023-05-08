@@ -64,7 +64,7 @@ export function Navbar(props: NavbarProps) {
                 alignItems={"center"} 
                 gap={"2"}>
                   <NavItem text="Menu" link="" color={properties.primaryColor}/>
-                  <ButtonM text="Login" type={props.type === "primary" ? "primary" : "secondary"}/>
+                  <ButtonM children="Login" type={props.type === "primary" ? "primary" : "secondary"}/>
                 </Flex>
               )
             ) : (
