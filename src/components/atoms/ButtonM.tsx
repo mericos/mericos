@@ -1,15 +1,14 @@
 import { Button } from "@chakra-ui/react";
 
 interface ButtonProps {
-	state?: string;
-	type?: "primary" | "secondary";
-	text: string;
+  type?: "primary" | "secondary";
+  children: string;
 }
 
-export function ButtonM(props: ButtonProps) {
-	return (
-		<>
-			<Button paddingX={8} variant={props.type ? props.type : 'primary'}>{props.text}</Button>
-		</>
-	);
+export function ButtonM({ type = "primary", children }: ButtonProps) {
+  return (
+    <Button px={8} variant={type}>
+      {children}
+    </Button>
+  );
 }
