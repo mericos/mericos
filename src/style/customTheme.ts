@@ -35,10 +35,14 @@ export const customTheme = extendTheme({
 		customColors,
 	},
 	fontSizes: {
+		heading_size: "3.053rem",
 		sub_heading_size: "2.441rem",
 		taglines_size: "1.953rem",
-		body_size: "1rem",
+		heading_for_pages_size: "1.263rem",
 		card_heading_size: "1.25rem",
+		body_size: "1rem",
+		sub_body_in_popovers_size: "1.25rem",
+		badges_tags_size: "0.64rem"
 	},
 	components: {
 		Button: {
@@ -84,7 +88,7 @@ export const customTheme = extendTheme({
 				},
 			},
 		},
+		
 	},
 });
 
-// export default customTheme;
