@@ -2,6 +2,7 @@ import { Box, Flex, Heading, useBreakpointValue } from "@chakra-ui/react";
 import { ButtonM } from "./atoms/ButtonM";
 import { Dropdown } from "./molecules/Dropdown";
 import { Navbar } from "./Navbar";
+import { DrawerOverlay } from "./molecules/HamburguerMenu";
 
 export function Introduction() {
 	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
@@ -18,22 +19,7 @@ export function Introduction() {
 	) ?? "phone"
 	return (
 		<Box width="full" align="center" >
-			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
-			<Box  maxWidth={"7xl"} padding={"2.5rem 1.25rem"}>
-				<Heading size={"xl"} fontFamily={"Roboto"} color={"primary"}>
-					Mericos {size}
-				</Heading>
-				<Flex gap={"1.25rem"}>
-					{/* <Text>
-						Mericos é uma empresa de entrega de comida dedicada a
-						fornecer refeições saborosas e convenientes para os
-						clientes.{" "}
-					</Text>
-					<Img src={food1} /> */}
-					<ButtonM text="Button" />
-					<Dropdown />
-				</Flex>
-			</Box>
+			<Navbar type={"secondary"} size={size} navigationState={"authenticated"} />
 		</Box>
 	);
 }
