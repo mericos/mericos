@@ -5,6 +5,7 @@ import { NavItem } from "./atoms/NaviItem";
 import mericosLogo from "../assets/logo/only-logo.svg";
 import mericosLogoWhite from "../assets/logo/only-logo-white.svg";
 import { ButtonM } from "./atoms/ButtonM";
+import { HamburguerMenu } from "./molecules/HamburguerMenu";
 
 interface NavbarProps {
   type?: "primary" | "secondary";
@@ -36,7 +37,7 @@ export function Navbar(props: NavbarProps) {
   // color properties
   const properties = {
     primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
-    background: isPrimaryType ? "FFFFFF" : "customColors.primary.500",
+    background: isPrimaryType ? "white" : "customColors.primary.500",
     image: isPrimaryType ? mericosLogo : mericosLogoWhite,
   };
   //left side of the navbar
@@ -53,10 +54,10 @@ export function Navbar(props: NavbarProps) {
     props.size === "phone" ? (
               /* nav items, depending on whether they are authenticated or not */
               props.navigationState === "authenticated" ?(
-              <HamburgerIcon
-                color={properties.primaryColor}
-                boxSize={6}
-                cursor="pointer"
+              <HamburguerMenu
+                color={properties.background}
+                background_color={properties.primaryColor}
+                options={getOptions(props["navigationState"])}
               />) :(
                 <Flex 
                 direction={"row"}  
