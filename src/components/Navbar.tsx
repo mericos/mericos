@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { HamburgerIcon, ArrowBackIcon } from "@chakra-ui/icons";
 import { NavItem } from "./atoms/NaviItem";
 
@@ -32,22 +32,22 @@ function getOptions(navState: NavbarProps["navigationState"]) {
 
 export function Navbar(props: NavbarProps) {
   const isPrimaryType = props.type === "primary";
-
+  // color properties
   const properties = {
     primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
     background: isPrimaryType ? "FFFFFF" : "customColors.primary.500",
     image: isPrimaryType ? mericosLogo : mericosLogoWhite,
   };
-
+  //left side of the navbar
   const leftSide = (
     <Flex className="logo" alignItems="center" gap="0.625rem">
       <img src={properties.image} alt="mericos-logo" />
-      <Text fontSize="1rem" color={properties.primaryColor}>
+      <Text fontSize="sub_heading_size" color={properties.primaryColor}>
         Mericos
       </Text>
     </Flex>
   );
-
+    //right side of the navbar
   const rightSide = (
     <Flex direction="row-reverse" alignItems="center" gap={10}>
       {getOptions(props.navigationState).map((item) => (
