@@ -1,10 +1,12 @@
 import { HamburgerIcon } from "@chakra-ui/icons"
-import { useDisclosure, Button, Drawer, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter, Radio, RadioGroup, Stack } from "@chakra-ui/react"
+import { useDisclosure, Button, Drawer, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter, Radio, RadioGroup, Stack, Flex, Box } from "@chakra-ui/react"
 import React from "react"
+import { NavItem } from "../atoms/NaviItem";
 
 interface HamburgerProps {
   color: string;
-  background_color: string
+  background_color: string;
+  options: Array<{name:string,link:string}>;
 }
 
 export function HamburguerMenu(props: HamburgerProps) {
@@ -28,15 +30,13 @@ export function HamburguerMenu(props: HamburgerProps) {
           <DrawerCloseButton />
           <DrawerHeader>Opções</DrawerHeader>
           <DrawerBody >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Consequat nisl vel pretium lectus quam id. Semper quis lectus
-              nulla at volutpat diam ut venenatis. Dolor morbi non arcu risus
-              quis varius quam quisque. Massa ultricies mi quis hendrerit dolor
-              magna eget est lorem. Erat imperdiet sed euismod nisi porta.
-              Lectus vestibulum mattis ullamcorper velit.
-            </p>
+            <Flex direction={"column"} gap={"2"}>
+              {props.options.map((option) => {
+                return (
+                  <NavItem text={option.name} link={option.link} color={props.color}/>
+                )
+              })}
+            </Flex>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
