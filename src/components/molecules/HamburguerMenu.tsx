@@ -1,6 +1,5 @@
 import { HamburgerIcon } from "@chakra-ui/icons"
-import { useDisclosure, Button, Drawer, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter, Radio, RadioGroup, Stack, Flex, Box } from "@chakra-ui/react"
-import React from "react"
+import { useDisclosure, Drawer, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Flex } from "@chakra-ui/react"
 import { NavItem } from "../atoms/NaviItem";
 
 interface HamburgerProps {
@@ -10,7 +9,6 @@ interface HamburgerProps {
 }
 
 export function HamburguerMenu(props: HamburgerProps) {
-  const [size, setSize] = React.useState('')
   const { isOpen, onOpen, onClose } = useDisclosure()
 
 

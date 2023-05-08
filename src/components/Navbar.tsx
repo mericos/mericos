@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { HamburgerIcon, ArrowBackIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import { NavItem } from "./atoms/NaviItem";
 
 import mericosLogo from "../assets/logo/only-logo.svg";
