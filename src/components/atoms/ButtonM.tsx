@@ -9,7 +9,7 @@ interface ButtonProps {
 export function ButtonM(props: ButtonProps) {
 	return (
 		<>
-			<Button variant={props.type ? props.type : 'primary'}>{props.text}</Button>
+			<Button paddingX={8} variant={props.type ? props.type : 'primary'}>{props.text}</Button>
 		</>
 	);
 }
