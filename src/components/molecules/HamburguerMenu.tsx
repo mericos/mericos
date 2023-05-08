@@ -23,7 +23,7 @@ export function HamburguerMenu(props: HamburgerProps) {
                 onClick={() => onOpen()}
               />
 
-      <Drawer onClose={onClose} isOpen={isOpen} size={"full"} >
+      <Drawer onClose={onClose} isOpen={isOpen} size={"full"}>
         <DrawerContent color={props.color} bgColor={props.background_color} >
           <DrawerCloseButton />
           <DrawerHeader>Opções</DrawerHeader>

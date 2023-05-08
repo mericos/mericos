@@ -98,7 +98,7 @@ export function Navbar(props: NavbarProps) {
           <>
             {/* logo and company name */}
             {leftSide}
-            
+            {/* right side navbar part */}
             {rightSide}
           </>
         ) : (
