@@ -8,8 +8,10 @@ interface NavItemProps {
 
 export function NavItem (props: NavItemProps) {
     return(
-        <Box  paddingX={"1"}>
-            <Link href={props.link} color={props.color}  fontSize={"body_size"} fontWeight={"bold"}>{props.text}</Link>
-        </Box>
+        <Link href={props.link} color={props.color}  fontSize={"body_size"} fontWeight={"bold"}>
+            <Box  paddingX={"1"} width={"full"}>
+                {props.text}
+            </Box>
+        </Link>
     )
 }
