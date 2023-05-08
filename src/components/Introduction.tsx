@@ -18,8 +18,8 @@ export function Introduction() {
 	) ?? "phone"
 	return (
 		<Box width="full" align="center" >
-			<Navbar type={"secondary"} size={size} navigationState={"authenticated"} />
-			<Box  maxWidth={"8xl"} padding={"2.5rem 1.25rem"}>
+			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
+			<Box  maxWidth={"7xl"} padding={"2.5rem 1.25rem"}>
 				<Heading size={"xl"} fontFamily={"Roboto"} color={"primary"}>
 					Mericos {size}
 				</Heading>

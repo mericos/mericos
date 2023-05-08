@@ -4,6 +4,7 @@ import { NavItem } from "./atoms/NaviItem";
 
 import mericosLogo from "../assets/logo/only-logo.svg";
 import mericosLogoWhite from "../assets/logo/only-logo-white.svg";
+import { ButtonM } from "./atoms/ButtonM";
 
 interface NavbarProps {
   type?: "primary" | "secondary";
@@ -22,8 +23,8 @@ function getOptions(navState: NavbarProps["navigationState"]) {
     case "not_authenticated":
       return [
         { name: "Menu", link: "" },
-        { name: "login", link: "" },
-        { name: "registro", link: "" },
+        { name: "Login", link: "" },
+        { name: "Registro", link: "" },
       ];
     default:
       return [];
@@ -42,23 +43,41 @@ export function Navbar(props: NavbarProps) {
   const leftSide = (
     <Flex className="logo" alignItems="center" gap="0.625rem">
       <img src={properties.image} alt="mericos-logo" />
-      <Text fontSize="sub_heading_size" color={properties.primaryColor}>
+      <Text fontSize="card_heading_size" fontWeight={"bold"} color={properties.primaryColor} >
         Mericos
       </Text>
     </Flex>
   );
     //right side of the navbar
   const rightSide = (
-    <Flex direction="row-reverse" alignItems="center" gap={10}>
-      {getOptions(props.navigationState).map((item) => (
-        <NavItem
-          key={item.name}
-          text={item.name}
-          link={item.link}
-          color={properties.primaryColor}
-        />
-      ))}
-    </Flex>
+    props.size === "phone" ? (
+              /* nav items, depending on whether they are authenticated or not */
+              props.navigationState === "authenticated" ?(
+              <HamburgerIcon
+                color={properties.primaryColor}
+                boxSize={6}
+                cursor="pointer"
+              />) :(
+                <Flex 
+                direction={"row"}  
+                alignItems={"center"} 
+                gap={"2"}>
+                  <NavItem text="Menu" link="" color={properties.primaryColor}/>
+                  <ButtonM text="Login" type={props.type === "primary" ? "primary" : "secondary"}/>
+                </Flex>
+              )
+            ) : (
+              <Flex direction="row" alignItems="center" gap={10}>
+                {getOptions(props.navigationState).map((item) => (
+                  <NavItem
+                    key={item.name}
+                    text={item.name}
+                    link={item.link}
+                    color={properties.primaryColor}
+                  />
+                ))}
+              </Flex>
+            )
   );
 
   const backArrow = (
@@ -70,24 +89,16 @@ export function Navbar(props: NavbarProps) {
       <Flex
         padding="0.65rem"
         direction="row"
-        alignItems="start"
+        alignItems="center"
         justifyContent="space-between"
-        maxWidth={"8xl"}
+        maxWidth={"7xl"}
       >
         {props.navigationState !== "goBack" ? (
           <>
             {/* logo and company name */}
             {leftSide}
-            {/* nav items, depending on whether they are authenticated or not */}
-            {props.size === "phone" ? (
-              <HamburgerIcon
-                color={properties.primaryColor}
-                boxSize={6}
-                cursor="pointer"
-              />
-            ) : (
-              rightSide
-            )}
+            
+            {rightSide}
           </>
         ) : (
           // go back Navbar

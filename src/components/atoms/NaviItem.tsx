@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react'
+import { Box, Link } from '@chakra-ui/react'
 
 interface NavItemProps {
     link : string,
@@ -8,6 +8,8 @@ interface NavItemProps {
 
 export function NavItem (props: NavItemProps) {
     return(
-        <Link href={props.link} color={props.color} textDecor={"underline"}>{props.text}</Link>
+        <Box  paddingX={"1"}>
+            <Link href={props.link} color={props.color}  fontSize={"body_size"} fontWeight={"bold"}>{props.text}</Link>
+        </Box>
     )
 }
