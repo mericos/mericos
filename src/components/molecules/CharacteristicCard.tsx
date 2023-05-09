@@ -9,20 +9,20 @@ interface CharacteristicCardProps {
 
 export function CharacteristicCard ({ heading, description, icon}: CharacteristicCardProps) {
     return (
-        <Card 
-        maxW="-moz-fit-content" 
-        borderRadius="md" 
-        overflow="hidden" 
-        boxShadow="sm" 
-        background={"white"} 
-        align={"center"} 
+        <Card
+        maxW={"-webkit-fit-content"}
+        borderRadius="md"
+        overflow="hidden"
+        boxShadow="sm"
+        background={"white"}
+        align={"center"}
         variant={"outline"}>
             {icon}
             <CardBody>
             <Stack spacing={2} >
             <Heading size="md" color={"customColors.primary.500"}>{heading}</Heading>
             <Text color={"customColors.text_color_dark.normal"}>
-                {description} Mzn
+                {description}
             </Text>
             </Stack>
         </CardBody>
