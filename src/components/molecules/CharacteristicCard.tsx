@@ -10,7 +10,7 @@ interface CharacteristicCardProps {
 export function CharacteristicCard ({ heading, description, icon}: CharacteristicCardProps) {
     return (
         <Card
-        maxW={"-webkit-fit-content"}
+        maxW={"-moz-max-content"}
         borderRadius="md"
         overflow="hidden"
         boxShadow="sm"
@@ -21,7 +21,7 @@ export function CharacteristicCard ({ heading, description, icon}: Characteristi
             <CardBody>
             <Stack spacing={2} >
             <Heading size="md" color={"customColors.primary.500"}>{heading}</Heading>
-            <Text color={"customColors.text_color_dark.normal"}>
+            <Text whiteSpace={"pre-wrap"} maxW={"16"} color={"customColors.text_color_dark.normal"}>
                 {description}
             </Text>
             </Stack>

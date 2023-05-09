@@ -20,7 +20,11 @@ export function Introduction() {
 	return (
 		<Box width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
-			<HStack maxWidth={"7xl"} bg="blue">
+			<HStack maxWidth={"7xl"}  wrap={"wrap"}>
+				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
 				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
 				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
 			</HStack>
