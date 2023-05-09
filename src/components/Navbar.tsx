@@ -51,7 +51,7 @@ function NavbarRight({ properties, navProps }: { properties: any, navProps: Navb
     return (
       <Flex direction="row" alignItems="center" gap={2}>
         <NavItem text="Menu" link="" color={properties.primaryColor} />
-        <ButtonM children="Login" type={properties.buttonType} />
+        <ButtonM text="Login" type={properties.buttonType} />
       </Flex>
     );
   }
