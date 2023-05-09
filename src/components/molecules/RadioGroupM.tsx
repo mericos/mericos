@@ -1,14 +1,14 @@
 import { RadioGroup } from "@chakra-ui/react";
 import { useState } from "react";
-import { SwitchM } from "../atoms/SwitchM";
+import { RadioButtonM } from "../atoms/RadioButtonM";
 
 export function RadioGroupM() {
 	const [value, setValue] = useState("");
 	return (
 		<>
 			<RadioGroup onChange={setValue} value={value}>
-				<SwitchM text=" " value={"checked"}/>
-				<SwitchM text=" " value={"unched"}/>
+				<RadioButtonM text=" " value={"checked"}/>
+				<RadioButtonM text=" " value={"unched"}/>
 			</RadioGroup>
 		</>
 	);
