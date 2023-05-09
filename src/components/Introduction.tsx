@@ -1,6 +1,8 @@
 import { Box, HStack, useBreakpointValue } from "@chakra-ui/react";
 import { Navbar } from "./Navbar";
 import { MealCard } from "./molecules/MealCard";
+import { CharacteristicCard } from "./molecules/CharacteristicCard";
+import { Ri24HoursFill } from 'react-icons/ri'
 
 export function Introduction() {
 	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
@@ -18,6 +20,10 @@ export function Introduction() {
 	return (
 		<Box width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
+			<HStack maxWidth={"7xl"} bg="blue">
+				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
+			</HStack>
 			<HStack maxWidth={"7xl"}>
 				<MealCard 
 				type="secondary"
