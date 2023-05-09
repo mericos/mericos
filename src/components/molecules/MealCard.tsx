@@ -25,7 +25,7 @@ export function MealCard({ url, heading, price, type="primary" }: MealCardProps)
         </Stack>
       </CardBody>
       <CardFooter justifyContent={"center"}>
-        <ButtonM type={type === "primary"? "secondary" : type} children="Adicione" />
+        <ButtonM type={type === "primary"? "secondary" : type} text="Adicione" />
       </CardFooter>
     </Card>
   );
