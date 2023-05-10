@@ -15,7 +15,7 @@ interface CardMProps {
 export function CardM ({name, price = 0, type = "default", image_shape = "square",image, state = "default"}: CardMProps) {
     
     return (
-        <Card w={"3xs"}>
+        <Card maxW={"3xs"}>
             <CardHeader>
                 <Image
                     borderRadius={image_shape === "circle" ? "full" : ""}
@@ -24,7 +24,7 @@ export function CardM ({name, price = 0, type = "default", image_shape = "square
                 />
             </CardHeader>
             <CardBody>
-                <Stack direction={"column"}>
+                <Stack direction={"column"} alignItems={"center"}>
                     <Text>
                         {name}
                     </Text>
