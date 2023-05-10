@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, HStack, Heading, Stack, Text } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 interface CharacteristicCardProps {
@@ -10,20 +10,22 @@ interface CharacteristicCardProps {
 export function CharacteristicCard ({ heading, description, icon}: CharacteristicCardProps) {
     return (
         <Card
-        maxW={"-moz-max-content"}
+        w={"full"}
         borderRadius="md"
         overflow="hidden"
         boxShadow="sm"
         background={"white"}
         align={"center"}
         variant={"outline"}>
-            {icon}
             <CardBody>
-            <Stack spacing={2} >
-            <Heading size="md" color={"customColors.primary.500"}>{heading}</Heading>
-            <Text whiteSpace={"pre-wrap"} maxW={"16"} color={"customColors.text_color_dark.normal"}>
-                {description}
-            </Text>
+            <Stack spacing={2}>
+                <HStack color={"customColors.primary.500"} justifyContent={"center"}>
+                    {icon}
+                    <Heading size="md">{heading}</Heading>
+                </HStack>
+                <Text whiteSpace={"pre-wrap"} color={"customColors.text_color_dark.normal"} textAlign={"center"}>
+                    {description}
+                </Text>
             </Stack>
         </CardBody>
         </Card>

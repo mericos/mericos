@@ -1,4 +1,4 @@
-import { Box, HStack, useBreakpointValue } from "@chakra-ui/react";
+import { Box, HStack, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import { Navbar } from "./Navbar";
 import { MealCard } from "./molecules/MealCard";
 import { CharacteristicCard } from "./molecules/CharacteristicCard";
@@ -17,19 +17,18 @@ export function Introduction() {
 		fallback: 'md',
 		},
 	) ?? "phone"
+	
 	return (
 		<Box width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
-			<HStack maxWidth={"7xl"}  wrap={"wrap"}>
-				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="descripkhhhhhhhhhhhhhhtion" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="description" icon={<Ri24HoursFill/>}/>
-			</HStack>
+			<SimpleGrid  spacing={"2"} minChildWidth={"3xs"} maxW={"7xl"} margin={1} >
+				<CharacteristicCard heading="heading" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!" icon={<Ri24HoursFill/>}/>
+				<CharacteristicCard heading="heading" description="descLorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!ription" icon={<Ri24HoursFill/>}/>
+			</SimpleGrid>
 			<HStack maxWidth={"7xl"}>
-				<MealCard 
+				<MealCard
 				type="secondary"
 				url="https://www.simplyrecipes.com/thmb/2MQuChhZANaSSxdL1a0tA6nBgmQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-4-82c60893fcad4ade906a8a9f59b8da9d.jpg"
 				heading={"Heading"}
