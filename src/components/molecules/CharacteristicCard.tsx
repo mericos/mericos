@@ -1,7 +1,7 @@
 import { Box, Card, CardBody, HStack, Heading, Stack, Text } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
-interface CharacteristicCardProps {
+export interface CharacteristicCardProps {
     heading: string;
     description: string;
     icon: ReactElement;
