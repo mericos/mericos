@@ -1,5 +1,6 @@
 import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { ButtonM } from "../atoms/ButtonM";
+import { BsCart } from "react-icons/bs"
 
 interface MealCardProps {
   url: string;
@@ -12,7 +13,6 @@ export function MealCard({ url, heading, price, type="primary" }: MealCardProps)
     const primaryColor = type === "primary" ? "white"  : "customColors.primary.500"
     const background = type ==="primary" ? "customColors.primary.500" : "white"
     const textColor = type === "primary" ? "white" : "customColors.text_color_dark.normal"
-    
   return (
     <Card maxW="xs" borderRadius="md" overflow="hidden" boxShadow="lg" background={background}>
       <Image src={url} alt={heading} h={'xs'} w={'xs'} objectFit="cover" />
@@ -25,7 +25,7 @@ export function MealCard({ url, heading, price, type="primary" }: MealCardProps)
         </Stack>
       </CardBody>
       <CardFooter justifyContent={"center"}>
-        <ButtonM type={type === "primary"? "secondary" : type} text="Adicione" />
+        <ButtonM type={type === "primary"? "secondary" : type} text="Adicione" icon={<BsCart/>} />
       </CardFooter>
     </Card>
   );
