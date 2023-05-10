@@ -1,11 +1,11 @@
 
-import { Box, HStack, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
+import { Box, HStack, Icon, useBreakpointValue } from "@chakra-ui/react";
 import { Navbar } from "./molecules/Navbar";
 
 
 import { MealCard } from "./molecules/MealCard";
-import { CharacteristicCard } from "./molecules/CharacteristicCard";
 import { Ri24HoursFill } from 'react-icons/ri'
+import { CharacteristicsList } from "./organisms/CharacteristicsList";
 
 export function Introduction() {
 	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
@@ -20,16 +20,33 @@ export function Introduction() {
 		fallback: 'md',
 		},
 	) ?? "phone"
-	
+	const characteristics = [
+		{
+		heading: "heading",
+		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
+		icon: <Icon as={Ri24HoursFill}/>
+		},
+		{
+		heading: "heading",
+		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
+		icon: <Icon as={Ri24HoursFill}/>
+		},
+		{
+		heading: "heading",
+		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
+		icon: <Icon as={Ri24HoursFill}/>
+		},
+		{
+		heading: "heading",
+		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
+		icon: <Icon as={Ri24HoursFill}/>
+		},
+	]
 	return (
 		<Box width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
-			<SimpleGrid  spacing={"2"} minChildWidth={"3xs"} maxW={"7xl"} margin={1} >
-				<CharacteristicCard heading="heading" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!" icon={<Ri24HoursFill/>}/>
-				<CharacteristicCard heading="heading" description="descLorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in recusandae doloremque libero quasi pariatur debitis eveniet delectus! Itaque ea repellat nesciunt minus distinctio doloribus nulla eveniet accusantium blanditiis veniam!ription" icon={<Ri24HoursFill/>}/>
-			</SimpleGrid>
+			<CharacteristicsList characteristics={characteristics}/>
+
 			<HStack maxWidth={"7xl"}>
 				<MealCard
 				type="secondary"
