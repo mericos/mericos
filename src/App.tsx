@@ -3,6 +3,8 @@ import { Navbar } from "./components/molecules/Navbar";
 import { Introduction } from "./components/Introduction";
 import { customTheme } from "./style/customTheme";
 import { SwitchM } from "./components/atoms/SwitchM";
+import { RatingsIcons } from "./components/atoms/RatingsIcons";
+import { Ratings } from "./components/molecules/Ratings";
 
 export function App() {
 	return (
@@ -10,7 +12,8 @@ export function App() {
 			<ChakraProvider theme={customTheme}>
 				<Flex fontFamily={"Roboto"} justifyContent="center">
 					{/* <Introduction /> */}
-					<SwitchM/>
+					{/* <SwitchM/> */}
+					<Ratings/>
 				</Flex>
 			</ChakraProvider>
 		</>
