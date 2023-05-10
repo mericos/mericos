@@ -5,7 +5,7 @@ interface RadioProps {
 	text: string;
 }
 
-export function SwitchM({ value, text }: RadioProps) {
+export function RadioButtonM({ value, text }: RadioProps) {
 	return (
 		<>
 			<Radio colorScheme="customColors.primary" value={value}>

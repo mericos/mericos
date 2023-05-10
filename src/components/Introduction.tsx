@@ -1,5 +1,8 @@
+
 import { Box, HStack, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
-import { Navbar } from "./Navbar";
+import { Navbar } from "./molecules/Navbar";
+
+
 import { MealCard } from "./molecules/MealCard";
 import { CharacteristicCard } from "./molecules/CharacteristicCard";
 import { Ri24HoursFill } from 'react-icons/ri'
@@ -37,6 +40,7 @@ export function Introduction() {
 				heading={"Heading"}
 				price={0}/>
 			</HStack>
+	
 		</Box>
 	);
 }
