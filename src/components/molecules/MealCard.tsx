@@ -2,19 +2,19 @@ import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra
 import { ButtonM } from "../atoms/ButtonM";
 import { BsCart } from "react-icons/bs"
 
-interface MealCardProps {
+export interface MealCardProps {
   url: string;
-  heading: string;
+  mealName: string;
   price: number;
   type?: "primary" | "secondary"
 }
 
-export function MealCard({ url, heading, price, type="primary" }: MealCardProps) {
+export function MealCard({ url, mealName: heading, price, type="primary" }: MealCardProps) {
     const primaryColor = type === "primary" ? "white"  : "customColors.primary.500"
     const background = type ==="primary" ? "customColors.primary.500" : "white"
     const textColor = type === "primary" ? "white" : "customColors.text_color_dark.normal"
   return (
-    <Card maxW="xs" borderRadius="md" overflow="hidden" boxShadow="lg" background={background}>
+    <Card flexShrink={0} maxW="xs" borderRadius="md" overflow="hidden" boxShadow="lg" background={background}>
       <Image src={url} alt={heading} h={'xs'} w={'xs'} objectFit="cover" />
       <CardBody>
         <Stack spacing={2} align={"start"}>
