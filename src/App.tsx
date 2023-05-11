@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { router } from "./router/router";
+import { DeviceProvider } from "./contextProviders/DeviceProvider";
 
 
 
@@ -13,9 +14,11 @@ export function App() {
 	return (
 		<>
 			<ChakraProvider theme={customTheme}>
-				<Flex fontFamily={"Roboto"} justifyContent="center">
-					<RouterProvider router={router}/>
-				</Flex>
+				<DeviceProvider>
+					<Flex fontFamily={"Roboto"} justifyContent="center">
+						<RouterProvider router={router}/>
+					</Flex>
+				</DeviceProvider>
 			</ChakraProvider>
 		</>
 	);
