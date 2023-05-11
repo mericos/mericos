@@ -101,7 +101,13 @@ export function Navbar(props: NavbarProps) {
 	);
 
 	return (
-		<Box bg={properties.background} padding={2} align="center" width={"full"}>
+		<Box 
+		bg={properties.background} 
+		padding={2} 
+		align="center" 
+		width={"full"} 
+		position={"sticky"}
+		top={0}>
 			<Flex
 				padding="0.65rem"
 				direction="row"
