@@ -7,7 +7,7 @@ interface MealsListProps {
 
 export function MealsList (props: MealsListProps) {
     const {meals} = props
-    const mealCards = meals.map(({mealName, url, price}) => (<MealCard url={url} mealName={mealName} price={price}/>))
+    const mealCards = meals.map(({mealName, url, price}) => (<MealCard key={mealName} url={url} mealName={mealName} price={price}/>))
     return(
         <HStack overflowX={"scroll"} width={"full"}>
             {mealCards}
