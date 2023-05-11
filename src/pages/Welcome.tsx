@@ -3,8 +3,11 @@ import { Box } from "@chakra-ui/react"
 
 export function Welcome() {
     return(
-        <Box width={"full"}>
-            <Navbar size={"laptop"} navigationState={"authenticated"}/>
+        <Box width={"full"} justifyContent={"center"} align={"center"}>
+            <Navbar size={"phone"} navigationState={"authenticated"}/>
+            <Box bg={"blue"} height={"4xl"} maxW={"7xl"}>
+                helo
+            </Box>
         </Box>
     )
 }
