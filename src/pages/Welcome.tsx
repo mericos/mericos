@@ -1,10 +1,14 @@
 import { Navbar } from "../components/molecules/Navbar";
-import { Box, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Flex, HStack, Heading, Icon, Image, SimpleGrid, Text } from "@chakra-ui/react"
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { ButtonM } from "../components/atoms/ButtonM";
-import { GiKnifeFork } from "react-icons/gi"
+import { GiKnifeFork, GiPuzzle, GiRotaryPhone } from "react-icons/gi"
 import { MealCard, MealCardProps } from "../components/molecules/MealCard";
 import { MealsList } from "../components/organisms/MealsList";
+import { CharacteristicCard } from "../components/molecules/CharacteristicCard";
+import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
+import { Ri24HoursFill } from "react-icons/ri";
+import { MdFastfood } from "react-icons/md";
 
 export function Welcome() {
     const higlightedMeals: Array<MealCardProps> = [{
@@ -28,6 +32,28 @@ export function Welcome() {
         url: "https://images.trustinnews.pt/uploads/sites/5/2019/10/se-gosta-de-gomas-e-gelatina-e-melhor-nao-ver-este-video-2-1024x576.jpg",
         price: 10
     }]
+    const characteristics = [
+		{
+		heading: "Integridade",
+		description: "A empresa zela pela cuidadosa seleção de fornecedores e ingredientes, assegurando a alta qualidade e segurança dos produtos comercializados.",
+		icon: <Icon as={GiPuzzle}/>
+		},
+		{
+		heading: "Diversidade",
+		description: "A empresa oferece uma ampla diversidade de alimentos, atendendo a diferentes preferências e necessidades dos clientes.",
+		icon: <Icon as={MdFastfood}/>
+		},
+		{
+		heading: "Disponibilidade",
+		description: "A empresa, garante a disponibilidade dos melhores produtos alimentícios para os nossos clientes, comprometendo-nos a manter nossas prateleiras abastecidas com uma ampla variedade de alimentos de alta qualidade",
+		icon: <Icon as={Ri24HoursFill}/>
+		},
+		{
+		heading: "Atendimento",
+		description: "A empresa oferece um excelente atendimento ao cliente, orientando sobre os produtos, tirando dúvidas e garantindo a satisfação dos consumidores.",
+		icon: <Icon as={GiRotaryPhone}/>
+		},
+	]
     const size = useDeviceContext();
     return(
         <Box width={"full"} align={"center"}>
@@ -47,6 +73,26 @@ export function Welcome() {
                     <Heading color={"customColors.primary.500"}> Refeições em destaque</Heading>
                     <MealsList meals={higlightedMeals}/>
                 </Flex>
+                <Flex direction={"column"} alignItems={"start"} width={"full"}>
+                    <Heading color={"customColors.primary.500"}> Nossos valores</Heading>
+                    <CharacteristicsList characteristics={characteristics} />
+                </Flex>
+                <Flex direction={"column"} alignItems={"start"} width={"full"}>
+                    <Heading color={"customColors.primary.500"}> Acesse a Mericos</Heading>
+                    <Flex direction={"row"} gap={2} justify={"center"} width={"full"}>
+                        <ButtonM text="Entrar" type="secondary"/>
+                        <ButtonM text="Registrar"/>
+                    </Flex>
+                </Flex>
+            </Flex>
+            <Flex color={"white"} bg={"customColors.primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"}>
+                <Text>You can find us at:</Text>
+                <Flex direction={"row"} gap={2}>
+                    LINKS TO ADD
+                </Flex>
+                <Text>Mericos - change the way we eat</Text>
+                <Text>@copyright-2023</Text>
+
             </Flex>
         </Box>
     )
