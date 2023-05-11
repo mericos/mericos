@@ -1,11 +1,9 @@
 
-import { Box, HStack, Icon, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Icon, useBreakpointValue } from "@chakra-ui/react";
 import { Navbar } from "./molecules/Navbar";
 
 
-import { MealCard } from "./molecules/MealCard";
-import { Ri24HoursFill } from 'react-icons/ri'
-import { CharacteristicsList } from "./organisms/CharacteristicsList";
+import { Ri24HoursFill } from 'react-icons/ri';
 import { CardM } from "./molecules/CardM";
 
 export function Introduction() {

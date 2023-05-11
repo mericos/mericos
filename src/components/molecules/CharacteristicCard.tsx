@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, HStack, Heading, Stack, Text } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Heading, Stack, Text } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 export interface CharacteristicCardProps {

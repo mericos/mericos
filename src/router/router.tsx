@@ -1,5 +1,4 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Introduction } from "../components/Introduction";
 import { Welcome } from "../pages/Welcome";
 
 export const router = createBrowserRouter([
