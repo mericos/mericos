@@ -85,7 +85,7 @@ export function Welcome() {
                     </Flex>
                 </Flex>
             </Flex>
-            <Flex color={"white"} bg={"customColors.primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"}>
+            <Flex color={"white"} bg={"customColors.primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
                 <Text>You can find us at:</Text>
                 <Flex direction={"row"} gap={2}>
                     LINKS TO ADD
