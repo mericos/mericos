@@ -9,7 +9,7 @@ interface ButtonProps {
 
 export function ButtonM({ type = "primary", text, icon }: ButtonProps) {
   return (
-    <Button px={8} variant={type} rightIcon={icon}>
+    <Button px={8} variant={type} rightIcon={icon} maxWidth={"-webkit-fit-content"}>
       {text}
     </Button>
   );

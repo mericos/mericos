@@ -87,7 +87,7 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const isPrimaryType = props.type === "primary";
+	const isPrimaryType = props.type === "primary" || props.type === undefined;
 
 	const properties = {
 		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
@@ -101,7 +101,14 @@ export function Navbar(props: NavbarProps) {
 	);
 
 	return (
-		<Box bg={properties.background} padding={2}>
+		<Box
+		bg={properties.background}
+		padding={2}
+		align="center"
+		width={"full"}
+		position={"sticky"}
+		zIndex={1}
+		top={0}>
 			<Flex
 				padding="0.65rem"
 				direction="row"
