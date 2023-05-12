@@ -90,8 +90,8 @@ export function Navbar(props: NavbarProps) {
 	const isPrimaryType = props.type === "primary" || props.type === undefined;
 
 	const properties = {
-		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
-		background: isPrimaryType ? "white" : "customColors.primary.500",
+		primaryColor: isPrimaryType ? "primary.500" : "white",
+		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: props.type === "primary" ? "primary" : "secondary",
 	};
@@ -102,13 +102,14 @@ export function Navbar(props: NavbarProps) {
 
 	return (
 		<Box
-		bg={properties.background}
-		padding={2}
-		align="center"
-		width={"full"}
-		position={"sticky"}
-		zIndex={1}
-		top={0}>
+			bg={properties.background}
+			padding={2}
+			align="center"
+			width={"full"}
+			position={"sticky"}
+			zIndex={1}
+			top={0}
+		>
 			<Flex
 				padding="0.65rem"
 				direction="row"

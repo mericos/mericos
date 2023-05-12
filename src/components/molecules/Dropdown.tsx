@@ -5,15 +5,17 @@ import { SetStateAction, useState } from "react";
 export function Dropdown() {
 	const [value, setValues] = useState("");
 
-	const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
-		setValues(event.target.value)
-	}
+	const handleChange = (event: {
+		target: { value: SetStateAction<string> };
+	}) => {
+		setValues(event.target.value);
+	};
 	return (
 		<>
 			<Select
-				borderColor={"customColors.primary.500"}
-				focusBorderColor="customColors.primary.700"
-				bgColor={"customColors.primary.500"}
+				borderColor={"primary.500"}
+				focusBorderColor="primary.500.700"
+				bgColor={"primary.500"}
 				color={value ? "black" : "white"}
 				placeholder="Select an option"
 				onChange={handleChange}

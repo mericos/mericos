@@ -1,7 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 
 // const customIcons = {
-	
+
 // }
 
 const customColors = {
@@ -46,7 +46,7 @@ export const customTheme = extendTheme({
 		card_heading_size: "1.25rem",
 		body_size: "1rem",
 		sub_body_in_popovers_size: "1.25rem",
-		badges_tags_size: "0.64rem"
+		badges_tags_size: "0.64rem",
 	},
 	components: {
 		Button: {
@@ -58,7 +58,7 @@ export const customTheme = extendTheme({
 			variants: {
 				// styles for solid buttons with brand color
 				primary: {
-					bg: "customColors.primary.500",
+					bg: "primary.500",
 					color: "white",
 					_hover: {
 						bg: "brand.400",
@@ -74,7 +74,7 @@ export const customTheme = extendTheme({
 				// styles for outline buttons with brand color
 				secondary: {
 					bg: "#FFFFFF",
-					color: "customColors.primary.500",
+					color: "primary.500",
 					border: "1px solid",
 					_hover: {
 						boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -88,11 +88,9 @@ export const customTheme = extendTheme({
 		Checkbox: {
 			baseStyle: {
 				control: {
-					borderColor: "customColors.primary.500",
+					borderColor: "primary.500",
 				},
 			},
 		},
-		
 	},
 });
-

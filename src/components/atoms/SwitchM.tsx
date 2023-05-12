@@ -1,11 +1,10 @@
 import { Switch } from "@chakra-ui/react";
 
 export function SwitchM() {
-    return (
+	return (
 		<>
-			{/* colorScheme={"customColors.primary"} */}
-			<Switch colorScheme="customColors.primary" size= "md" >
-			</Switch>
+			{/* colorScheme={"primary.500"} */}
+			<Switch colorScheme="primary.500" size="md"></Switch>
 		</>
 	);
 }
