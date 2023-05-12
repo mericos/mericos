@@ -1,6 +1,6 @@
 import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { ButtonM } from "../atoms/ButtonM";
-import { BsCart } from "react-icons/bs"
+import { BsCart } from "react-icons/bs";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -21,14 +21,12 @@ export function MealCard({ url, mealName: heading, price, type="primary" }: Meal
       setBackgroundColor(background === "white" ? "customColors.primary.500" : "white")
       setTextColor(textColor === "white" ? "customColors.text_color_dark.normal" : "white")
     }
-
   return (
     <Card 
     as={motion.div}
+    initial={{ opacity: 1 }}
     whileHover={{ scale: 1.1, zIndex: 1 }}
     whileTap={{ scale: 0.9 }}
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
     viewport={{ once: true }}
     flexShrink={0} 
     maxW="xs" 
