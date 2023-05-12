@@ -16,7 +16,7 @@ export function App() {
 					{/* <SwitchM/> */}
 					{/* <Ratings />
 					<InputM text="text"/> */}
-					<RatingsIcons id={0}/>
+					<RatingsIcons />
 				</Flex>
 			</ChakraProvider>
 		</>
