@@ -1,12 +1,10 @@
-import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
-import { Navbar } from "./components/molecules/Navbar";
-import { Introduction } from "./components/Introduction";
-import { customTheme } from "./style/customTheme";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import {
-  RouterProvider,
+	RouterProvider,
 } from "react-router-dom";
-import { router } from "./router/router";
 import { DeviceProvider } from "./contextProviders/DeviceProvider";
+import { router } from "./router/router";
+import { customTheme } from "./style/customTheme";
 
 
 

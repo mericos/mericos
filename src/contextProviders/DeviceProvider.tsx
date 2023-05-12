@@ -1,5 +1,5 @@
 import { useBreakpointValue } from "@chakra-ui/react"
-import React, { PropsWithChildren, useContext, useState } from "react"
+import React, { PropsWithChildren, useContext } from "react"
 
 const DeviceContext = React.createContext('phone')
 

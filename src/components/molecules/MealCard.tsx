@@ -1,7 +1,8 @@
 import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { ButtonM } from "../atoms/ButtonM";
-import { BsCart } from "react-icons/bs"
+import { BsCart } from "react-icons/bs";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export interface MealCardProps {
   url: string;
@@ -20,9 +21,22 @@ export function MealCard({ url, mealName: heading, price, type="primary" }: Meal
       setBackgroundColor(background === "white" ? "customColors.primary.500" : "white")
       setTextColor(textColor === "white" ? "customColors.text_color_dark.normal" : "white")
     }
-
   return (
-    <Card flexShrink={0} maxW="xs" borderRadius="md" overflow="hidden" boxShadow="lg" background={background} onMouseEnter={()=> switchColor()} onMouseLeave={() => switchColor()} _active={{border : "1px", color: primaryColor }}>
+    <Card 
+    as={motion.div}
+    initial={{ opacity: 1 }}
+    whileHover={{ scale: 1.1, zIndex: 1 }}
+    whileTap={{ scale: 0.9 }}
+    viewport={{ once: true }}
+    flexShrink={0} 
+    maxW="xs" 
+    borderRadius="md" 
+    overflow="hidden" 
+    boxShadow="lg" 
+    background={background} 
+    onMouseEnter={()=> switchColor()} 
+    onMouseLeave={() => switchColor()} 
+    _active={{border : "1px", color: primaryColor }}>
       <Image src={url} alt={heading} h={'xs'} w={'xs'} objectFit="cover" />
       <CardBody>
         <Stack spacing={2} align={"start"}>

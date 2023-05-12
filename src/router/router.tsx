@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Introduction } from "../components/Introduction";
 import { Welcome } from "../pages/Welcome";
+import { Introduction } from "../components/Introduction";
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +10,10 @@ export const router = createBrowserRouter([
   {
     path: "/welcome",
     element : <Welcome/>
+  },
+  {
+    path: "/testing",
+    element: <Introduction/>
   },
   {
 	path: "/*",

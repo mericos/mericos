@@ -1,11 +1,10 @@
 import { Navbar } from "../components/molecules/Navbar";
-import { Box, Flex, HStack, Heading, Icon, Image, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Icon, Image, SimpleGrid, Text } from "@chakra-ui/react"
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { ButtonM } from "../components/atoms/ButtonM";
 import { GiKnifeFork, GiPuzzle, GiRotaryPhone } from "react-icons/gi"
-import { MealCard, MealCardProps } from "../components/molecules/MealCard";
+import { MealCardProps } from "../components/molecules/MealCard";
 import { MealsList } from "../components/organisms/MealsList";
-import { CharacteristicCard } from "../components/molecules/CharacteristicCard";
 import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
 import { Ri24HoursFill } from "react-icons/ri";
 import { MdFastfood } from "react-icons/md";
