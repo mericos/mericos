@@ -8,9 +8,11 @@ export function RatingsIcons() {
 		selectedRating === rating ? setRating(0) : setRating(selectedRating);
 	};
 
+	const arr = [1, 2, 3, 4, 5];
+
 	return (
 		<>
-			{[1, 2, 3, 4, 5].map((star) => (
+			{arr.map((star) => (
 				<StarIcon
 					key={star}
 					onClick={() => handleStarClick(star)}
