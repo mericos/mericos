@@ -1,5 +1,9 @@
 import { extendTheme } from "@chakra-ui/react";
 
+// const customIcons = {
+	
+// }
+
 const customColors = {
 	primary: {
 		50: "#ffeedc",
@@ -32,7 +36,7 @@ const customColors = {
 
 export const customTheme = extendTheme({
 	colors: {
-		customColors,
+		...customColors,
 	},
 	fontSizes: {
 		heading_size: "3.053rem",
