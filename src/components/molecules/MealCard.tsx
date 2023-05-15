@@ -5,13 +5,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export interface MealCardProps {
-  url: string;
+  imageUrl: string;
   mealName: string;
   price: number;
   type?: "primary" | "secondary"
 }
 
-export function MealCard({ url, mealName: heading, price, type="primary" }: MealCardProps) {
+export function MealCard({ imageUrl: url, mealName: heading, price, type="primary" }: MealCardProps) {
     const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "customColors.primary.500")
     const [background, setBackgroundColor ] = useState(type ==="primary" ? "customColors.primary.500" : "white")
     const [textColor, setTextColor] = useState(type === "primary" ? "white" : "customColors.text_color_dark.normal")
