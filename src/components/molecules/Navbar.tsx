@@ -7,6 +7,7 @@ import { ButtonM } from "../atoms/ButtonM";
 import { HamburguerMenu } from "./HamburguerMenu";
 
 interface NavbarProps {
+	text?: string;
 	type?: "primary" | "secondary";
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
@@ -87,17 +88,21 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const isPrimaryType = props.type === "primary" || props.type === undefined;
+	const { text, type, size, navigationState } = props
+	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties = {
 		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
 		background: isPrimaryType ? "white" : "customColors.primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
-		buttonType: props.type === "primary" ? "primary" : "secondary",
+		buttonType: type === "primary" ? "primary" : "secondary",
 	};
 
 	const backArrow = (
-		<ArrowBackIcon color={properties.primaryColor} boxSize={6} />
+		<>
+			<ArrowBackIcon color={properties.primaryColor} boxSize={6} />
+			<Text>{text}</Text>
+		</>
 	);
 
 	return (
@@ -116,7 +121,7 @@ export function Navbar(props: NavbarProps) {
 				justifyContent="space-between"
 				maxWidth={"7xl"}
 			>
-				{props.navigationState !== "goBack" ? (
+				{navigationState !== "goBack" ? (
 					<>
 						{/* logo and company name */}
 						<NavbarLeft properties={properties} />
