@@ -72,8 +72,8 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
         <Box width={"full"} align={"center"}>
             <Navbar size={size} navigationState={"not_authenticated"} type="primary"/>
             <Flex direction={"column"} maxW={"7xl"} padding={2} gap={8}>
-                <SimpleGrid spacing={"2"} minChildWidth={"xs"}  >
-                    <Flex justifyContent={"center"} alignItems={"start"} direction={"column"}>
+                <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
+                    <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>
                         <Heading color={"customColors.primary.500"}>Mericos</Heading>
                         <Text textAlign={"start"} color={"customColors.text_color_dark.normal"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi veniam minus fugit enim excepturi impedit soluta sint eum omnis ea eveniet incidunt, nulla totam dolores illo asperiores eaque itaque deleniti.</Text>
                         <ButtonM text="Menu" icon={<GiKnifeFork/>}/>
@@ -82,15 +82,15 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
                         <Image boxSize={"full"} objectFit={"cover"} borderRadius={8} src="https://b.zmtcdn.com/data/pictures/chains/9/19912889/e9f25f9e9daf2e355e7c44b5877c46ba.jpg?output-format=webp"/>
                     </Box>
                 </SimpleGrid>
-                <Flex direction={"column"} alignItems={"start"}>
+                <Flex direction={"column"} alignItems={"start"} gap={8}>
                     <Heading color={"customColors.primary.500"}> Refeições em destaque</Heading>
                     <MealsList meals={highlightedMeals}/>
                 </Flex>
-                <Flex direction={"column"} alignItems={"start"} width={"full"}>
+                <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
                     <Heading color={"customColors.primary.500"}> Nossos valores</Heading>
                     <CharacteristicsList characteristics={characteristics} />
                 </Flex>
-                <Flex direction={"column"} alignItems={"start"} width={"full"}>
+                <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
                     <Heading color={"customColors.primary.500"}> Acesse a Mericos</Heading>
                     <Flex direction={"row"} gap={2} justify={"center"} width={"full"}>
                         <ButtonM text="Entrar" type="secondary"/>
