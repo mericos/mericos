@@ -107,7 +107,7 @@ export function Navbar(props: NavbarProps) {
 		align="center"
 		width={"full"}
 		position={"sticky"}
-		zIndex={1}
+		zIndex={2}
 		top={0}>
 			<Flex
 				padding="0.65rem"
