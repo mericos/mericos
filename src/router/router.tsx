@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Welcome } from "../pages/Home";
 import { Introduction } from "../components/Introduction";
+import { Meal } from "../pages/Meal";
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
   {
     path: "/welcome",
     element : <Welcome/>
+  },
+  {
+    path: "/meal/:id",
+    element: <Meal/>
   },
   {
     path: "/testing",

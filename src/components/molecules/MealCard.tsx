@@ -3,26 +3,34 @@ import { ButtonM } from "../atoms/ButtonM";
 import { BsCart } from "react-icons/bs";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { redirect, useNavigate } from "react-router-dom";
 
 export interface MealCardProps {
+  id: string;
   imageUrl: string;
   mealName: string;
   price: number;
   type?: "primary" | "secondary"
 }
 
-export function MealCard({ imageUrl: url, mealName: heading, price, type="primary" }: MealCardProps) {
+export function MealCard({ id, imageUrl, mealName, price, type="primary" }: MealCardProps) {
     const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "customColors.primary.500")
     const [background, setBackgroundColor ] = useState(type ==="primary" ? "customColors.primary.500" : "white")
     const [textColor, setTextColor] = useState(type === "primary" ? "white" : "customColors.text_color_dark.normal")
-
+    const navigate = useNavigate();
+    
     function switchColor() {
       setPrimaryColor(primaryColor === "white" ? "customColors.primary.500" : "white")
       setBackgroundColor(background === "white" ? "customColors.primary.500" : "white")
       setTextColor(textColor === "white" ? "customColors.text_color_dark.normal" : "white")
     }
+    function handleClick() {
+      console.log("clicked")
+      navigate(`/meal/${id}`,{state: { name: mealName }})
+    }
   return (
     <Card 
+    onClick={() => handleClick()}
     as={motion.div}
     initial={{ opacity: 1 }}
     whileHover={{ scale: 1.05, zIndex: 1 }}
@@ -38,10 +46,10 @@ export function MealCard({ imageUrl: url, mealName: heading, price, type="primar
     onMouseEnter={()=> switchColor()} 
     onMouseLeave={() => switchColor()} 
     _active={{border : "1px", color: primaryColor }}>
-      <Image src={url} alt={heading} h={'xs'} w={'xs'} objectFit="cover" />
+      <Image src={imageUrl} alt={mealName} h={'xs'} w={'xs'} objectFit="cover" />
       <CardBody>
         <Stack spacing={2} align={"start"}>
-          <Heading size="md" color={primaryColor}>{heading}</Heading>
+          <Heading size="md" color={primaryColor}>{mealName}</Heading>
           <Text fontWeight="bold" color={textColor}>
             {price} Mzn
           </Text>

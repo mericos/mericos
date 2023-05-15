@@ -8,29 +8,43 @@ import { MealsList } from "../components/organisms/MealsList";
 import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
 import { Ri24HoursFill } from "react-icons/ri";
 import { MdFastfood } from "react-icons/md";
+import { v4 as uuidv4 } from 'uuid';
 
 export function Welcome() {
-    const higlightedMeals: Array<MealCardProps> = [{
-        mealName: "pizza",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/800px-Pizza-3007395.jpg",
-        price: 25
-    },{
-        mealName: "Shawarma",
-        imageUrl: "https://hips.hearstapps.com/hmg-prod/images/190130-chicken-shwarma-horizontal-1549421250.png?crop=1xw:0.843328335832084xh;center,top",
-        price: 120
-    },{
-        mealName: "Hamburguer",
-        imageUrl: "https://s2.glbimg.com/GRF9KCq-1hiz5uSs-xX9Go_KqIc=/0x0:2048x1365/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d72fd4bf0af74c0c89d27a5a226dbbf8/internal_photos/bs/2022/p/X/eb4KQdToys327cGqnRGg/receita-ceboloni-bacon.jpg",
-        price: 180
-    },{
-        mealName: "Bolo de chocolate",
-        imageUrl: "https://thefirstyearblog.com/wp-content/uploads/2015/11/chocolate-chocolate-cake-1-500x500.png",
-        price: 50
-    },{
-        mealName: "Gomas",
-        imageUrl: "https://images.trustinnews.pt/uploads/sites/5/2019/10/se-gosta-de-gomas-e-gelatina-e-melhor-nao-ver-este-video-2-1024x576.jpg",
-        price: 10
-    }]
+
+const highlightedMeals: Array<MealCardProps & { id: string }> = [
+  {
+    id: uuidv4(),
+    mealName: "pizza",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/800px-Pizza-3007395.jpg",
+    price: 25
+  },
+  {
+    id: uuidv4(),
+    mealName: "Shawarma",
+    imageUrl: "https://hips.hearstapps.com/hmg-prod/images/190130-chicken-shwarma-horizontal-1549421250.png?crop=1xw:0.843328335832084xh;center,top",
+    price: 120
+  },
+  {
+    id: uuidv4(),
+    mealName: "Hamburguer",
+    imageUrl: "https://s2.glbimg.com/GRF9KCq-1hiz5uSs-xX9Go_KqIc=/0x0:2048x1365/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d72fd4bf0af74c0c89d27a5a226dbbf8/internal_photos/bs/2022/p/X/eb4KQdToys327cGqnRGg/receita-ceboloni-bacon.jpg",
+    price: 180
+  },
+  {
+    id: uuidv4(),
+    mealName: "Bolo de chocolate",
+    imageUrl: "https://thefirstyearblog.com/wp-content/uploads/2015/11/chocolate-chocolate-cake-1-500x500.png",
+    price: 50
+  },
+  {
+    id: uuidv4(),
+    mealName: "Gomas",
+    imageUrl: "https://images.trustinnews.pt/uploads/sites/5/2019/10/se-gosta-de-gomas-e-gelatina-e-melhor-nao-ver-este-video-2-1024x576.jpg",
+    price: 10
+  }
+];
+
     const characteristics = [
 		{
 		heading: "Integridade",
@@ -70,7 +84,7 @@ export function Welcome() {
                 </SimpleGrid>
                 <Flex direction={"column"} alignItems={"start"}>
                     <Heading color={"customColors.primary.500"}> Refeições em destaque</Heading>
-                    <MealsList meals={higlightedMeals}/>
+                    <MealsList meals={highlightedMeals}/>
                 </Flex>
                 <Flex direction={"column"} alignItems={"start"} width={"full"}>
                     <Heading color={"customColors.primary.500"}> Nossos valores</Heading>
