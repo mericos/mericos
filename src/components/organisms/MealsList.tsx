@@ -9,7 +9,7 @@ export function MealsList (props: MealsListProps) {
     const {meals} = props
     const mealCards = meals.map(({mealName, url, price}) => (<MealCard key={mealName} url={url} mealName={mealName} price={price}/>))
     return(
-        <HStack overflowX={"scroll"} width={"full"} height={"-webkit-fit-content"} padding={"8"}>
+        <HStack overflowX={"scroll"} width={"full"} height={"-webkit-fit-content"} padding={"8"} spacing={4}>
             {mealCards}
         </HStack>
     )
