@@ -25,9 +25,10 @@ export function MealCard({ url, mealName: heading, price, type="primary" }: Meal
     <Card 
     as={motion.div}
     initial={{ opacity: 1 }}
-    whileHover={{ scale: 1.1, zIndex: 1 }}
+    whileHover={{ scale: 1.05, zIndex: 1 }}
     whileTap={{ scale: 0.9 }}
     viewport={{ once: true }}
+    transition='0.1s linear'
     flexShrink={0} 
     maxW="xs" 
     borderRadius="md" 
