@@ -1,10 +1,11 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { NavItem } from "../atoms/NaviItem";
 import mericosLogo from "../../assets/logo/only-logo.svg";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
 import { ButtonM } from "../atoms/ButtonM";
 import { HamburguerMenu } from "./HamburguerMenu";
+import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
 	text?: string;
@@ -97,12 +98,19 @@ export function Navbar(props: NavbarProps) {
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
-
+	const navigate = useNavigate()
+	function handleBack () {
+		navigate(-1)
+	}
 	const backArrow = (
-		<>
-			<ArrowBackIcon color={properties.primaryColor} boxSize={6} />
-			<Text>{text}</Text>
-		</>
+		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
+			<ArrowBackIcon color={properties.primaryColor} boxSize={6} onClick={() => handleBack()}/>
+			<Text
+				fontSize="card_heading_size"
+				fontWeight="bold"
+				color={properties.primaryColor}
+			>{text}</Text>
+		</Flex>
 	);
 
 	return (
