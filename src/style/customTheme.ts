@@ -1,4 +1,5 @@
-import { extendTheme } from "@chakra-ui/react";
+import { StyleFunctionProps, extendTheme } from "@chakra-ui/react";
+import {mode}from '@chakra-ui/theme-tools';
 
 // const customIcons = {
 
@@ -35,6 +36,31 @@ const customColors = {
 };
 
 export const customTheme = extendTheme({
+	styles: {
+
+		global: (props:StyleFunctionProps) =>  ({
+			/* width */
+			"::-webkit-scrollbar": {
+				width: "8px",
+				height:"8px"
+			},
+			
+			/* Track */
+			"::-webkit-scrollbar-track": {
+        background: "gray.200",
+      },
+
+      /* Handle */
+      "::-webkit-scrollbar-thumb": {
+		background: "customColors.primary.200",
+		},
+		
+		/* Handle on hover */
+		"::-webkit-scrollbar-thumb:hover": {
+			background: "customColors.primary.400",
+		},
+	}),
+},
 	colors: {
 		...customColors,
 	},

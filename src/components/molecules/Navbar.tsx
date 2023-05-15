@@ -1,12 +1,14 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { NavItem } from "../atoms/NaviItem";
 import mericosLogo from "../../assets/logo/only-logo.svg";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
 import { ButtonM } from "../atoms/ButtonM";
 import { HamburguerMenu } from "./HamburguerMenu";
+import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
+	text?: string;
 	type?: "primary" | "secondary";
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
@@ -87,29 +89,39 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const isPrimaryType = props.type === "primary" || props.type === undefined;
+	const { text, type, size, navigationState } = props
+	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties = {
 		primaryColor: isPrimaryType ? "primary.500" : "white",
 		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
-		buttonType: props.type === "primary" ? "primary" : "secondary",
+		buttonType: type === "primary" ? "primary" : "secondary",
 	};
-
+	const navigate = useNavigate()
+	function handleBack () {
+		navigate(-1)
+	}
 	const backArrow = (
-		<ArrowBackIcon color={properties.primaryColor} boxSize={6} />
+		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
+			<ArrowBackIcon color={properties.primaryColor} boxSize={6} onClick={() => handleBack()}/>
+			<Text
+				fontSize="card_heading_size"
+				fontWeight="bold"
+				color={properties.primaryColor}
+			>{text}</Text>
+		</Flex>
 	);
 
 	return (
 		<Box
-			bg={properties.background}
-			padding={2}
-			align="center"
-			width={"full"}
-			position={"sticky"}
-			zIndex={1}
-			top={0}
-		>
+		bg={properties.background}
+		padding={2}
+		align="center"
+		width={"full"}
+		position={"sticky"}
+		zIndex={2}
+		top={0}>
 			<Flex
 				padding="0.65rem"
 				direction="row"
@@ -117,7 +129,7 @@ export function Navbar(props: NavbarProps) {
 				justifyContent="space-between"
 				maxWidth={"7xl"}
 			>
-				{props.navigationState !== "goBack" ? (
+				{navigationState !== "goBack" ? (
 					<>
 						{/* logo and company name */}
 						<NavbarLeft properties={properties} />
