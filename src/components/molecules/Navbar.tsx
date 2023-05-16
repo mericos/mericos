@@ -13,6 +13,12 @@ interface NavbarProps {
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
 }
+interface PropertiesProps {
+	primaryColor: string
+	background: string
+	image: string
+	buttonType: "primary" | "secondary"
+}
 
 function getNavItems(navState: NavbarProps["navigationState"]) {
 	const navItems = [
@@ -30,7 +36,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: any }) {
+function NavbarLeft({ properties }: { properties: PropertiesProps }) {
 	return (
 		<Flex className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
@@ -49,7 +55,7 @@ function NavbarRight({
 	properties,
 	navProps,
 }: {
-	properties: any;
+	properties: PropertiesProps;
 	navProps: NavbarProps;
 }) {
 	const { navigationState, size } = navProps;
@@ -92,7 +98,7 @@ export function Navbar(props: NavbarProps) {
 	const { text, type, navigationState } = props
 	const isPrimaryType = type === "primary" || type === undefined;
 
-	const properties = {
+	const properties: PropertiesProps = {
 		primaryColor: isPrimaryType ? "primary.500" : "white",
 		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
