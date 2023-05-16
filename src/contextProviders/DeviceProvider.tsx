@@ -1,12 +1,14 @@
 import { useBreakpointValue } from "@chakra-ui/react"
 import React, { PropsWithChildren, useContext } from "react"
 
-const DeviceContext = React.createContext('phone')
+
+type Size= "phone" | "laptop" | "universal"
+const DeviceContext = React.createContext<Size>('phone')
 
 
 
 export const DeviceProvider = ({children}: PropsWithChildren) => {
-    const size: "phone" | "laptop" | "universal" = useBreakpointValue(
+    const size:Size = useBreakpointValue(
         {
             base: 'phone',
             sm: 'laptop',

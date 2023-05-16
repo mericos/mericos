@@ -13,6 +13,7 @@ import { BsCart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { ButtonM } from "../atoms/ButtonM";
 
+
 export interface MealCardProps {
   id: string;
   imageUrl: string;
