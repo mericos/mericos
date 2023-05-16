@@ -93,8 +93,8 @@ export function Navbar(props: NavbarProps) {
 	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties: { primaryColor: string, background: string, image: string, buttonType : "primary" | "secondary" | undefined} = {
-		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
-		background: isPrimaryType ? "white" : "customColors.primary.500",
+		primaryColor: isPrimaryType ? "primary.500" : "white",
+		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
