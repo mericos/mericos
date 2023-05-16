@@ -34,9 +34,11 @@ export function CharacteristicCard ({ heading, description, icon}: Characteristi
                     {icon}
                     <Heading size="md">{heading}</Heading>
                 </HStack>
-                <Text whiteSpace={"pre-wrap"} color={"customColors.text_color_dark.normal"} textAlign={"center"}>
-                    {description}
-                </Text>
+                <HStack color={"customColors.text_color_dark.normal"}>
+                    <Text whiteSpace={"pre-wrap"}  textAlign={"center"}>
+                        {description}
+                    </Text>
+                </HStack>
             </Stack>
         </CardBody>
         </Card>
