@@ -80,9 +80,9 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
 	];
 	const size = useDeviceContext();
     return(
-        <Box width={"full"} align={"center"}>
+        <Box width={"full"} >
             <Navbar size={size} navigationState={"not_authenticated"} type="primary"/>
-            <Flex direction={"column"} maxW={"7xl"} padding={2} gap={8}>
+            <Flex direction={"column"}  padding={2} gap={8} justifyContent={"center"} maxW={"7xl"} marginX={"auto"}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
                     <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>
                         <Heading color={"primary.500"}>Mericos</Heading>

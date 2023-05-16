@@ -123,7 +123,6 @@ export function Navbar(props: NavbarProps) {
 		<Box
 		bg={properties.background}
 		padding={2}
-		align="center"
 		width={"full"}
 		position={"sticky"}
 		zIndex={2}
@@ -133,7 +132,7 @@ export function Navbar(props: NavbarProps) {
 				direction="row"
 				alignItems="center"
 				justifyContent="space-between"
-				maxWidth={"7xl"}
+				maxWidth={"7xl"} marginX={"auto"}
 			>
 				{navigationState !== "goBack" ? (
 					<>
