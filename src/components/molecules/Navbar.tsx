@@ -1,5 +1,5 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
 import mericosLogo from "../../assets/logo/only-logo.svg";
@@ -30,7 +30,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: any }) {
+function NavbarLeft({ properties }: { properties: { image: string, primaryColor: string} }) {
 	return (
 		<Flex className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
@@ -49,7 +49,7 @@ function NavbarRight({
 	properties,
 	navProps,
 }: {
-	properties: any;
+	properties:  { background: string, primaryColor: string, buttonType: "primary" | "secondary" | undefined};
 	navProps: NavbarProps;
 }) {
 	const { navigationState, size } = navProps;
@@ -92,7 +92,7 @@ export function Navbar(props: NavbarProps) {
 	const { text, type, navigationState } = props
 	const isPrimaryType = type === "primary" || type === undefined;
 
-	const properties = {
+	const properties : { primaryColor: string, background: string, image: string, buttonType : "primary" | "secondary" | undefined}  = {
 		primaryColor: isPrimaryType ? "primary.500" : "white",
 		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
@@ -114,7 +114,8 @@ export function Navbar(props: NavbarProps) {
 	);
 
 	return (
-		<Box
+		<Flex
+		direction="column"
 		bg={properties.background}
 		padding={2}
 		align="center"
@@ -141,6 +142,6 @@ export function Navbar(props: NavbarProps) {
 					backArrow
 				)}
 			</Flex>
-		</Box>
+		</Flex>
 	);
 }

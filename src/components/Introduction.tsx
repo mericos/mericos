@@ -1,9 +1,8 @@
-import { Box, Flex, Icon, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, useBreakpointValue } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { Navbar } from "./molecules/Navbar";
 
 
-import { Ri24HoursFill } from 'react-icons/ri';
 import { CardM } from "./molecules/CardM";
 import { MealCard } from "./molecules/MealCard";
 
@@ -20,28 +19,6 @@ export function Introduction() {
 		fallback: 'md',
 		},
 	) ?? "phone"
-	const characteristics = [
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-	]
 	return (
 		<Flex direction={"column"} width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
