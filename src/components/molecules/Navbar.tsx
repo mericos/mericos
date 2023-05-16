@@ -1,11 +1,11 @@
-import { Flex, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { NavItem } from "../atoms/NaviItem";
-import mericosLogo from "../../assets/logo/only-logo.svg";
-import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
-import { ButtonM } from "../atoms/ButtonM";
-import { HamburguerMenu } from "./HamburguerMenu";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
+import mericosLogo from "../../assets/logo/only-logo.svg";
+import { ButtonM } from "../atoms/ButtonM";
+import { NavItem } from "../atoms/NaviItem";
+import { HamburguerMenu } from "./HamburguerMenu";
 
 interface NavbarProps {
 	text?: string;

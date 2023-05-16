@@ -1,6 +1,6 @@
 import { Card, CardBody, CardHeader, Image, Stack, Text } from "@chakra-ui/react"
-import { ButtonM } from "../atoms/ButtonM"
 import { BsCart, BsPlus } from "react-icons/bs"
+import { ButtonM } from "../atoms/ButtonM"
 
 interface CardMProps {
     name?: string

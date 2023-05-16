@@ -8,7 +8,7 @@ interface RadioProps {
 export function RadioButtonM({ value, text }: RadioProps) {
 	return (
 		<>
-			<Radio colorScheme="customColors.primary" value={value}>
+			<Radio colorScheme="primary.500" value={value}>
 				{text}
 			</Radio>
 		</>

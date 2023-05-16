@@ -1,9 +1,18 @@
-import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import { ButtonM } from "../atoms/ButtonM";
-import { BsCart } from "react-icons/bs";
-import { useState } from "react";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { BsCart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { ButtonM } from "../atoms/ButtonM";
+
 
 export interface MealCardProps {
   id: string;
@@ -14,15 +23,15 @@ export interface MealCardProps {
 }
 
 export function MealCard({ id, imageUrl, mealName, price, type="primary" }: MealCardProps) {
-    const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "customColors.primary.500")
-    const [background, setBackgroundColor ] = useState(type ==="primary" ? "customColors.primary.500" : "white")
-    const [textColor, setTextColor] = useState(type === "primary" ? "white" : "customColors.text_color_dark.normal")
+    const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "primary.500")
+    const [background, setBackgroundColor ] = useState(type ==="primary" ? "primary.500" : "white")
+    const [textColor, setTextColor] = useState(type === "primary" ? "white" : "text_color_dark.normal")
     const navigate = useNavigate();
     
     function switchColor() {
-      setPrimaryColor(primaryColor === "white" ? "customColors.primary.500" : "white")
-      setBackgroundColor(background === "white" ? "customColors.primary.500" : "white")
-      setTextColor(textColor === "white" ? "customColors.text_color_dark.normal" : "white")
+      setPrimaryColor(primaryColor === "white" ? "primary.500" : "white")
+      setBackgroundColor(background === "white" ? "primary.500" : "white")
+      setTextColor(textColor === "white" ? "text_color_dark.normal" : "white")
     }
     function handleClick() {
       console.log("clicked")
