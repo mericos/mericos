@@ -26,4 +26,5 @@ export const DeviceProvider = ({children}: PropsWithChildren) => {
 
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useDeviceContext = () => useContext(DeviceContext)

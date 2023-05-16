@@ -1,17 +1,17 @@
 import {
-	Card,
-	CardBody,
-	CardFooter,
-	Heading,
-	Image,
-	Stack,
-	Text,
+  Card,
+  CardBody,
+  CardFooter,
+  Heading,
+  Image,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
-import { ButtonM } from "../atoms/ButtonM";
-import { BsCart } from "react-icons/bs";
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { redirect, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { BsCart } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import { ButtonM } from "../atoms/ButtonM";
 
 export interface MealCardProps {
   id: string;
