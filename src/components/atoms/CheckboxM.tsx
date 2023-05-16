@@ -1,10 +1,8 @@
 import { Checkbox } from "@chakra-ui/react";
 export function CheckboxM() {
-    return (
+	return (
 		<>
-			<Checkbox colorScheme="customColors.primary">
-				Checkbox
-			</Checkbox>
+			<Checkbox colorScheme="primary.500">Checkbox</Checkbox>
 		</>
 	);
 }

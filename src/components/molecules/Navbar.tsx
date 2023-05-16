@@ -1,11 +1,11 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { NavItem } from "../atoms/NaviItem";
-import mericosLogo from "../../assets/logo/only-logo.svg";
-import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
-import { ButtonM } from "../atoms/ButtonM";
-import { HamburguerMenu } from "./HamburguerMenu";
+import { Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
+import mericosLogo from "../../assets/logo/only-logo.svg";
+import { ButtonM } from "../atoms/ButtonM";
+import { NavItem } from "../atoms/NaviItem";
+import { HamburguerMenu } from "./HamburguerMenu";
 
 interface NavbarProps {
 	text?: string;
@@ -30,9 +30,9 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: any }) {
+function NavbarLeft({ properties }: { properties: { image: string, primaryColor: string} }) {
 	return (
-		<Flex className="logo" alignItems="center" gap="0.625rem">
+		<Flex direction={"row"} className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
 			<Text
 				fontSize="card_heading_size"
@@ -49,7 +49,7 @@ function NavbarRight({
 	properties,
 	navProps,
 }: {
-	properties: any;
+	properties: { background: string, primaryColor: string, buttonType: "primary" | "secondary" | undefined};
 	navProps: NavbarProps;
 }) {
 	const { navigationState, size } = navProps;
@@ -89,12 +89,12 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type, size, navigationState } = props
+	const { text, type, navigationState } = props
 	const isPrimaryType = type === "primary" || type === undefined;
 
-	const properties = {
-		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
-		background: isPrimaryType ? "white" : "customColors.primary.500",
+	const properties: { primaryColor: string, background: string, image: string, buttonType : "primary" | "secondary" | undefined} = {
+		primaryColor: isPrimaryType ? "primary.500" : "white",
+		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
@@ -114,7 +114,8 @@ export function Navbar(props: NavbarProps) {
 	);
 
 	return (
-		<Box
+		<Flex
+		direction={"column"}
 		bg={properties.background}
 		padding={2}
 		align="center"
@@ -130,17 +131,17 @@ export function Navbar(props: NavbarProps) {
 				maxWidth={"7xl"}
 			>
 				{navigationState !== "goBack" ? (
-					<>
+					<Flex direction={"row"} justifyContent={"space-between"} w={"7xl"} maxWidth={"7xl"}>
 						{/* logo and company name */}
 						<NavbarLeft properties={properties} />
 						{/* right side navbar part */}
 						<NavbarRight properties={properties} navProps={props} />
-					</>
+					</Flex>
 				) : (
 					// go back Navbar
 					backArrow
 				)}
 			</Flex>
-		</Box>
+		</Flex>
 	);
 }

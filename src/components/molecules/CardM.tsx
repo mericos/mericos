@@ -1,6 +1,6 @@
 import { Card, CardBody, CardHeader, Image, Stack, Text } from "@chakra-ui/react"
-import { ButtonM } from "../atoms/ButtonM"
 import { BsCart, BsPlus } from "react-icons/bs"
+import { ButtonM } from "../atoms/ButtonM"
 
 interface CardMProps {
     name?: string
@@ -12,7 +12,7 @@ interface CardMProps {
 
 }
 
-export function CardM ({name, price = 0, type = "default", image_shape = "square",image, state = "default"}: CardMProps) {
+export function CardM ({name, type = "default", image_shape = "square",image}: CardMProps) {
     
     return (
         <Card maxW={"3xs"}>
