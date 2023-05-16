@@ -69,7 +69,7 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
 	]
     const size = useDeviceContext();
     return(
-        <Box width={"full"} align={"center"}>
+        <Flex direction={"column"} width={"full"} align={"center"}>
             <Navbar size={size} navigationState={"not_authenticated"} type="primary"/>
             <Flex direction={"column"} maxW={"7xl"} padding={2} gap={8}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
@@ -107,6 +107,6 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
                 <Text>@copyright-2023</Text>
 
             </Flex>
-        </Box>
+        </Flex>
     )
 }

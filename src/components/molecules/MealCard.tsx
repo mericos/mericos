@@ -3,7 +3,7 @@ import { ButtonM } from "../atoms/ButtonM";
 import { BsCart } from "react-icons/bs";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export interface MealCardProps {
   id: string;

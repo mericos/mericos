@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { NavItem } from "../atoms/NaviItem";
 import mericosLogo from "../../assets/logo/only-logo.svg";
@@ -32,7 +32,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 
 function NavbarLeft({ properties }: { properties: any }) {
 	return (
-		<Flex className="logo" alignItems="center" gap="0.625rem">
+		<Flex direction={"row"} className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
 			<Text
 				fontSize="card_heading_size"
@@ -89,7 +89,7 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type, size, navigationState } = props
+	const { text, type, navigationState } = props
 	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties = {
@@ -114,7 +114,8 @@ export function Navbar(props: NavbarProps) {
 	);
 
 	return (
-		<Box
+		<Flex
+		direction={"column"}
 		bg={properties.background}
 		padding={2}
 		align="center"
@@ -130,17 +131,17 @@ export function Navbar(props: NavbarProps) {
 				maxWidth={"7xl"}
 			>
 				{navigationState !== "goBack" ? (
-					<>
+					<Flex direction={"row"} justifyContent={"space-between"} w={"7xl"} maxWidth={"7xl"}>
 						{/* logo and company name */}
 						<NavbarLeft properties={properties} />
 						{/* right side navbar part */}
 						<NavbarRight properties={properties} navProps={props} />
-					</>
+					</Flex>
 				) : (
 					// go back Navbar
 					backArrow
 				)}
 			</Flex>
-		</Box>
+		</Flex>
 	);
 }

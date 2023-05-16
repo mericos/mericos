@@ -1,5 +1,4 @@
-import { StyleFunctionProps, extendTheme } from "@chakra-ui/react";
-import {mode}from '@chakra-ui/theme-tools';
+import { extendTheme } from "@chakra-ui/react";
 
 const customColors = {
 	primary: {
@@ -34,7 +33,7 @@ const customColors = {
 export const customTheme = extendTheme({
 	styles: {
 
-		global: (props:StyleFunctionProps) =>  ({
+		global: () =>  ({
 			/* width */
 			"::-webkit-scrollbar": {
 				width: "8px",

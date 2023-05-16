@@ -12,7 +12,7 @@ interface CardMProps {
 
 }
 
-export function CardM ({name, price = 0, type = "default", image_shape = "square",image, state = "default"}: CardMProps) {
+export function CardM ({name, type = "default", image_shape = "square",image}: CardMProps) {
     
     return (
         <Card maxW={"3xs"}>

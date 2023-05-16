@@ -1,10 +1,9 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
-import { useLocation, useParams } from "react-router-dom"
+import { Flex, Image } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom"
 import { Navbar } from "../components/molecules/Navbar";
 
 export function Meal () {
     const location = useLocation()
-    const { id } = useParams()
     const { name } = location.state
 
     return (
