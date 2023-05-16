@@ -85,8 +85,8 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
             <Flex direction={"column"} maxW={"7xl"} padding={2} gap={8}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
                     <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>
-                        <Heading color={"customColors.primary.500"}>Mericos</Heading>
-                        <Text textAlign={"start"} color={"customColors.text_color_dark.normal"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi veniam minus fugit enim excepturi impedit soluta sint eum omnis ea eveniet incidunt, nulla totam dolores illo asperiores eaque itaque deleniti.</Text>
+                        <Heading color={"primary.500"}>Mericos</Heading>
+                        <Text textAlign={"start"} color={"text_color_dark.normal"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi veniam minus fugit enim excepturi impedit soluta sint eum omnis ea eveniet incidunt, nulla totam dolores illo asperiores eaque itaque deleniti.</Text>
                         <ButtonM text="Menu" icon={<GiKnifeFork/>}/>
                     </Flex>
                     <Box>
@@ -94,22 +94,22 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
                     </Box>
                 </SimpleGrid>
                 <Flex direction={"column"} alignItems={"start"} gap={8}>
-                    <Heading color={"customColors.primary.500"}> Refeições em destaque</Heading>
+                    <Heading color={"primary.500"}> Refeições em destaque</Heading>
                     <MealsList meals={highlightedMeals}/>
                 </Flex>
                 <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
-                    <Heading color={"customColors.primary.500"}> Nossos valores</Heading>
+                    <Heading color={"primary.500"}> Nossos valores</Heading>
                     <CharacteristicsList characteristics={characteristics} />
                 </Flex>
                 <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
-                    <Heading color={"customColors.primary.500"}> Acesse a Mericos</Heading>
+                    <Heading color={"primary.500"}> Acesse a Mericos</Heading>
                     <Flex direction={"row"} gap={2} justify={"center"} width={"full"}>
                         <ButtonM text="Entrar" type="secondary"/>
                         <ButtonM text="Registrar"/>
                     </Flex>
                 </Flex>
             </Flex>
-            <Flex color={"white"} bg={"customColors.primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
+            <Flex color={"white"} bg={"primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
                 <Text>You can find us at:</Text>
                 <Flex direction={"row"} gap={2}>
                     LINKS TO ADD

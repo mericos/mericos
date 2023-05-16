@@ -41,7 +41,7 @@ export function CharacteristicCard({
 					</HStack>
 					<Text
 						whiteSpace={"pre-wrap"}
-						color={"customColors.text_color_dark.normal"}
+						color={"text_color_dark.normal"}
 						textAlign={"center"}
 					>
 						{description}
