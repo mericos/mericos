@@ -30,7 +30,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: any }) {
+function NavbarLeft({ properties }: { properties: { image: string, primaryColor: string} }) {
 	return (
 		<Flex direction={"row"} className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
@@ -49,7 +49,7 @@ function NavbarRight({
 	properties,
 	navProps,
 }: {
-	properties: any;
+	properties: { background: string, primaryColor: string, buttonType: "primary" | "secondary" | undefined};
 	navProps: NavbarProps;
 }) {
 	const { navigationState, size } = navProps;
@@ -92,7 +92,7 @@ export function Navbar(props: NavbarProps) {
 	const { text, type, navigationState } = props
 	const isPrimaryType = type === "primary" || type === undefined;
 
-	const properties = {
+	const properties: { primaryColor: string, background: string, image: string, buttonType : "primary" | "secondary" | undefined} = {
 		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
 		background: isPrimaryType ? "white" : "customColors.primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
