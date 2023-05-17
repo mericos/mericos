@@ -1,7 +1,7 @@
 import { DetailedMealCardProps } from "../pages/Meal";
 
 
-class Meals {
+export class Meals {
     meals:  Array<DetailedMealCardProps>;
     constructor() {
         this.meals = [
