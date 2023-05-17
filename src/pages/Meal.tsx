@@ -1,6 +1,23 @@
 import { Flex, Image } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "../components/molecules/Navbar";
+import { MealCardProps } from "../components/molecules/MealCard";
+
+interface ingredient {
+    name: string, 
+    image: string
+}
+interface producer {
+    name: string, 
+    avatar: string
+}
+export interface DetailedMealCardProps extends MealCardProps {
+    description: string,
+    rating: number,
+    ingredients: Array<ingredient>,
+    producer: producer
+    
+}
 
 export function Meal () {
     const location = useLocation()
