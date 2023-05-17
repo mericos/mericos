@@ -1,8 +1,16 @@
 import { Navbar } from "../components/molecules/Navbar";
-import { Box, Flex, Heading, Icon, Image, SimpleGrid, Text } from "@chakra-ui/react"
+import {
+	Box,
+	Flex,
+	Heading,
+	Icon,
+	Image,
+	SimpleGrid,
+	Text,
+} from "@chakra-ui/react";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { ButtonM } from "../components/atoms/ButtonM";
-import { GiKnifeFork, GiPuzzle, GiRotaryPhone } from "react-icons/gi"
+import { GiKnifeFork, GiPuzzle, GiRotaryPhone } from "react-icons/gi";
 import { MealCardProps } from "../components/molecules/MealCard";
 import { MealsList } from "../components/organisms/MealsList";
 import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
@@ -44,38 +52,41 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
     price: 10
   }
 ];
-
-    const characteristics = [
+	const characteristics = [
 		{
-		heading: "Integridade",
-		description: "A empresa zela pela cuidadosa seleção de fornecedores e ingredientes, assegurando a alta qualidade e segurança dos produtos comercializados.",
-		icon: <Icon as={GiPuzzle}/>
+			heading: "Integridade",
+			description:
+				"A empresa zela pela cuidadosa seleção de fornecedores e ingredientes, assegurando a alta qualidade e segurança dos produtos comercializados.",
+			icon: <Icon as={GiPuzzle} />,
 		},
 		{
-		heading: "Diversidade",
-		description: "A empresa oferece uma ampla diversidade de alimentos, atendendo a diferentes preferências e necessidades dos clientes.",
-		icon: <Icon as={MdFastfood}/>
+			heading: "Diversidade",
+			description:
+				"A empresa oferece uma ampla diversidade de alimentos, atendendo a diferentes preferências e necessidades dos clientes.",
+			icon: <Icon as={MdFastfood} />,
 		},
 		{
-		heading: "Disponibilidade",
-		description: "A empresa, garante a disponibilidade dos melhores produtos alimentícios para os nossos clientes, comprometendo-nos a manter nossas prateleiras abastecidas com uma ampla variedade de alimentos de alta qualidade",
-		icon: <Icon as={Ri24HoursFill}/>
+			heading: "Disponibilidade",
+			description:
+				"A empresa, garante a disponibilidade dos melhores produtos alimentícios para os nossos clientes, comprometendo-nos a manter nossas prateleiras abastecidas com uma ampla variedade de alimentos de alta qualidade",
+			icon: <Icon as={Ri24HoursFill} />,
 		},
 		{
-		heading: "Atendimento",
-		description: "A empresa oferece um excelente atendimento ao cliente, orientando sobre os produtos, tirando dúvidas e garantindo a satisfação dos consumidores.",
-		icon: <Icon as={GiRotaryPhone}/>
+			heading: "Atendimento",
+			description:
+				"A empresa oferece um excelente atendimento ao cliente, orientando sobre os produtos, tirando dúvidas e garantindo a satisfação dos consumidores.",
+			icon: <Icon as={GiRotaryPhone} />,
 		},
-	]
-    const size = useDeviceContext();
+	];
+	const size = useDeviceContext();
     return(
-        <Box width={"full"} align={"center"}>
+        <Box width={"full"} >
             <Navbar size={size} navigationState={"not_authenticated"} type="primary"/>
-            <Flex direction={"column"} maxW={"7xl"} padding={2} gap={8}>
+            <Flex direction={"column"}  padding={2} gap={8} justifyContent={"center"} maxW={"7xl"} marginX={"auto"}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
                     <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>
-                        <Heading color={"customColors.primary.500"}>Mericos</Heading>
-                        <Text textAlign={"start"} color={"customColors.text_color_dark.normal"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi veniam minus fugit enim excepturi impedit soluta sint eum omnis ea eveniet incidunt, nulla totam dolores illo asperiores eaque itaque deleniti.</Text>
+                        <Heading color={"primary.500"}>Mericos</Heading>
+                        <Text textAlign={"start"} color={"text_color_dark.normal"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi veniam minus fugit enim excepturi impedit soluta sint eum omnis ea eveniet incidunt, nulla totam dolores illo asperiores eaque itaque deleniti.</Text>
                         <ButtonM text="Menu" icon={<GiKnifeFork/>}/>
                     </Flex>
                     <Box>
@@ -83,22 +94,22 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
                     </Box>
                 </SimpleGrid>
                 <Flex direction={"column"} alignItems={"start"} gap={8}>
-                    <Heading color={"customColors.primary.500"}> Refeições em destaque</Heading>
+                    <Heading color={"primary.500"}> Refeições em destaque</Heading>
                     <MealsList meals={highlightedMeals}/>
                 </Flex>
                 <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
-                    <Heading color={"customColors.primary.500"}> Nossos valores</Heading>
+                    <Heading color={"primary.500"}> Nossos valores</Heading>
                     <CharacteristicsList characteristics={characteristics} />
                 </Flex>
                 <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
-                    <Heading color={"customColors.primary.500"}> Acesse a Mericos</Heading>
+                    <Heading color={"primary.500"}> Acesse a Mericos</Heading>
                     <Flex direction={"row"} gap={2} justify={"center"} width={"full"}>
                         <ButtonM text="Entrar" type="secondary"/>
                         <ButtonM text="Registrar"/>
                     </Flex>
                 </Flex>
             </Flex>
-            <Flex color={"white"} bg={"customColors.primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
+            <Flex color={"white"} bg={"primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
                 <Text>You can find us at:</Text>
                 <Flex direction={"row"} gap={2}>
                     LINKS TO ADD

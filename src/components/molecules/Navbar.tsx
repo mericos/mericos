@@ -1,17 +1,23 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { NavItem } from "../atoms/NaviItem";
-import mericosLogo from "../../assets/logo/only-logo.svg";
-import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
-import { ButtonM } from "../atoms/ButtonM";
-import { HamburguerMenu } from "./HamburguerMenu";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
+import mericosLogo from "../../assets/logo/only-logo.svg";
+import { ButtonM } from "../atoms/ButtonM";
+import { NavItem } from "../atoms/NaviItem";
+import { HamburguerMenu } from "./HamburguerMenu";
 
 interface NavbarProps {
 	text?: string;
 	type?: "primary" | "secondary";
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
+}
+interface PropertiesProps {
+	primaryColor: string
+	background: string
+	image: string
+	buttonType: "primary" | "secondary"
 }
 
 function getNavItems(navState: NavbarProps["navigationState"]) {
@@ -30,7 +36,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: any }) {
+function NavbarLeft({ properties }: { properties: PropertiesProps }) {
 	return (
 		<Flex className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
@@ -49,7 +55,7 @@ function NavbarRight({
 	properties,
 	navProps,
 }: {
-	properties: any;
+	properties: PropertiesProps;
 	navProps: NavbarProps;
 }) {
 	const { navigationState, size } = navProps;
@@ -89,12 +95,12 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type, size, navigationState } = props
+	const { text, type, navigationState } = props
 	const isPrimaryType = type === "primary" || type === undefined;
 
-	const properties = {
-		primaryColor: isPrimaryType ? "customColors.primary.500" : "white",
-		background: isPrimaryType ? "white" : "customColors.primary.500",
+	const properties: PropertiesProps = {
+		primaryColor: isPrimaryType ? "primary.500" : "white",
+		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
@@ -117,7 +123,6 @@ export function Navbar(props: NavbarProps) {
 		<Box
 		bg={properties.background}
 		padding={2}
-		align="center"
 		width={"full"}
 		position={"sticky"}
 		zIndex={2}
@@ -127,7 +132,7 @@ export function Navbar(props: NavbarProps) {
 				direction="row"
 				alignItems="center"
 				justifyContent="space-between"
-				maxWidth={"7xl"}
+				maxWidth={"7xl"} marginX={"auto"}
 			>
 				{navigationState !== "goBack" ? (
 					<>
