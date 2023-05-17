@@ -20,7 +20,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export function Welcome() {
 
-const highlightedMeals: Array<MealCardProps & { id: string }> = [
+    const highlightedMeals: Array<MealCardProps> = [
   {
     id: uuidv4(),
     mealName: "pizza",
@@ -51,7 +51,7 @@ const highlightedMeals: Array<MealCardProps & { id: string }> = [
     imageUrl: "https://images.trustinnews.pt/uploads/sites/5/2019/10/se-gosta-de-gomas-e-gelatina-e-melhor-nao-ver-este-video-2-1024x576.jpg",
     price: 10
   }
-];
+    ];
 	const characteristics = [
 		{
 			heading: "Integridade",
