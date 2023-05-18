@@ -109,8 +109,8 @@ export function Navbar(props: NavbarProps) {
 		navigate(-1)
 	}
 	const backArrow = (
-		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
-			<ArrowBackIcon color={properties.primaryColor} boxSize={6} onClick={() => handleBack()}/>
+		<Flex justify={"flex-start"} alignItems={"center"} gap={4} >
+			<ArrowBackIcon  background={properties.background} _hover={{ background: properties.primaryColor , color: properties.background }} _active={{ background: properties.background, color: properties.primaryColor }} color={properties.primaryColor} borderRadius={"full"} boxSize={6} onClick={() => handleBack()}/>
 			<Text
 				fontSize="card_heading_size"
 				fontWeight="bold"
