@@ -2,8 +2,8 @@ import { StarIcon } from "@chakra-ui/icons";
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 interface RatingProps {
-	rating: number,
-	isEditable: boolean
+	rating?: number,
+	isEditable?: boolean
 }
 
 export function RatingsIcons( { rating = 5, isEditable = false}: RatingProps) {
