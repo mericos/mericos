@@ -25,8 +25,7 @@ export function Meal () {
     const { name } = location.state
     if (!id) return null
     const meal = new Meals().getMeal(id)
-    if (!meal) return null
-    console.log(meal)
+    if (!meal) return (<h1>404 not found</h1>)
 
     return (
         <Flex width={"full"} direction={"column"} align={"center"}>
