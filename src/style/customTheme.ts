@@ -41,7 +41,7 @@ export const customTheme = extendTheme({
 			/* width */
 			"::-webkit-scrollbar": {
 				width: "8px",
-				height:"8px"
+				height:"4px"
 			},
 			
 			/* Track */
@@ -51,12 +51,12 @@ export const customTheme = extendTheme({
 
       /* Handle */
       "::-webkit-scrollbar-thumb": {
-		background: "customColors.primary.200",
+		background: "primary.200",
 		},
 		
 		/* Handle on hover */
 		"::-webkit-scrollbar-thumb:hover": {
-			background: "customColors.primary.400",
+			background: "primary.400",
 		},
 	}),
 },
