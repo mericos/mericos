@@ -11,6 +11,7 @@ import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { Meals } from "../utils/Meals";
 import { Error } from "./Error";
 
+
 interface ingredient {
     name: string, 
     image: string
