@@ -5,7 +5,8 @@ import {
 import { DeviceProvider } from "./contextProviders/DeviceProvider";
 import { router } from "./router/router";
 import { customTheme } from "./style/customTheme";
-import { LoadingIndicator } from "./components/atoms/LoadingIndicator";
+import { CartInfoContainer } from "./components/molecules/CartInfoContainer";
+
 
 
 
@@ -15,8 +16,7 @@ export function App() {
 			<ChakraProvider theme={customTheme}>
 				<DeviceProvider>
 					<Flex fontFamily={"Roboto"} justifyContent="center">
-						<LoadingIndicator/>
-						{/* <RouterProvider router={router}/> */}
+						<RouterProvider router={router}/>
 					</Flex>
 				</DeviceProvider>
 			</ChakraProvider>

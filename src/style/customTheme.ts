@@ -92,5 +92,14 @@ export const customTheme = extendTheme({
 				},
 			},
 		},
+		Input: {
+			baseStyle: {
+				borderColor: "gray.300",
+				_focus: {
+					borderColor: "blue.500",
+					boxShadow: "0 0 0 1px blue.500",
+				},
+			},
+		},
 	},
 });

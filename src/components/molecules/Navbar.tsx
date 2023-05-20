@@ -1,15 +1,23 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { NavItem } from "../atoms/NaviItem";
-import mericosLogo from "../../assets/logo/only-logo.svg";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
+import mericosLogo from "../../assets/logo/only-logo.svg";
 import { ButtonM } from "../atoms/ButtonM";
+import { NavItem } from "../atoms/NaviItem";
 import { HamburguerMenu } from "./HamburguerMenu";
 
 interface NavbarProps {
+	text?: string;
 	type?: "primary" | "secondary";
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
+}
+interface PropertiesProps {
+	primaryColor: string;
+	background: string;
+	image: string;
+	buttonType: "primary" | "secondary";
 }
 
 function getNavItems(navState: NavbarProps["navigationState"]) {
@@ -28,7 +36,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: any }) {
+function NavbarLeft({ properties }: { properties: PropertiesProps }) {
 	return (
 		<Flex className="logo" alignItems="center" gap="0.625rem">
 			<img src={properties.image} alt="mericos-logo" />
@@ -47,7 +55,7 @@ function NavbarRight({
 	properties,
 	navProps,
 }: {
-	properties: any;
+	properties: PropertiesProps;
 	navProps: NavbarProps;
 }) {
 	const { navigationState, size } = navProps;
@@ -87,27 +95,53 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const isPrimaryType = props.type === "primary" || props.type === undefined;
+	const { text, type, navigationState } = props;
+	const isPrimaryType = type === "primary" || type === undefined;
 
-	const properties = {
+	const properties: PropertiesProps = {
 		primaryColor: isPrimaryType ? "primary.500" : "white",
 		background: isPrimaryType ? "white" : "primary.500",
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
-		buttonType: props.type === "primary" ? "primary" : "secondary",
+		buttonType: type === "primary" ? "primary" : "secondary",
 	};
-
+	const navigate = useNavigate();
+	function handleBack() {
+		navigate(-1);
+	}
 	const backArrow = (
-		<ArrowBackIcon color={properties.primaryColor} boxSize={6} />
+		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
+			<ArrowBackIcon
+				background={properties.background}
+				_hover={{
+					background: properties.primaryColor,
+					color: properties.background,
+				}}
+				_active={{
+					background: properties.background,
+					color: properties.primaryColor,
+				}}
+				color={properties.primaryColor}
+				borderRadius={"full"}
+				boxSize={6}
+				onClick={() => handleBack()}
+			/>
+			<Text
+				fontSize="card_heading_size"
+				fontWeight="bold"
+				color={properties.primaryColor}
+			>
+				{text}
+			</Text>
+		</Flex>
 	);
 
 	return (
 		<Box
 			bg={properties.background}
 			padding={2}
-			align="center"
 			width={"full"}
 			position={"sticky"}
-			zIndex={1}
+			zIndex={2}
 			top={0}
 		>
 			<Flex
@@ -116,8 +150,9 @@ export function Navbar(props: NavbarProps) {
 				alignItems="center"
 				justifyContent="space-between"
 				maxWidth={"7xl"}
+				marginX={"auto"}
 			>
-				{props.navigationState !== "goBack" ? (
+				{navigationState !== "goBack" ? (
 					<>
 						{/* logo and company name */}
 						<NavbarLeft properties={properties} />

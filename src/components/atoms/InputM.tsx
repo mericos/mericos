@@ -7,7 +7,14 @@ interface InputMProps {
 export function InputM({text}:InputMProps) {
     return (
 		<>
-			<Input variant="flushed" placeholder={text} borderColor={"black"} width={"auto"}/>
+			<Input
+				
+				variant="flushed"
+				focusBorderColor="primary.500"
+				placeholder={text}
+				borderColor={"gray"}
+				width={"2xs"}
+			/>
 		</>
 	);
 }
