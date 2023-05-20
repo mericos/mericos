@@ -22,7 +22,7 @@ interface PropertiesProps {
 
 function getNavItems(navState: NavbarProps["navigationState"]) {
 	const navItems = [
-		{ name: "Menu", link: "" },
+		{ name: "Menu", link: "/menu" },
 		{
 			name: navState === "authenticated" ? "Encomenda" : "Login",
 			link: "",
@@ -74,7 +74,7 @@ function NavbarRight({
 
 		return (
 			<Flex direction="row" alignItems="center" gap={2}>
-				<NavItem text="Menu" link="" color={properties.primaryColor} />
+				<NavItem text="Menu" link="/menu" color={properties.primaryColor} />
 				<ButtonM text="Login" type={properties.buttonType} />
 			</Flex>
 		);

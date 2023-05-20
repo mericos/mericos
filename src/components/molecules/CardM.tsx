@@ -1,11 +1,11 @@
-import { Card, CardBody, CardHeader, Image, Stack, Text } from "@chakra-ui/react"
+import { Card, CardBody, CardHeader, Flex, Image, Stack, Text } from "@chakra-ui/react"
 import { BsCart, BsPlus } from "react-icons/bs"
 import { ButtonM } from "../atoms/ButtonM"
 
-interface CardMProps {
+export interface CardMProps {
     name?: string
     price?: number
-    type?: "default" | "producer" | "categories" | "meal"
+    type?: "default" | "producer" | "meal"
     image_shape?: "circle" | "square"
     image: string
     state?: "selected" | "unselected" | "default"
@@ -13,17 +13,18 @@ interface CardMProps {
 }
 
 export function CardM ({name, type = "default", image_shape = "square",image}: CardMProps) {
-    
     return (
-        <Card minW={"32"} maxW={"36"} color={"text_color_dark.normal"} height={"full"}>
+        <Card minW={"32"} maxW={"full"}  color={"text_color_dark.normal"} height={"full"}>
             <CardHeader>
-                <Image
-                    borderRadius={image_shape === "circle" ? "full" : ""}
-                    src={image}
-                    alt={name ? name : "unknown"}
-                    boxSize={"100"}
-                    fit={"cover"}
-                />
+                <Flex justifyContent={"center"}>
+                    <Image
+                        borderRadius={image_shape === "circle" ? "full" : ""}
+                        src={image}
+                        alt={name ? name : "unknown"}
+                        boxSize={"100"}
+                        fit={"cover"}
+                    />
+                </Flex>
             </CardHeader>
             <CardBody>
                 <Stack direction={"column"} alignItems={"center"} >

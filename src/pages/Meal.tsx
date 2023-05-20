@@ -9,6 +9,8 @@ import { MealCardProps } from "../components/molecules/MealCard";
 import { Navbar } from "../components/molecules/Navbar";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { Meals } from "../utils/Meals";
+import { Error } from "./Error";
+
 
 interface ingredient {
     name: string, 
@@ -30,7 +32,7 @@ export function Meal () {2
     const { id } = useParams()
     if (!id) return null
     const meal = new Meals().getMeal(id)
-    if (!meal) return (<h1>404 not found</h1>)
+    if (!meal) return (<Error/>)
     const { mealName, price, image, description, rating, ingredients, producer } = meal
 
     const ingredientsList = ingredients.map((ingredient) => {
@@ -40,9 +42,19 @@ export function Meal () {2
     return (
         <Flex width={"full"} maxWidth={"7xl"} direction={"column"} align={"center"} margin={2} color={"text_color_dark.normal"} gap={4}>
             <Navbar size={"phone"} navigationState={"goBack"} text={meal.mealName}/>
-            <Image src={image} alt={mealName} h={'xs'} maxW={"7xl"} w={"inherit"} objectFit="cover" borderRadius={8} />
-            <SimpleGrid columns={size === "phone" ? 1 : 2} spacingX={4} >
-                <Flex direction={"column"} align="center">
+            <Image 
+            position={"sticky"}
+            zIndex={-1}
+            top={0}
+            src={image}
+            alt={mealName} 
+            h={size === "phone" ? "md" : "2xl"} 
+            maxW={"7xl"} 
+            w={"inherit"} 
+            objectFit="cover" 
+            borderRadius={8} />
+            <SimpleGrid columns={size === "phone" ? 1 : 2} spacingX={4} bg={"white"}>
+                <Flex direction={"column"} align="center" paddingTop={4}>
                     <Flex justifyContent={"space-between"} width={"full"}>
                         <Text >{price} MZN</Text>
                         <RatingsIcons rating={rating}/>
