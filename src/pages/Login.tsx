@@ -1,19 +1,21 @@
-import { Center, Flex, Link, Stack, Text } from "@chakra-ui/react";
+import {
+	Center,
+	Flex,
+	Link,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { InputM } from "../components/atoms/InputM";
 import { Navbar } from "../components/molecules/Navbar";
 import { ButtonM } from "../components/atoms/ButtonM";
 
-export function Register() {
+export function Login() {
 	const size = useDeviceContext();
 	return (
 		<>
 			<Flex width={"full"} flexDirection={"column"}>
-				<Navbar
-					text="Register"
-					size={size}
-					navigationState={"goBack"}
-				/>{" "}
+				<Navbar text="Login" size={size} navigationState={"goBack"} />{" "}
 				<Center>
 					<Flex
 						backgroundColor={"gray.100"}
@@ -35,7 +37,6 @@ export function Register() {
 							</Text>{" "}
 							<InputM text={"Email"} />{" "}
 							<InputM typeB="password" text={"Passoword"} />{" "}
-							<InputM typeB="password" text={"Confirm Password"} />
 							<Text
 								color="primary.500"
 								align={"right"}
@@ -44,12 +45,12 @@ export function Register() {
 								Forgot?
 							</Text>
 							<Center>
-								<ButtonM text={"REGISTER"} />
+								<ButtonM text={"LOGIN"} />
 							</Center>
 							<Text align={"center"} fontSize={"sm"}>
 								{" "}
-								Já tem uma conta?{" "}
-								<Link color={"primary.500"}>Login</Link>
+								Don’t have an account?{" "}
+								<Link color={"primary.500"}>Register</Link>
 							</Text>
 						</Stack>
 					</Flex>
