@@ -15,16 +15,18 @@ interface CardMProps {
 export function CardM ({name, type = "default", image_shape = "square",image}: CardMProps) {
     
     return (
-        <Card maxW={"3xs"}>
+        <Card minW={"32"} maxW={"36"} color={"text_color_dark.normal"} height={"full"}>
             <CardHeader>
                 <Image
                     borderRadius={image_shape === "circle" ? "full" : ""}
                     src={image}
-                    alt='Chakra UI'
+                    alt={name ? name : "unknown"}
+                    boxSize={"100"}
+                    fit={"cover"}
                 />
             </CardHeader>
             <CardBody>
-                <Stack direction={"column"} alignItems={"center"}>
+                <Stack direction={"column"} alignItems={"center"} >
                     <Text>
                         {name}
                     </Text>

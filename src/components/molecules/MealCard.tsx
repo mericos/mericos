@@ -15,13 +15,13 @@ import { ButtonM } from "../atoms/ButtonM";
 
 export interface MealCardProps {
   id: string;
-  imageUrl: string;
+  image: string;
   mealName: string;
   price: number;
   type?: "primary" | "secondary"
 }
 
-export function MealCard({ id, imageUrl, mealName, price, type="primary" }: MealCardProps) {
+export function MealCard({ id, image: imageUrl, mealName, price, type="primary" }: MealCardProps) {
     const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "primary.500")
     const [background, setBackgroundColor ] = useState(type ==="primary" ? "primary.500" : "white")
     const [textColor, setTextColor] = useState(type === "primary" ? "white" : "text_color_dark.normal")
