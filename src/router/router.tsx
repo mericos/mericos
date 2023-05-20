@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Welcome } from "../pages/Home";
 import { Introduction } from "../components/Introduction";
 import { Meal } from "../pages/Meal";
+import { Error } from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,6 @@ export const router = createBrowserRouter([
   },
   {
 	path: "/*",
-	element: <h1>404 error</h1>
+	element: <Error/>
   }
 ]);
