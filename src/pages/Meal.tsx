@@ -8,6 +8,7 @@ import { ButtonM } from "../components/atoms/ButtonM";
 import { BsCart } from "react-icons/bs";
 import { CardM } from "../components/molecules/CardM";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
+import { CartInfoContainer } from "../components/molecules/CartInfoContainer";
 
 interface ingredient {
     name: string, 
@@ -40,7 +41,7 @@ export function Meal () {2
         <Flex width={"full"} maxWidth={"7xl"} direction={"column"} align={"center"} margin={2} color={"text_color_dark.normal"} gap={4}>
             <Navbar size={"phone"} navigationState={"goBack"} text={meal.mealName}/>
             <Image src={image} alt={mealName} h={'xs'} maxW={"7xl"} w={"inherit"} objectFit="cover" borderRadius={8} />
-            <SimpleGrid columns={size === "phone" ? 1 : 2} >
+            <SimpleGrid columns={size === "phone" ? 1 : 2} spacingX={4} >
                 <Flex direction={"column"} align="center">
                     <Flex justifyContent={"space-between"} width={"full"}>
                         <Text >{price} MZN</Text>
@@ -63,7 +64,7 @@ export function Meal () {2
                         <CardM type={"producer"} name={producer.name} image={producer.avatar} image_shape={"circle"}/>
                     </Flex>
                 </Flex>
-                <Text>TODO</Text>
+                <CartInfoContainer/>
             </SimpleGrid>
         </Flex>
     )
