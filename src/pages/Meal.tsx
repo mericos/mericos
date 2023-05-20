@@ -54,7 +54,7 @@ export function Meal () {2
                     </Flex>
                     <Divider/>
                     <Heading fontSize={"heading_for_pages_size"} color={"primary.500"}>Ingredientes</Heading>
-                    <HStack overflowX={"scroll"} width={"full"} height={"-webkit-fit-content"} paddingY={"8"} spacing={4} justifyContent={"center"}>
+                    <HStack overflowX={"scroll"} width={"full"} height={"-webkit-fit-content"} paddingY={"8"} paddingX={2} spacing={4} alignItems={"center"}>
                         {ingredientsList}
                     </HStack>
                     <Divider/>
