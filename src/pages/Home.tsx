@@ -1,22 +1,21 @@
-import { Navbar } from "../components/molecules/Navbar";
 import {
-	Box,
-	Flex,
-	Heading,
-	Icon,
-	Image,
-	SimpleGrid,
-	Text,
+    Box,
+    Flex,
+    Heading,
+    Icon,
+    Image,
+    SimpleGrid,
+    Text,
 } from "@chakra-ui/react";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
-import { ButtonM } from "../components/atoms/ButtonM";
 import { GiKnifeFork, GiPuzzle, GiRotaryPhone } from "react-icons/gi";
-import { MealCardProps } from "../components/molecules/MealCard";
-import { MealsList } from "../components/organisms/MealsList";
-import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
-import { Ri24HoursFill } from "react-icons/ri";
 import { MdFastfood } from "react-icons/md";
-import { v4 as uuidv4 } from 'uuid';
+import { Ri24HoursFill } from "react-icons/ri";
+import { ButtonM } from "../components/atoms/ButtonM";
+import { MealCardProps } from "../components/molecules/MealCard";
+import { Navbar } from "../components/molecules/Navbar";
+import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
+import { MealsList } from "../components/organisms/MealsList";
+import { useDeviceContext } from "../contextProviders/DeviceProvider";
 
 export function Welcome() {
 
