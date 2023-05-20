@@ -1,4 +1,4 @@
-import { HStack, SimpleGrid } from "@chakra-ui/react"
+import { HStack } from "@chakra-ui/react"
 import { CategoryCard, CategoryCardProps } from "../molecules/CategoryCard"
 
 interface CategoriesListProps {

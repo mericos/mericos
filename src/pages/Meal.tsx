@@ -1,14 +1,14 @@
 import { Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import { useLocation, useParams } from "react-router-dom";
-import { Navbar } from "../components/molecules/Navbar";
-import { MealCardProps } from "../components/molecules/MealCard";
-import { Meals } from "../utils/Meals";
-import { RatingsIcons } from "../components/atoms/Ratings";
-import { ButtonM } from "../components/atoms/ButtonM";
 import { BsCart } from "react-icons/bs";
+import { useParams } from "react-router-dom";
+import { ButtonM } from "../components/atoms/ButtonM";
+import { RatingsIcons } from "../components/atoms/Ratings";
 import { CardM } from "../components/molecules/CardM";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { CartInfoContainer } from "../components/molecules/CartInfoContainer";
+import { MealCardProps } from "../components/molecules/MealCard";
+import { Navbar } from "../components/molecules/Navbar";
+import { useDeviceContext } from "../contextProviders/DeviceProvider";
+import { Meals } from "../utils/Meals";
 import { Error } from "./Error";
 
 interface ingredient {

@@ -1,11 +1,11 @@
-import { Box, Flex, HStack, Icon } from "@chakra-ui/react"
-import { useDeviceContext } from "../contextProviders/DeviceProvider"
-import { Navbar } from "../components/molecules/Navbar"
-import { InputM } from "../components/atoms/InputM"
-import { CategoriesList } from "../components/organisms/CategoriesList"
+import { Flex, Icon } from "@chakra-ui/react"
 import { BiDish } from "react-icons/bi"
-import { MenuList } from "../components/organisms/MenuList"
+import { InputM } from "../components/atoms/InputM"
 import { CardMProps } from "../components/molecules/CardM"
+import { Navbar } from "../components/molecules/Navbar"
+import { CategoriesList } from "../components/organisms/CategoriesList"
+import { MenuList } from "../components/organisms/MenuList"
+import { useDeviceContext } from "../contextProviders/DeviceProvider"
 
 export function Menu () {
     const categories = [
