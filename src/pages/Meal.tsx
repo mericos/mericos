@@ -9,6 +9,7 @@ import { BsCart } from "react-icons/bs";
 import { CardM } from "../components/molecules/CardM";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { CartInfoContainer } from "../components/molecules/CartInfoContainer";
+import { Error } from "./Error";
 
 interface ingredient {
     name: string, 
@@ -30,7 +31,7 @@ export function Meal () {2
     const { id } = useParams()
     if (!id) return null
     const meal = new Meals().getMeal(id)
-    if (!meal) return (<h1>404 not found</h1>)
+    if (!meal) return (<Error/>)
     const { mealName, price, image, description, rating, ingredients, producer } = meal
 
     const ingredientsList = ingredients.map((ingredient) => {
