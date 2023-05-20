@@ -33,7 +33,7 @@ export function Register() {
 								{" "}
 								{/* Mericos */}{" "}
 							</Text>{" "}
-							<InputM text={"Email"} />{" "}
+							<InputM text={"Email"}/>{" "}
 							<InputM typeB="password" text={"Passoword"} />{" "}
 							<InputM typeB="password" text={"Confirm Password"} />
 							<Text
