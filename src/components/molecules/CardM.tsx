@@ -2,7 +2,7 @@ import { Card, CardBody, CardHeader, Image, Stack, Text } from "@chakra-ui/react
 import { BsCart, BsPlus } from "react-icons/bs"
 import { ButtonM } from "../atoms/ButtonM"
 
-interface CardMProps {
+export interface CardMProps {
     name?: string
     price?: number
     type?: "default" | "producer" | "categories" | "meal"
