@@ -5,6 +5,7 @@ import { Navbar } from "./molecules/Navbar";
 
 import { CardM } from "./molecules/CardM";
 import { MealCard } from "./molecules/MealCard";
+import { LoadingIndicator } from "./atoms/LoadingIndicator";
 
 export function Introduction() {
 	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
@@ -23,14 +24,14 @@ export function Introduction() {
 		<Flex direction={"column"} width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
 
-			<CardM 
+			<CardM
 			name="name"
 			type="producer"
 			image_shape="circle"
 			image="https://www.researchgate.net/profile/Bosheng-Song/publication/311221368/figure/fig1/AS:444086353174528@1482889845254/A-chess-board-pattern.png"
 			/>
 
-			<Box 
+			<Box
 			maxWidth={"7xl"}>
 				<MealCard
 					type="secondary"

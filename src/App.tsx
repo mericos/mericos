@@ -5,6 +5,8 @@ import {
 import { DeviceProvider } from "./contextProviders/DeviceProvider";
 import { router } from "./router/router";
 import { customTheme } from "./style/customTheme";
+import { CartInfoContainer } from "./components/molecules/CartInfoContainer";
+
 
 
 

@@ -1,6 +1,5 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Welcome } from "../pages/Home";
-import { Introduction } from "../components/Introduction";
+import { Register } from "../pages/Register";
+import { Login } from "../pages/Login";
 import { Meal } from "../pages/Meal";
 import { Error } from "../pages/Error";
 import { Menu } from "../pages/Menu";
@@ -22,6 +21,14 @@ export const router = createBrowserRouter([
     path: "/menu",
     element: <Menu/>
   },
+  	{
+		path: "/login",
+		element: <Login />,
+	},
+	{
+		path: "/register",
+		element: <Register />,
+	},
   {
     path: "/testing",
     element: <Introduction/>
@@ -31,3 +38,4 @@ export const router = createBrowserRouter([
 	element: <Error/>
   }
 ]);
+

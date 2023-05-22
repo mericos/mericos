@@ -14,10 +14,10 @@ interface NavbarProps {
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
 }
 interface PropertiesProps {
-	primaryColor: string
-	background: string
-	image: string
-	buttonType: "primary" | "secondary"
+	primaryColor: string;
+	background: string;
+	image: string;
+	buttonType: "primary" | "secondary";
 }
 
 function getNavItems(navState: NavbarProps["navigationState"]) {
@@ -95,7 +95,7 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type, navigationState } = props
+	const { text, type, navigationState } = props;
 	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties: PropertiesProps = {
@@ -104,13 +104,28 @@ export function Navbar(props: NavbarProps) {
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
-	const navigate = useNavigate()
-	function handleBack () {
-		navigate(-1)
+	const navigate = useNavigate();
+	function handleBack() {
+		navigate(-1);
 	}
 	const backArrow = (
-		<Flex justify={"flex-start"} alignItems={"center"} gap={4} >
-			<ArrowBackIcon  background={properties.background} _hover={{ background: properties.primaryColor , color: properties.background }} _active={{ background: properties.background, color: properties.primaryColor }} color={properties.primaryColor} borderRadius={"full"} boxSize={6} onClick={() => handleBack()}/>
+		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
+			<ArrowBackIcon
+				background={properties.background}
+				_hover={{
+					background: properties.primaryColor,
+					color: properties.background,
+				}}
+				_active={{
+					background: properties.background,
+					color: properties.primaryColor,
+				}}
+				color={properties.primaryColor}
+				borderRadius={"full"}
+				boxSize={6}
+				onClick={() => handleBack()}
+			/>
+    
 			<Text
 				fontSize="card_heading_size"
 				fontWeight="bold"
@@ -127,12 +142,15 @@ export function Navbar(props: NavbarProps) {
 		position={"sticky"}
 		zIndex={2}
 		top={0}>
+
 			<Flex
 				padding="0.65rem"
 				direction="row"
 				alignItems="center"
 				justifyContent="space-between"
-				maxWidth={"7xl"} marginX={"auto"}
+				maxWidth={"7xl"}
+				marginX={"auto"}
+
 			>
 				{navigationState !== "goBack" ? (
 					<>
