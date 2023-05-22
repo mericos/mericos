@@ -23,15 +23,24 @@ interface PropertiesProps {
 function getNavItems(navState: NavbarProps["navigationState"]) {
 	const navItems = [
 		{ name: "Menu", link: "/menu" },
-		{
-			name: navState === "authenticated" ? "Encomenda" : "Login",
-			link: "",
-		},
-		{
-			name: navState === "authenticated" ? "Historico" : "Registro",
-			link: "",
-		},
 	];
+	const items = navState == "authenticated" ? [{
+			name: "Encomenda",
+			link: "/delivery",
+		},
+		{
+			name: "Historico",
+			link: "history",
+		},] : [{
+			name: "Login",
+			link: "/login",
+		},
+		{
+			name: "Registro",
+			link: "register",
+		},]
+	for (const item of items) { (navItems.push(item))}
+
 
 	return navItems.filter((navItem) => navItem.name);
 }
