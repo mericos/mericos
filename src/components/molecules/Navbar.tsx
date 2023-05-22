@@ -22,7 +22,7 @@ interface PropertiesProps {
 
 function getNavItems(navState: NavbarProps["navigationState"]) {
 	const navItems = [
-		{ name: "Menu", link: "" },
+		{ name: "Menu", link: "/menu" },
 		{
 			name: navState === "authenticated" ? "Encomenda" : "Login",
 			link: "",
@@ -74,7 +74,7 @@ function NavbarRight({
 
 		return (
 			<Flex direction="row" alignItems="center" gap={2}>
-				<NavItem text="Menu" link="" color={properties.primaryColor} />
+				<NavItem text="Menu" link="/menu" color={properties.primaryColor} />
 				<ButtonM text="Login" type={properties.buttonType} />
 			</Flex>
 		);
@@ -125,25 +125,24 @@ export function Navbar(props: NavbarProps) {
 				boxSize={6}
 				onClick={() => handleBack()}
 			/>
+    
 			<Text
 				fontSize="card_heading_size"
 				fontWeight="bold"
 				color={properties.primaryColor}
-			>
-				{text}
-			</Text>
+			>{text}</Text>
 		</Flex>
 	);
 
 	return (
 		<Box
-			bg={properties.background}
-			padding={2}
-			width={"full"}
-			position={"sticky"}
-			zIndex={2}
-			top={0}
-		>
+		bg={properties.background}
+		padding={2}
+		width={"full"}
+		position={"sticky"}
+		zIndex={2}
+		top={0}>
+
 			<Flex
 				padding="0.65rem"
 				direction="row"
@@ -151,6 +150,7 @@ export function Navbar(props: NavbarProps) {
 				justifyContent="space-between"
 				maxWidth={"7xl"}
 				marginX={"auto"}
+
 			>
 				{navigationState !== "goBack" ? (
 					<>

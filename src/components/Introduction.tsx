@@ -1,9 +1,8 @@
-import { Box, Icon, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, useBreakpointValue } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { Navbar } from "./molecules/Navbar";
 
 
-import { Ri24HoursFill } from 'react-icons/ri';
 import { CardM } from "./molecules/CardM";
 import { MealCard } from "./molecules/MealCard";
 import { LoadingIndicator } from "./atoms/LoadingIndicator";
@@ -21,30 +20,8 @@ export function Introduction() {
 		fallback: 'md',
 		},
 	) ?? "phone"
-	const characteristics = [
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-		{
-		heading: "heading",
-		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae maiores iure obcaecati quam, voluptatum animi dignissimos vel reiciendis quaerat culpa commodi id ad, neque ex accusamus quas tempora veniam.",
-		icon: <Icon as={Ri24HoursFill}/>
-		},
-	]
 	return (
-		<Box width="full" align="center">
+		<Flex direction={"column"} width="full" align="center">
 			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
 
 			<CardM
@@ -57,22 +34,21 @@ export function Introduction() {
 			<Box
 			maxWidth={"7xl"}>
 				<MealCard
-				type="secondary"
-				url="https://www.simplyrecipes.com/thmb/2MQuChhZANaSSxdL1a0tA6nBgmQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-4-82c60893fcad4ade906a8a9f59b8da9d.jpg"
-				mealName={"Heading"}
-				price={0}/>
+					type="secondary"
+					image="https://www.simplyrecipes.com/thmb/2MQuChhZANaSSxdL1a0tA6nBgmQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-4-82c60893fcad4ade906a8a9f59b8da9d.jpg"
+					mealName={"Heading"}
+					price={0} id={""}/>
 				<Box
 				as={motion.div}
 				whileHover={{ scale: 1.1 }}
 				whileTap={{ scale: 0.9 }}
 				>
 					<MealCard
-					url="https://www.estadao.com.br/resizer/CST2BU9c4a41u6CjapTOgobBc0o=/720x503/filters:format(jpg):quality(80):focal(1180x595:1190x605)/cloudfront-us-east-1.images.arcpublishing.com/estadao/GUOGMQ4FRJIUPAWMYLE4WNA3SY.jpg"
-					mealName={"Heading"}
-					price={0}/>
+						image="https://www.estadao.com.br/resizer/CST2BU9c4a41u6CjapTOgobBc0o=/720x503/filters:format(jpg):quality(80):focal(1180x595:1190x605)/cloudfront-us-east-1.images.arcpublishing.com/estadao/GUOGMQ4FRJIUPAWMYLE4WNA3SY.jpg"
+						mealName={"Heading"}
+						price={0} id={""}/>
 				</Box>
 			</Box>
-
-		</Box>
+		</Flex>
 	);
 }

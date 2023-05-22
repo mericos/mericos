@@ -35,6 +35,31 @@ const customColors = {
 };
 
 export const customTheme = extendTheme({
+	styles: {
+
+		global: () =>  ({
+			/* width */
+			"::-webkit-scrollbar": {
+				width: "8px",
+				height:"4px"
+			},
+			
+			/* Track */
+			"::-webkit-scrollbar-track": {
+        background: "gray.200",
+      },
+
+      /* Handle */
+      "::-webkit-scrollbar-thumb": {
+		background: "primary.200",
+		},
+		
+		/* Handle on hover */
+		"::-webkit-scrollbar-thumb:hover": {
+			background: "primary.400",
+		},
+	}),
+},
 	colors: {
 		...customColors,
 	},
