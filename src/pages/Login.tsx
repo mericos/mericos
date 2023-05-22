@@ -105,24 +105,6 @@ export function Login() {
 								</form>
 							)}
 							</Formik>
-						{/* <InputM text={"Email"} />{" "}
-						<InputM typeB="password" text={"Passoword"} />{" "}
-						<Text
-							color="primary.500"
-							align={"right"}
-							fontSize={"xs"}
-						>
-							Forgot password?
-						</Text>
-						<Center>
-							<ButtonM text={"LOGIN"} />
-						</Center>
-						<Flex  rounded={"md"} p={4} justifyContent={"end"}>
-							<Text fontSize={"sm"} gap={2}>
-								Don’t have an account?
-							</Text>
-							<Link color={"primary.500"}>Register</Link>
-						</Flex> */}
 					</Flex>
 				</Center>
 			</Flex>
