@@ -16,7 +16,8 @@ import { Navbar } from "../components/molecules/Navbar";
 import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
 import { MealsList } from "../components/organisms/MealsList";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { BsInstagram } from "react-icons/bs";
 
 export function Welcome() {
 
@@ -114,7 +115,9 @@ const highlightedMeals: Array<MealCardProps> = [
             <Flex color={"white"} bg={"primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
                 <Text>You can find us at:</Text>
                 <Flex direction={"row"} gap={2}>
-                    LINKS TO ADD
+                    <Link to={"https://www.instagram.com/mericos.mz/"} target="_blank" rel="noopener noreferrer">
+                        <BsInstagram/>
+                    </Link>
                 </Flex>
                 <Text>Mericos - change the way we eat</Text>
                 <Text>@copyright-2023</Text>
