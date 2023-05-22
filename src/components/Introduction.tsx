@@ -5,7 +5,6 @@ import { Navbar } from "./molecules/Navbar";
 
 import { CardM } from "./molecules/CardM";
 import { MealCard } from "./molecules/MealCard";
-import { LoadingIndicator } from "./atoms/LoadingIndicator";
 
 export function Introduction() {
 	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
