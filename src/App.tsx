@@ -14,7 +14,7 @@ export function App() {
 		<>
 			<ChakraProvider theme={customTheme}>
 				<DeviceProvider>
-					<Flex fontFamily={"roboto, sans-serif"} justifyContent="center">
+					<Flex fontFamily={"Roboto, sans-serif"} justifyContent="center">
 						<RouterProvider router={router}/>
 					</Flex>
 				</DeviceProvider>
