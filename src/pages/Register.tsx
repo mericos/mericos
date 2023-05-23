@@ -1,5 +1,4 @@
 import {
-	Button,
 	Center,
 	Flex,
 	FormControl,
@@ -8,14 +7,14 @@ import {
 	Heading,
 	Link,
 	Text,
-	VStack,
+	VStack
 } from "@chakra-ui/react";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
-import { InputM } from "../components/atoms/InputM";
-import { Navbar } from "../components/molecules/Navbar";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { ButtonM } from "../components/atoms/ButtonM";
+import { InputM } from "../components/atoms/InputM";
+import { Navbar } from "../components/molecules/Navbar";
+import { useDeviceContext } from "../contextProviders/DeviceProvider";
 
 export function Register() {
 	const RegisterSchema = Yup.object().shape({

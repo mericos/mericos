@@ -1,26 +1,20 @@
-import { CheckIcon } from "@chakra-ui/icons";
 import {
-	Button,
 	Center,
 	Flex,
 	FormControl,
 	FormErrorMessage,
 	FormLabel,
 	Heading,
-	Input,
-	InputGroup,
-	InputRightElement,
 	Text,
 	VStack
 } from "@chakra-ui/react";
-import { Field, Formik } from "formik";
-import React from "react";
+import { Formik } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { ButtonM } from "../components/atoms/ButtonM";
+import { InputM } from "../components/atoms/InputM";
 import { Navbar } from "../components/molecules/Navbar";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
-import { InputM } from "../components/atoms/InputM";
 
 
 export function Login() {
@@ -37,7 +31,6 @@ export function Login() {
 		),
 	});
 	const size = useDeviceContext();
-	const [show, setShow] = React.useState(false)
 	return (
 		<>
 			<Flex width={"full"} flexDirection={"column"}>
