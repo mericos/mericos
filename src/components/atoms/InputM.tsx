@@ -68,10 +68,9 @@ export function InputM({
 							as={Input}
 							id={id}
 							name={name}
-							borderColor="black"
 							// type={input_type}
 							type={show ? "text" : "password"}
-							variant="flushed"
+							variant={"filled"}
 						/>
 						<InputRightElement width="4.5rem">
 							<IconButton
@@ -89,12 +88,11 @@ export function InputM({
 					<>
 						<Field
 							focusBorderColor="primary.500"
-							borderColor="black"
 							as={Input}
 							id={id}
 							name={name}
 							type={input_type}
-							variant="flushed"
+							variant={"filled"}
 						/>
 					</>
 				)}

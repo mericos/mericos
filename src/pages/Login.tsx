@@ -20,6 +20,7 @@ import * as Yup from "yup";
 import { ButtonM } from "../components/atoms/ButtonM";
 import { Navbar } from "../components/molecules/Navbar";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
+import { InputM } from "../components/atoms/InputM";
 
 
 export function Login() {
@@ -70,37 +71,22 @@ export function Login() {
 								<VStack spacing={4} align="center" marginX={"auto"} w="full" maxW={"xl"}  >
 									<FormControl isInvalid={!!errors.email && touched.email} isRequired>
 									<FormLabel htmlFor="email">Email</FormLabel>
-									<InputGroup>
-										<Field
-											as={Input}
-											id="email"
-											name="email"
-											type="email"
-											variant={"filled"}
-										/>
-										<InputRightElement width='4.5rem'>
-											{ !errors.email && touched.email ? <CheckIcon color='green.500' />: "" }
-										</InputRightElement>
-									</InputGroup>
+									<InputM
+										text="email"
+										id="email"
+										name="email"
+										input_type="email"
+									/>
 									<FormErrorMessage>{errors.email}</FormErrorMessage>
 									</FormControl>
 									<FormControl isInvalid={!!errors.password && touched.password} isRequired>
 									<FormLabel htmlFor="password">Palavra-passe</FormLabel>
-									<InputGroup>
-										<Field
-											as={Input}
+										<InputM
+											text="password"
 											id="password"
 											name="password"
-											type={show ? 'text' : 'password'}
-											variant="filled"
+											input_type="password"
 										/>
-										<InputRightElement width='4.5rem' paddingRight={"0.1rem"}>
-											{ !errors.password &&  touched.password ? <CheckIcon color='green.500' />:""}
-											<Button h='1.75rem' size='sm' onClick={() => setShow(!show)}>
-											{show ? 'Hide' : 'Show'}
-											</Button>
-										</InputRightElement>
-									</InputGroup>
 									<FormErrorMessage>{errors.password}</FormErrorMessage>
 									</FormControl>
 									<Text

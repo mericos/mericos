@@ -15,6 +15,7 @@ import { InputM } from "../components/atoms/InputM";
 import { Navbar } from "../components/molecules/Navbar";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { ButtonM } from "../components/atoms/ButtonM";
 
 export function Register() {
 	const RegisterSchema = Yup.object().shape({
@@ -22,7 +23,7 @@ export function Register() {
 			.email("E-mail inválido")
 			.required("Email é obrigatória"),
 		name: Yup.string()
-		.required("Insira o seu nome")
+		.required("nome é obrigatória")
 		.min(3, "O nome deve ter pelo menos 3 caracteres"),
 		password: Yup.string()
 			.required("Palavra-passe é obrigatória")
@@ -71,6 +72,7 @@ export function Register() {
 											isInvalid={
 												!!errors.email && touched.email
 											}
+											isRequired
 										>
 											<FormLabel htmlFor="email">
 												Email
@@ -85,7 +87,7 @@ export function Register() {
 												{errors.email}
 											</FormErrorMessage>
 										</FormControl>
-										<FormControl isInvalid={!!errors.name}>
+										<FormControl isInvalid={!!errors.name} isRequired>
 											<FormLabel htmlFor="name">
 												Nome
 											</FormLabel>
@@ -104,6 +106,7 @@ export function Register() {
 												!!errors.password &&
 												touched.password
 											}
+											isRequired
 										>
 											<FormLabel htmlFor="password">
 												Palavra-passe
@@ -118,14 +121,7 @@ export function Register() {
 												{errors.password}
 											</FormErrorMessage>
 										</FormControl>
-
-										<Button
-											type="submit"
-											colorScheme="primary"
-											width="full"
-										>
-											Register
-										</Button>
+										<ButtonM isSubmit={true} text={"Registro"}/>
 									</VStack>
 								</form>
 							)}
