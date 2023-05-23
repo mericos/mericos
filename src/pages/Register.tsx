@@ -17,11 +17,13 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 export function Register() {
-	const loginSchema = Yup.object().shape({
+	const RegisterSchema = Yup.object().shape({
 		email: Yup.string()
 			.email("E-mail inválido")
 			.required("Email é obrigatória"),
-		name: Yup.string().required("Insira o seu nome"),
+		name: Yup.string()
+		.required("Insira o seu nome")
+		.min(3, "O nome deve ter pelo menos 3 caracteres"),
 		password: Yup.string()
 			.required("Palavra-passe é obrigatória")
 			.min(8, "A palavra-passe deve ter pelo menos 8 caracteres")
@@ -37,7 +39,7 @@ export function Register() {
 				<Navbar text="Mericos" size={size} navigationState={"goBack"} />{" "}
 				<Center>
 					<Flex
-						backgroundColor={"gray.100"}
+						backgroundColor={"gray.50"}
 						color={"Gray"}
 						backgroundPosition={"center"}
 						width={"7xl"}
@@ -60,7 +62,7 @@ export function Register() {
 							onSubmit={(values) => {
 								alert(JSON.stringify(values, null, 2));
 							}}
-							validationSchema={loginSchema}
+							validationSchema={RegisterSchema}
 						>
 							{({ handleSubmit, errors, touched }) => (
 								<form onSubmit={handleSubmit}>
@@ -128,25 +130,6 @@ export function Register() {
 								</form>
 							)}
 						</Formik>
-
-						{/* <InputM text={"Email"} />{" "}
-						<InputM typeB="password" text={"Passoword"} />{" "}
-						<Text
-							color="primary.500"
-							align={"right"}
-							fontSize={"xs"}
-						>
-							Forgot password?
-						</Text>
-						<Center>
-							<ButtonM text={"LOGIN"} />
-						</Center>
-						<Flex  rounded={"md"} p={4} justifyContent={"end"}>
-							<Text fontSize={"sm"} gap={2}>
-								Don’t have an account?
-							</Text>
-							<Link color={"primary.500"}>Register</Link>
-						</Flex> */}
 						<Text align={"center"} fontSize={"sm"}>
 							Já tem uma conta?{" "}
 							<Link color={"primary.500"}>Login</Link>
