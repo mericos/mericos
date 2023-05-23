@@ -6,7 +6,8 @@ import {
 	InputGroup,
 	InputRightElement,
 } from "@chakra-ui/react";
-import { SetStateAction, useState } from "react";
+import { Field } from "formik";
+import { ChangeEventHandler, SetStateAction, useState } from "react";
 
 import { HiEye, HiEyeOff } from "react-icons/hi";
 
@@ -14,9 +15,22 @@ interface InputMProps {
 	text: string;
 	typeB?: string;
 	isSearchBar?: boolean;
+	id?: string;
+	name?: string;
+	type?: string;
+	input_type?: string;
+	// onChange: ChangeEvent<HTMLInputElement>;
+	onChange?: ChangeEventHandler<HTMLInputElement>;
+	value?: string;
 }
 
-export function InputM({ text, typeB, isSearchBar = false }: InputMProps) {
+export function InputM({
+	text,
+	isSearchBar = false,
+	name,
+	id,
+	input_type,
+}: InputMProps) {
 	const [value, setValue] = useState("");
 	const handleChange = (event: {
 		target: { value: SetStateAction<string> };
@@ -47,16 +61,17 @@ export function InputM({ text, typeB, isSearchBar = false }: InputMProps) {
 							borderStartRadius={0}
 						/>
 					</>
-				) : typeB === "password" ? (
-					<InputGroup size="md">
-						<Input
-							variant="flushed"
+				) : input_type === "password" ? (
+					<InputGroup width={"full"} size="md">
+						<Field
 							focusBorderColor="primary.500"
-							placeholder={text}
-							borderColor={"gray"}
-							width={"2xs"}
-							pr="4.5rem"
+							as={Input}
+							id={id}
+							name={name}
+							borderColor="black"
+							// type={input_type}
 							type={show ? "text" : "password"}
+							variant="flushed"
 						/>
 						<InputRightElement width="4.5rem">
 							<IconButton
@@ -71,13 +86,17 @@ export function InputM({ text, typeB, isSearchBar = false }: InputMProps) {
 						</InputRightElement>
 					</InputGroup>
 				) : (
-					<Input
-						variant="flushed"
-						focusBorderColor="primary.500"
-						placeholder={text}
-						borderColor={"gray"}
-						width={"2xs"}
-					/>
+					<>
+						<Field
+							focusBorderColor="primary.500"
+							borderColor="black"
+							as={Input}
+							id={id}
+							name={name}
+							type={input_type}
+							variant="flushed"
+						/>
+					</>
 				)}
 			</Flex>
 		</>
