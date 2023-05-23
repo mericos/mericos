@@ -40,7 +40,7 @@ export function Register() {
 				<Center>
 					<Flex
 						backgroundColor={"gray.50"}
-						color={"Gray"}
+						color={"GrayText"}
 						backgroundPosition={"center"}
 						width={"7xl"}
 						// padding={"20"}
@@ -51,7 +51,7 @@ export function Register() {
 						flexDirection={"column"}
 						gap={4}
 					>
-						<Heading color={"primary.500"}>Register</Heading>
+						<Heading color={"primary.500"} marginX={"auto"}>Register</Heading>
 						<Formik
 							initialValues={{
 								email: "",
@@ -66,7 +66,7 @@ export function Register() {
 						>
 							{({ handleSubmit, errors, touched }) => (
 								<form onSubmit={handleSubmit}>
-									<VStack spacing={4}>
+									<VStack spacing={4}  w="full" maxW={"xl"} marginX={"auto"}>
 										<FormControl
 											isInvalid={
 												!!errors.email && touched.email
