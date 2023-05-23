@@ -6,6 +6,8 @@ import {
 	FormErrorMessage,
 	FormLabel,
 	Heading,
+	Link,
+	Text,
 	VStack,
 } from "@chakra-ui/react";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
@@ -45,7 +47,7 @@ export function Register() {
 						paddingY={"16"}
 						paddingX={"32"}
 						flexDirection={"column"}
-						gap={8}
+						gap={4}
 					>
 						<Heading color={"primary.500"}>Register</Heading>
 						<Formik
@@ -126,6 +128,7 @@ export function Register() {
 								</form>
 							)}
 						</Formik>
+
 						{/* <InputM text={"Email"} />{" "}
 						<InputM typeB="password" text={"Passoword"} />{" "}
 						<Text
@@ -144,6 +147,11 @@ export function Register() {
 							</Text>
 							<Link color={"primary.500"}>Register</Link>
 						</Flex> */}
+						<Text align={"center"} fontSize={"sm"}>
+							Já tem uma conta?{" "}
+							<Link color={"primary.500"}>Login</Link>
+							{" "}
+						</Text>
 					</Flex>
 				</Center>
 			</Flex>
