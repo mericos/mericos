@@ -16,6 +16,8 @@ import { Navbar } from "../components/molecules/Navbar";
 import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
 import { MealsList } from "../components/organisms/MealsList";
 import { useDeviceContext } from "../contextProviders/DeviceProvider";
+import { Link, useNavigate } from "react-router-dom";
+import { BsInstagram } from "react-icons/bs";
 
 export function Welcome() {
 
@@ -79,6 +81,7 @@ const highlightedMeals: Array<MealCardProps> = [
 		},
 	];
 	const size = useDeviceContext();
+    const navigate = useNavigate()
     return(
         <Box width={"full"} >
             <Navbar size={size} navigationState={"not_authenticated"} type="primary"/>
@@ -87,7 +90,7 @@ const highlightedMeals: Array<MealCardProps> = [
                     <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>
                         <Heading color={"primary.500"}>Mericos</Heading>
                         <Text textAlign={"start"} color={"text_color_dark.normal"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi veniam minus fugit enim excepturi impedit soluta sint eum omnis ea eveniet incidunt, nulla totam dolores illo asperiores eaque itaque deleniti.</Text>
-                        <ButtonM text="Menu" icon={<GiKnifeFork/>}/>
+                        <ButtonM text="Menu" icon={<GiKnifeFork/>} onClick={() => navigate("/menu")}/>
                     </Flex>
                     <Box>
                         <Image boxSize={"full"} objectFit={"cover"} borderRadius={8} src="https://b.zmtcdn.com/data/pictures/chains/9/19912889/e9f25f9e9daf2e355e7c44b5877c46ba.jpg?output-format=webp"/>
@@ -104,15 +107,17 @@ const highlightedMeals: Array<MealCardProps> = [
                 <Flex direction={"column"} alignItems={"start"} width={"full"} gap={8}>
                     <Heading color={"primary.500"}> Acesse a Mericos</Heading>
                     <Flex direction={"row"} gap={2} justify={"center"} width={"full"}>
-                        <ButtonM text="Entrar" type="secondary"/>
-                        <ButtonM text="Registrar"/>
+                        <ButtonM text="Entrar" type="secondary" onClick={() => navigate("/login")}/>
+                        <ButtonM text="Registrar" onClick={() => navigate("/register")}/>
                     </Flex>
                 </Flex>
             </Flex>
             <Flex color={"white"} bg={"primary.500"} direction={"column"} justifyContent={"center"} padding={4} alignItems={"center"} gap={2}>
                 <Text>You can find us at:</Text>
                 <Flex direction={"row"} gap={2}>
-                    LINKS TO ADD
+                    <Link to={"https://www.instagram.com/mericos.mz/"} target="_blank" rel="noopener noreferrer">
+                        <BsInstagram/>
+                    </Link>
                 </Flex>
                 <Text>Mericos - change the way we eat</Text>
                 <Text>@copyright-2023</Text>

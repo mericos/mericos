@@ -69,6 +69,7 @@ function NavbarRight({
 }) {
 	const { navigationState, size } = navProps;
 	const isPhone = size === "phone";
+	const navigate = useNavigate()
 
 	if (isPhone) {
 		if (navigationState === "authenticated") {
@@ -84,7 +85,7 @@ function NavbarRight({
 		return (
 			<Flex direction="row" alignItems="center" gap={2}>
 				<NavItem text="Menu" link="/menu" color={properties.primaryColor} />
-				<ButtonM text="Login" type={properties.buttonType} />
+				<ButtonM text="Login" type={properties.buttonType} onClick={()=> navigate("/login")} />
 			</Flex>
 		);
 	}

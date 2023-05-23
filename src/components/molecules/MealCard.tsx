@@ -33,7 +33,6 @@ export function MealCard({ id, image: imageUrl, mealName, price, type="primary" 
       setTextColor(textColor === "white" ? "text_color_dark.normal" : "white")
     }
     function handleClick() {
-      console.log("clicked")
       navigate(`/meal/${id}`,{state: { name: mealName }})
     }
   return (

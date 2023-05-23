@@ -31,7 +31,7 @@ export function HamburguerMenu(props: HamburgerProps) {
             <Flex direction={"column"} gap={"2"}>
               {props.options.map((option) => {
                 return (
-                  <NavItem text={option.name} link={option.link} color={props.color}/>
+                  <NavItem key={option.name} text={option.name} link={option.link} color={props.color}/>
                 )
               })}
             </Flex>
