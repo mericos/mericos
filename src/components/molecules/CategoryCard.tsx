@@ -44,7 +44,7 @@ export function CategoryCard({
 				<Stack>
 					<HStack >
 						{icon}
-						<Heading size="md">{name}</Heading>
+						<Heading size="sm">{name}</Heading>
 					</HStack>
 				</Stack>
 			</CardBody>
