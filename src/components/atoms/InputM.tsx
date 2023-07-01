@@ -36,7 +36,8 @@ export function InputM({
 		target: { value: SetStateAction<string> };
 	}) => setValue(event.target.value);
 	const [show, setShow] = useState(false);
-	const handleClick = () => setShow(!show);
+	const handlePassword = () => setShow(!show);
+	const handleSearch = () => setValue("");
 	return (
 		<>
 			<Flex direction={"row"} w={"full"}>
@@ -47,10 +48,10 @@ export function InputM({
 							onChange={handleChange}
 							focusBorderColor={"primary.500"}
 							color={"primary.500"}
-							variant="flushed"
+							variant="outline"
 							placeholder={text}
 							width={"full"}
-							border={8}
+							border={"1px"}
 							borderEndRadius={isSearchBar ? 0 : 8}
 						/>
 						<IconButton
@@ -58,7 +59,11 @@ export function InputM({
 							color={"primary.500"}
 							aria-label="Search database"
 							icon={<SearchIcon />}
+							backgroundColor={"white"}
 							borderStartRadius={0}
+							border={"1px"}
+							borderStart={"0"}
+							onClick={handleSearch}
 						/>
 					</>
 				) : input_type === "password" ? (
@@ -79,7 +84,7 @@ export function InputM({
 								}
 								h="1.75rem"
 								size="lg"
-								onClick={handleClick}
+								onClick={handlePassword}
 								icon={show ? <HiEyeOff /> : <HiEye />}
 							/>
 						</InputRightElement>
