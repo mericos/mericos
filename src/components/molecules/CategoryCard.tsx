@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading, Stack, VStack } from "@chakra-ui/react";
+import { Card, CardBody, Heading, Stack, HStack } from "@chakra-ui/react";
 import { ReactElement, useState } from "react";
 
 export interface CategoryCardProps {
@@ -10,33 +10,42 @@ export function CategoryCard({
 	name,
 	icon,
 }: CategoryCardProps) {
-    const [ selected, setSelected] = useState(true)
+    const [ selected, setSelected] = useState(false)
 
     function handleSelection () {
+		if (!selected) {
+			setPrimaryColor("white")
+			setBackground("primary.500")
+		} else {
+			setPrimaryColor("primary.500")
+			setBackground("white")
+		}
         setSelected(!selected)
     }
-    const primaryColor = selected ? "primary.500" : "white";
-    const background = selected ? "white" : "primary.500";
+    const [primaryColor, setPrimaryColor] = useState("primary.500");
+	// !selected ? "primary.500" : "white";
+    const [ background, setBackground ] = useState("white");
+	// !selected ? "white" : "primary.500"
 	return (
 		<Card
 			w={"full"}
             height={"full"}
-            minW={"20"}
-			borderRadius="md"
+            minW={""}
+			borderRadius={"full"}
 			background={background}
             color={primaryColor}
             onClick={()=> handleSelection()}
-            _hover={{color:"white", background:"primary.500"}}
+            _hover={{transform: 'translateY(-5px)', transitionDuration: '0.5s', transitionTimingFunction: "ease-in-out"}}
             _active={{shadow:"inset 0 0 0 2px white"}}
 			align={"center"}
 			variant={"outline"}
 		>
-			<CardBody>
-				<Stack spacing={2}>
-					<VStack justifyContent={"center"}>
+			<CardBody paddingY={"1"}>
+				<Stack>
+					<HStack >
 						{icon}
-						<Heading size="md">{name}</Heading>
-					</VStack>
+						<Heading size="sm">{name}</Heading>
+					</HStack>
 				</Stack>
 			</CardBody>
 		</Card>

@@ -12,6 +12,7 @@ interface NavbarProps {
 	type?: "primary" | "secondary";
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
+	children? : JSX.Element[];
 }
 interface PropertiesProps {
 	primaryColor: string;
@@ -152,27 +153,33 @@ export function Navbar(props: NavbarProps) {
 		position={"sticky"}
 		zIndex={2}
 		top={0}>
-
 			<Flex
 				padding="0.65rem"
-				direction="row"
+				direction="column"
 				alignItems="center"
 				justifyContent="space-between"
 				maxWidth={"7xl"}
 				marginX={"auto"}
 
 			>
-				{navigationState !== "goBack" ? (
-					<>
-						{/* logo and company name */}
-						<NavbarLeft properties={properties} />
-						{/* right side navbar part */}
-						<NavbarRight properties={properties} navProps={props} />
-					</>
-				) : (
-					// go back Navbar
-					backArrow
-				)}
+				<Flex
+					direction="row"
+					width={"full"}
+					justify={"start"}>
+					{navigationState !== "goBack" ? (
+						<>
+							{/* logo and company name */}
+							<NavbarLeft properties={properties} />
+							{/* right side navbar part */}
+							<NavbarRight properties={properties} navProps={props} />
+						</>
+					) : (
+						// go back Navbar
+						backArrow
+					)}
+
+				</Flex>
+				{props.children}
 			</Flex>
 		</Box>
 	);
