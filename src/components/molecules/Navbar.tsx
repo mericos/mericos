@@ -165,7 +165,7 @@ export function Navbar(props: NavbarProps) {
 				<Flex
 					direction="row"
 					width={"full"}
-					justify={"start"}>
+					justify={"space-between"}>
 					{navigationState !== "goBack" ? (
 						<>
 							{/* logo and company name */}
