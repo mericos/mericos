@@ -1,23 +1,22 @@
 import { Flex, Icon } from "@chakra-ui/react"
-import { BiDish } from "react-icons/bi"
+import { BiCross, BiDish } from "react-icons/bi"
 import { InputM } from "../components/atoms/InputM"
 import { CardMProps } from "../components/molecules/CardM"
 import { Navbar } from "../components/molecules/Navbar"
 import { CategoriesList } from "../components/organisms/CategoriesList"
 import { MenuList } from "../components/organisms/MenuList"
 import { useDeviceContext } from "../contextProviders/DeviceProvider"
+import { GiCakeSlice, GiCandyCanes, GiFullPizza, GiHamburger, GiPizzaSlice, GiTacos, GiWrappedHeart } from "react-icons/gi"
 
 export function Menu () {
     const categories = [
-        { name:"cat1", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat2", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat3", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat4", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat5", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat6", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat7", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat8", icon:<Icon boxSize={"8"} as={BiDish}/> },
-        { name:"cat9", icon:<Icon boxSize={"8"} as={BiDish}/> }
+        { name:"Destaque", icon:<Icon boxSize={"8"} as={BiDish}/> },
+        { name:"Pizza", icon:<Icon boxSize={"8"} as={GiFullPizza}/> },
+        { name:"Hamburguer", icon:<Icon boxSize={"8"} as={GiHamburger}/> },
+        { name:"Doces", icon:<Icon boxSize={"8"} as={GiCandyCanes}/> },
+        { name:"Wraps", icon:<Icon boxSize={"8"} as={GiTacos}/> },
+        { name:"Hallal", icon:<Icon boxSize={"8"} as={BiCross}/> },
+        { name:"Bolos", icon:<Icon boxSize={"8"} as={GiCakeSlice}/> },
     ]
     const menuItems: Array<CardMProps> = [
         {
