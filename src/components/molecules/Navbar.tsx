@@ -12,7 +12,7 @@ interface NavbarProps {
 	type?: "primary" | "secondary";
 	size: "phone" | "laptop" | "universal";
 	navigationState: "authenticated" | "not_authenticated" | "goBack";
-	children : JSX.Element[];
+	children? : JSX.Element[];
 }
 interface PropertiesProps {
 	primaryColor: string;
