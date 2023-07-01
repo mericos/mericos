@@ -179,7 +179,7 @@ export function Navbar(props: NavbarProps) {
 					)}
 
 				</Flex>
-			{props.children}
+				{props.children}
 			</Flex>
 		</Box>
 	);
