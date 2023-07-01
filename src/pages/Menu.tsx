@@ -6,7 +6,7 @@ import { Navbar } from "../components/molecules/Navbar"
 import { CategoriesList } from "../components/organisms/CategoriesList"
 import { MenuList } from "../components/organisms/MenuList"
 import { useDeviceContext } from "../contextProviders/DeviceProvider"
-import { GiCakeSlice, GiCandyCanes, GiFullPizza, GiHamburger, GiPizzaSlice, GiTacos, GiWrappedHeart } from "react-icons/gi"
+import { GiCakeSlice, GiCandyCanes, GiFullPizza, GiHamburger, GiTacos } from "react-icons/gi"
 
 export function Menu () {
     const categories = [
@@ -150,11 +150,12 @@ export function Menu () {
     const size = useDeviceContext()
     return (
         <Flex width={"full"} direction={"column"} justifyContent={"center"} alignItems={"center"}paddingX={2}>
-            <Navbar size={size} navigationState={"goBack"} text="Menu"/>
-            <Flex w={"full"} maxW={"7xl"} direction={"column"}>
-                <InputM text="search" isSearchBar></InputM>
-            </Flex>
-            <CategoriesList categories={categories}/>
+            <Navbar size={size} navigationState={"goBack"} text="Menu">
+                <Flex w={"full"} maxW={"7xl"} direction={"column"}>
+                    <InputM text="search" isSearchBar></InputM>
+                </Flex>
+                <CategoriesList categories={categories}/>
+            </Navbar>
             <MenuList menuItems={menuItems} />
         </Flex>
     )
