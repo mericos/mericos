@@ -46,13 +46,14 @@ export function MealCard({ id, image: imageUrl, mealName, price, type="primary" 
     transition='0.1s linear'
     flexShrink={0} 
     maxW="xs" 
-    borderRadius="md" 
+    borderRadius={"3xl"} 
     overflow="hidden" 
     boxShadow="lg" 
     background={background} 
     onMouseEnter={()=> switchColor()} 
     onMouseLeave={() => switchColor()} 
-    _active={{border : "1px", color: primaryColor }}>
+    _active={{border : "1px", color: primaryColor }}
+    >
       <Image src={imageUrl} alt={mealName} h={'xs'} w={'xs'} objectFit="cover" />
       <CardBody>
         <Stack spacing={2} align={"start"}>
