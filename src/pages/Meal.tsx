@@ -63,7 +63,9 @@ export function Meal () {2
                         <ButtonM text={"Adicione a carrinha"} icon={<BsCart/>}/>
                     </Flex>
                     <Flex >
-                        {description}
+                        <Text>
+                            {description}
+                        </Text>
                     </Flex>
                     <Divider/>
                     <Heading fontSize={"heading_for_pages_size"} color={"primary.500"}>Ingredientes</Heading>
