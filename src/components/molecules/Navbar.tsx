@@ -1,5 +1,5 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
 import mericosLogo from "../../assets/logo/only-logo.svg";
@@ -141,20 +141,19 @@ export function Navbar(props: NavbarProps) {
 				fontSize="card_heading_size"
 				fontWeight="bold"
 				color={properties.primaryColor}
-			>{text}</Text>
+			>{text ? text : "Mericos"}</Text>
 		</Flex>
 	);
 
 	return (
 		<Box
 		bg={properties.background}
-		padding={2}
 		width={"full"}
 		position={"sticky"}
 		zIndex={2}
 		top={0}>
 			<Flex
-				padding="0.65rem"
+				padding="0.85rem"
 				direction="column"
 				alignItems="center"
 				justifyContent="space-between"
@@ -181,6 +180,7 @@ export function Navbar(props: NavbarProps) {
 				</Flex>
 				{props.children}
 			</Flex>
+			<Divider/>
 		</Box>
 	);
 }
