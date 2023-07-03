@@ -2,6 +2,7 @@ import {
   Card,
   CardBody,
   CardFooter,
+  Flex,
   Heading,
   Image,
   Stack,
@@ -12,6 +13,7 @@ import { useState } from "react";
 import { BsCart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { ButtonM } from "../atoms/ButtonM";
+import { RatingsIcons } from "../atoms/Ratings";
 
 export interface MealCardProps {
   id: string;
@@ -19,9 +21,10 @@ export interface MealCardProps {
   mealName: string;
   price: number;
   type?: "primary" | "secondary"
+  rating?: number
 }
 
-export function MealCard({ id, image: imageUrl, mealName, price, type="primary" }: MealCardProps) {
+export function MealCard({ id, image: imageUrl, mealName, price, type="primary" , rating=0 }: MealCardProps) {
     const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "primary.500")
     const [background, setBackgroundColor ] = useState(type ==="primary" ? "primary.500" : "white")
     const [textColor, setTextColor] = useState(type === "primary" ? "white" : "text_color_dark.normal")
@@ -54,14 +57,27 @@ export function MealCard({ id, image: imageUrl, mealName, price, type="primary" 
     onMouseLeave={() => switchColor()} 
     _active={{border : "1px", color: primaryColor }}
     >
-      <Image src={imageUrl} alt={mealName} h={'xs'} w={'xs'} objectFit="cover" />
+      <Image src={imageUrl} alt={mealName} h={"3xs"} w={'xs'} objectFit="cover" />
       <CardBody>
-        <Stack spacing={2} align={"start"}>
-          <Heading size="md" color={primaryColor}>{mealName}</Heading>
-          <Text fontWeight="bold" color={textColor}>
-            {price} Mzn
-          </Text>
-        </Stack>
+        <Heading textAlign={"center"} size="md" color={primaryColor}>{mealName}</Heading>
+        <Flex direction={"row"} justifyContent={"space-between"}>
+          <Flex direction={"column"}>
+            <Text fontWeight="thin" color={textColor}>
+              price
+            </Text>
+            <Text fontWeight={"light"} color={primaryColor}>
+              {price} Mzn
+            </Text>
+          </Flex>
+          <Flex direction={"column"}>
+            <Text fontWeight={"thin"} color={textColor}>
+              Review
+            </Text>
+            <Text fontWeight="light" color={primaryColor}>
+              <RatingsIcons rating={rating}/>
+            </Text>
+          </Flex>
+        </Flex>
       </CardBody>
       <CardFooter justifyContent={"center"}>
         <ButtonM type={type === "primary"? "secondary" : type} text="Adicione" icon={<BsCart/>} />
