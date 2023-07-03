@@ -128,7 +128,8 @@ export const customTheme = extendTheme({
 		},
 		Heading : {
 			baseStyle: {
-				fontWeight: "normal"
+				fontWeight: "normal",
+				color: "primary.500"
 			}
 		},
 		Text: {
