@@ -22,7 +22,7 @@ export function RatingsIcons( { rating = 5, isEditable = false}: RatingProps) {
 					key={star}
 					onClick={() => isEditable ? handleStarClick(star) : null}
 					color={star <= ratingValue ? "primary.500" : "gray.200"}
-					boxSize={6}
+					boxSize={"4"}
 				/>
 			))}
 		</Box>
