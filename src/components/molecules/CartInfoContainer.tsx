@@ -50,7 +50,8 @@ export function CartInfoContainer() {
 	)
     return (
 		<>
-			{size === "phone" ? phoneContainer : laptopContainer}
+			{/* {size === "phone" ? phoneContainer : laptopContainer} */}
+			{phoneContainer}
 		</>
 	);
 }
