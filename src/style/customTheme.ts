@@ -126,5 +126,15 @@ export const customTheme = extendTheme({
 				},
 			},
 		},
+		Heading : {
+			baseStyle: {
+				fontWeight: "normal"
+			}
+		},
+		Text: {
+			baseStyle: {
+				fontWeight: "light"
+			}
+		}
 	},
 });
