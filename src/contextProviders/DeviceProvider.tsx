@@ -2,7 +2,8 @@ import { useBreakpointValue } from "@chakra-ui/react"
 import React, { Context, PropsWithChildren, useContext } from "react"
 
 type size = "phone" | "tablet" | "laptop" | "universal"
-const DeviceContext:Context<"phone" | "tablet" | "laptop" | "universal"> = React.createContext<size>("phone")
+type authentication = "authenticated" | "not_authenticated"
+const DeviceContext:Context<{size: "phone" | "tablet" | "laptop" | "universal", authentication: "authenticated" | "not_authenticated" }> = React.createContext<{size:size, authentication:authentication}>({size: "phone", authentication: "authenticated"})
 
 
 
@@ -20,8 +21,9 @@ export const DeviceProvider = ({children}: PropsWithChildren) => {
             fallback: 'md',
 		},
         ) ?? "phone"
+    const authentication: authentication = "authenticated"
     return (
-        <DeviceContext.Provider value={size}>
+        <DeviceContext.Provider value={{size, authentication}}>
             {children}
         </DeviceContext.Provider>
     )
@@ -29,4 +31,4 @@ export const DeviceProvider = ({children}: PropsWithChildren) => {
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const useDeviceContext = ():size => useContext(DeviceContext)
+export const useDeviceContext = ():{size:size, authentication:authentication} => useContext(DeviceContext)
