@@ -7,8 +7,8 @@ export interface CardIngredientProps {
 
 export function CardIngredient ({name, image}: CardIngredientProps) {
     return (
-        <Card minW={"40"} maxW={"full"} alignItems={"center"} color={"text_color_dark.normal"} height={"full"} direction={"row"}>
-            <CardHeader>
+        <Card minW={"32"} maxW={"full"} alignItems={"center"} color={"text_color_dark.normal"} height={"full"} direction={"row"} borderRadius={"full"}>
+            <CardHeader padding={"0"} >
                 <Image
                     borderRadius={"full"}
                     src={image}
@@ -17,7 +17,7 @@ export function CardIngredient ({name, image}: CardIngredientProps) {
                     fit={"cover"}
                 />
             </CardHeader>
-            <CardBody>
+            <CardBody padding={"0"}>
                 <Stack direction={"column"} alignItems={"center"} >
                     <Text>
                         {name}
