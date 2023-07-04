@@ -12,7 +12,7 @@ import { useState } from "react";
 import { BsCart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { ButtonM } from "../atoms/ButtonM";
-import { RatingsIcons } from "../atoms/Ratings";
+// import { Ratings } from "../atoms/Ratings";
 
 export interface MealCardProps {
   id: string;
@@ -73,7 +73,7 @@ export function MealCard({ id, image: imageUrl, mealName, price, type="primary" 
               Review
             </Text>
             <Text fontWeight="light" color={primaryColor}>
-              <RatingsIcons rating={rating}/>
+              {/* <Ratings rating={rating}/> */}
             </Text>
           </Flex>
         </Flex>

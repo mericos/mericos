@@ -147,7 +147,7 @@ export function Menu () {
 
     ]
 
-    const size = useDeviceContext()
+    const {size} = useDeviceContext()
     return (
         <Flex width={"full"} direction={"column"} justifyContent={"center"} alignItems={"center"}paddingX={2}>
             <Navbar size={size} navigationState={"goBack"} text="Menu">
