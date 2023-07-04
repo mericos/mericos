@@ -14,7 +14,7 @@ export function CartInfoContainer() {
 	for ( const item of itemsInfo) {
 		total += item.pricePerUnit*item.amount
 	}
-	const size = useDeviceContext()
+	const {size} = useDeviceContext()
 
 	const phoneContainer = (<Flex borderRadius={8} width={"full"} bg={"primary.500"} color={"white"} padding={"8"} justify={"space-between"}>
 			<Text>Items | 0 Mzn</Text>

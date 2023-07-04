@@ -80,7 +80,7 @@ const highlightedMeals: Array<MealCardProps> = [
 			icon: <Icon as={GiRotaryPhone} />,
 		},
 	];
-	const size = useDeviceContext();
+	const {size} = useDeviceContext();
     const navigate = useNavigate()
     return(
         <Box width={"full"} >

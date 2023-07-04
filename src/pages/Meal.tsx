@@ -2,7 +2,7 @@ import { Box, Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@c
 import { BsCart } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { ButtonM } from "../components/atoms/ButtonM";
-import { RatingsIcons } from "../components/atoms/Ratings";
+// import { RatingsIcons } from "../components/atoms/Ratings";
 import { CartInfoContainer } from "../components/molecules/CartInfoContainer";
 import { MealCardProps } from "../components/molecules/MealCard";
 import { Navbar } from "../components/molecules/Navbar";
@@ -29,7 +29,7 @@ export interface DetailedMealCardProps extends MealCardProps {
 }
 
 export function Meal () {2
-    const size = useDeviceContext()
+    const {size} = useDeviceContext()
     const { id } = useParams()
     if (!id) return null
     const meal = new Meals().getMeal(id)
@@ -68,7 +68,7 @@ export function Meal () {2
                         <Text>
                             {description}
                         </Text>
-                        <RatingsIcons rating={rating}/>
+                        {/* <RatingsIcons rating={rating}/> */}
                     </Flex>
                     <Divider/>
                     <Heading fontSize={"heading_for_pages_size"} color={"primary.500"}>Ingredientes</Heading>

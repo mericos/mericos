@@ -32,7 +32,7 @@ export function Register() {
 				"A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial"
 			),
 	});
-	const size = useDeviceContext();
+	const {size} = useDeviceContext();
 	return (
 		<>
 			<Flex width={"full"} flexDirection={"column"}>
@@ -154,7 +154,7 @@ export function Register() {
 // import mericosLogo from "../assets/logo/lazyLogo.svg";
 
 // export function Register() {
-// 	const size = useDeviceContext();
+// 	const {size} = useDeviceContext();
 
 // 	return (
 // 		<>

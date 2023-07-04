@@ -30,7 +30,7 @@ export function Login() {
 		'A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial'
 		),
 	});
-	const size = useDeviceContext();
+	const {size} = useDeviceContext();
 	return (
 		<>
 			<Flex width={"full"} flexDirection={"column"}>
