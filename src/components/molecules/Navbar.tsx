@@ -23,7 +23,7 @@ interface PropertiesProps {
 	buttonType: "primary" | "secondary";
 }
 
-function getNavItems(navState: NavbarProps["navigationState"]) {
+function getNavItems(navState: NavbarProps["navigationState"] , size: NavbarProps["size"]) {
 	const navItems = [
 		{ name: "Menu", link: "/menu" },
 	];
@@ -43,16 +43,16 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 		{
 			name: "Historico",
 			link: "history",
-		},] : [
-			// {
-			// 	name: "Login",
-			// 	link: "/login",
-			// },
-			// {
-			// 	name: "Registro",
-			// 	link: "register",
-			// },
-	]
+		},] : size==="phone" ? [
+			{
+				name: "Login",
+				link: "/login",
+			},
+			{
+				name: "Registro",
+				link: "register",
+			},
+	] : []
 	for (const item of items) { (navItems.push(item))}
 
 
@@ -61,7 +61,7 @@ function getNavItems(navState: NavbarProps["navigationState"]) {
 
 function NavbarLeft({ properties, navProps }: { properties: PropertiesProps; navProps: NavbarProps }) {
 	const { navigationState, size } = navProps;
-	const options = getNavItems(navigationState);
+	const options = getNavItems(navigationState, size);
 	return (
 		<Flex className="logo" alignItems="center" gap="0.5rem" direction={"row"}>
 			<img src={properties.image} alt="mericos-logo" />
@@ -72,7 +72,7 @@ function NavbarLeft({ properties, navProps }: { properties: PropertiesProps; nav
 			>
 				Mericos
 			</Text>
-			{size!=="phone" ? getNavItems(navigationState).filter((item,index) => size === "laptop" || index < 2).map((item, key) => (
+			{size!=="phone" ? options.filter((item,index) => size === "laptop" || index < 2).map((item, key) => (
 				<NavItem
 					key={item.name}
 					text={item.name}
@@ -103,7 +103,7 @@ function NavbarRight({
 				<HamburguerMenu
 					color={properties.background}
 					background_color={properties.primaryColor}
-					options={getNavItems(navigationState)}
+					options={getNavItems(navigationState, size)}
 				/>
 			</Flex>
 		);
