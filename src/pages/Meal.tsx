@@ -61,13 +61,7 @@ export function Meal () {2
                 w={"inherit"} 
                 objectFit="cover" 
                 borderRadius={8} />
-                <Flex direction={"column"} h={"full"} gap={4}>
-                    <CartInfoContainer/>
-                    <Box border={"3px dashed"} paddingY={"56"} color={"primary.500"} textAlign={"center"}>
-                        <Text>Comment Section TODO</Text>
-                    </Box>
-                    {/* <CommentSection/> */}
-                </Flex>
+                
                 <Flex direction={"column"} align="center" paddingTop={4} gap={4}>
                     <Heading>Sobre a refeição</Heading>
                     <Flex direction={"column"} alignItems={"end"} >
@@ -86,6 +80,13 @@ export function Meal () {2
                     <Flex>
                         <CardSupplier name={producer.name} image={producer.avatar}/>
                     </Flex>
+                </Flex>
+                <Flex direction={"column"} h={"full"} gap={4}>
+                    <CartInfoContainer/>
+                    <Box border={"3px dashed"} paddingY={"56"} color={"primary.500"} textAlign={"center"}>
+                        <Text>Comment Section TODO</Text>
+                    </Box>
+                    {/* <CommentSection/> */}
                 </Flex>
             </SimpleGrid>
         </Flex>
