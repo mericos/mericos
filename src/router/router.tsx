@@ -5,16 +5,16 @@ import { Error } from "../pages/Error";
 import { Menu } from "../pages/Menu";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Introduction } from "../components/Introduction";
-import { Welcome } from "../pages/Home";
+import { Home } from "../pages/Home";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to={"/welcome"} />,
+    element: <Navigate to={"/home"} />,
   },
   {
-    path: "/welcome",
-    element : <Welcome/>
+    path: "/home",
+    element : <Home/>
   },
   {
     path: "/meal/:id",

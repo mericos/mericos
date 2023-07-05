@@ -26,7 +26,7 @@ export function CharacteristicCard({
 			}}
 			transition="0.5s linear"
 			w={"full"}
-			borderRadius="md"
+			borderRadius={"3xl"}
 			overflow="hidden"
 			boxShadow="sm"
 			background={"white"}

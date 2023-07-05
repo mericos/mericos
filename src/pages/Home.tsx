@@ -15,11 +15,10 @@ import { MealCardProps } from "../components/molecules/MealCard";
 import { Navbar } from "../components/molecules/Navbar";
 import { CharacteristicsList } from "../components/organisms/CharacteristicsList";
 import { MealsList } from "../components/organisms/MealsList";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 
-export function Welcome() {
+export function Home() {
 
 
 const highlightedMeals: Array<MealCardProps> = [
@@ -80,11 +79,10 @@ const highlightedMeals: Array<MealCardProps> = [
 			icon: <Icon as={GiRotaryPhone} />,
 		},
 	];
-	const size = useDeviceContext();
     const navigate = useNavigate()
     return(
         <Box width={"full"} >
-            <Navbar size={size} navigationState={"not_authenticated"} type="primary"/>
+            <Navbar type="primary"/>
             <Flex direction={"column"}  padding={2} gap={8} justifyContent={"center"} maxW={"7xl"} marginX={"auto"}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
                     <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>

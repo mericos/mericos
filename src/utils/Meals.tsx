@@ -10,7 +10,7 @@ export class Meals {
             mealName: "pizza",
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/800px-Pizza-3007395.jpg",
             price: 25,
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque iusto explicabo totam recusandae quae, dolorem odit voluptatem nobis quasi odio? Alias et totam sed voluptatem magni soluta officiis praesentium repudiandae!",
+            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque iusto explicabo totam recusandae quae, dolorem odit voluptatem nobis quasi odio? Alias et totam sed voluptatem magni soluta officiis praesentium repudiandae! lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolores quas, beatae ab quaerat, fuga magnam at soluta dolor laudantium illum aliquam perferendis natus sint consequuntur corrupti nemo totam? Sint?Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolores quas, beatae ab quaerat, fuga magnam at soluta dolor laudantium illum aliquam perferendis natus sint consequuntur corrupti nemo totam? Sint?",
             rating: 5,
             ingredients: [
                 {

@@ -1,4 +1,4 @@
-import { Box, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { Navbar } from "./molecules/Navbar";
 
@@ -7,21 +7,9 @@ import { CardM } from "./molecules/CardM";
 import { MealCard } from "./molecules/MealCard";
 
 export function Introduction() {
-	const size: "phone" | "laptop" | "universal" = useBreakpointValue(
-		{
-		base: 'phone',
-		sm: 'laptop',
-		xl: "universal"
-		},
-		{
-		// Breakpoint to use when mediaqueries cannot be used, such as in server-side rendering
-		// (Defaults to 'base')
-		fallback: 'md',
-		},
-	) ?? "phone"
 	return (
 		<Flex direction={"column"} width="full" align="center">
-			<Navbar type={"primary"} size={size} navigationState={"authenticated"} />
+			<Navbar type={"primary"} />
 
 			<CardM
 			name="name"

@@ -1,17 +1,16 @@
-import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
 import mericosLogo from "../../assets/logo/only-logo.svg";
 import { ButtonM } from "../atoms/ButtonM";
 import { NavItem } from "../atoms/NaviItem";
 import { HamburguerMenu } from "./HamburguerMenu";
+import { DropDown } from "../atoms/DropDown";
+import { authentication, size, useDeviceContext } from "../../contextProviders/DeviceProvider";
 
 interface NavbarProps {
 	text?: string;
 	type?: "primary" | "secondary";
-	size: "phone" | "laptop" | "universal";
-	navigationState: "authenticated" | "not_authenticated" | "goBack";
 	children? : JSX.Element[];
 }
 interface PropertiesProps {
@@ -21,42 +20,64 @@ interface PropertiesProps {
 	buttonType: "primary" | "secondary";
 }
 
-function getNavItems(navState: NavbarProps["navigationState"]) {
+function getNavItems(navState: authentication , size: size) {
 	const navItems = [
+		{
+			name: "Home",
+			link: "/home",
+		},
 		{ name: "Menu", link: "/menu" },
+		{
+			name: "Sobre nós",
+			link: "/about",
+		},
 	];
-	const items = navState == "authenticated" ? [{
-			name: "Encomenda",
-			link: "/delivery",
+	const items = navState == "authenticated" ? [
+		
+		{
+			name: "Carrinha",
+			link: "/cart",
 		},
 		{
 			name: "Historico",
 			link: "history",
-		},] : [{
-			name: "Login",
-			link: "/login",
-		},
-		{
-			name: "Registro",
-			link: "register",
-		},]
+		},] : size==="phone" ? [
+			{
+				name: "Login",
+				link: "/login",
+			},
+			{
+				name: "Registro",
+				link: "register",
+			},
+	] : []
 	for (const item of items) { (navItems.push(item))}
 
 
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties }: { properties: PropertiesProps }) {
+function NavbarLeft({ navProps,properties }: { properties: PropertiesProps; navProps: {navigationState: authentication, size: size} }) {
+	const { navigationState, size } = navProps;
+	const options = getNavItems(navigationState, size);
 	return (
-		<Flex className="logo" alignItems="center" gap="0.625rem">
+		<Flex className="logo" alignItems="center" gap="0.5rem" direction={"row"}>
 			<img src={properties.image} alt="mericos-logo" />
 			<Text
 				fontSize="card_heading_size"
-				fontWeight="bold"
 				color={properties.primaryColor}
 			>
 				Mericos
 			</Text>
+			{size!=="phone" ? options.filter((item,index) => item === item && size === "laptop" || index < 2).map((item) => (
+				<NavItem
+					key={item.name}
+					text={item.name}
+					link={item.link}
+					color={properties.primaryColor}
+				/>
+			)) : ""}
+			{size === "tablet" && options.length > 1 ? <DropDown options={options.filter((item,index) =>  item === item && index >= 2)}/> :""}
 		</Flex>
 	);
 }
@@ -66,47 +87,44 @@ function NavbarRight({
 	navProps,
 }: {
 	properties: PropertiesProps;
-	navProps: NavbarProps;
+	navProps: {navigationState: authentication, size: size};
 }) {
 	const { navigationState, size } = navProps;
 	const isPhone = size === "phone";
 	const navigate = useNavigate()
 
 	if (isPhone) {
-		if (navigationState === "authenticated") {
-			return (
+		return (
+			<Flex direction={"row"} alignItems={"center"} gap={"4"}>
+				{navigationState === "not_authenticated" ? <ButtonM text="Login" type={properties.buttonType} onClick={()=> navigate("/login")} /> : ""}
 				<HamburguerMenu
 					color={properties.background}
 					background_color={properties.primaryColor}
-					options={getNavItems(navigationState)}
+					options={getNavItems(navigationState, size)}
 				/>
-			);
-		}
-
+			</Flex>
+		);
+	}
+	if (navigationState === "not_authenticated") {
 		return (
 			<Flex direction="row" alignItems="center" gap={2}>
-				<NavItem text="Menu" link="/menu" color={properties.primaryColor} />
 				<ButtonM text="Login" type={properties.buttonType} onClick={()=> navigate("/login")} />
+				<ButtonM text="Register" type={properties.buttonType==="primary" ? "secondary" : "primary" } onClick={()=> navigate("/register")} />
 			</Flex>
 		);
 	}
 
 	return (
-		<Flex direction="row" alignItems="center" gap={10}>
-			{getNavItems(navigationState).map((item) => (
-				<NavItem
-					key={item.name}
-					text={item.name}
-					link={item.link}
-					color={properties.primaryColor}
-				/>
-			))}
+		<Flex direction="row" alignItems="center" gap={2}>
+			<ButtonM text="Order" type={properties.buttonType} onClick={()=> navigate("/order")} />
 		</Flex>
 	);
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type, navigationState } = props;
+	const { type } = props;
+	const { size } = useDeviceContext();
+	const navigationState = useDeviceContext().authentication
 	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties: PropertiesProps = {
@@ -115,72 +133,36 @@ export function Navbar(props: NavbarProps) {
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
-	const navigate = useNavigate();
-	function handleBack() {
-		navigate(-1);
-	}
-	const backArrow = (
-		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
-			<ArrowBackIcon
-				background={properties.background}
-				_hover={{
-					background: properties.primaryColor,
-					color: properties.background,
-				}}
-				_active={{
-					background: properties.background,
-					color: properties.primaryColor,
-				}}
-				color={properties.primaryColor}
-				borderRadius={"full"}
-				boxSize={6}
-				onClick={() => handleBack()}
-			/>
-    
-			<Text
-				fontSize="card_heading_size"
-				fontWeight="bold"
-				color={properties.primaryColor}
-			>{text}</Text>
-		</Flex>
-	);
-
 	return (
 		<Box
 		bg={properties.background}
-		padding={2}
 		width={"full"}
 		position={"sticky"}
 		zIndex={2}
 		top={0}>
 			<Flex
-				padding="0.65rem"
+				padding="0.85rem"
 				direction="column"
 				alignItems="center"
 				justifyContent="space-between"
 				maxWidth={"7xl"}
 				marginX={"auto"}
-
+				gap={2}
 			>
 				<Flex
 					direction="row"
 					width={"full"}
 					justify={"space-between"}>
-					{navigationState !== "goBack" ? (
-						<>
-							{/* logo and company name */}
-							<NavbarLeft properties={properties} />
-							{/* right side navbar part */}
-							<NavbarRight properties={properties} navProps={props} />
-						</>
-					) : (
-						// go back Navbar
-						backArrow
-					)}
-
+					<>
+						{/* logo and company name */}
+						<NavbarLeft properties={properties} navProps={{navigationState: navigationState, size: size}} />
+						{/* right side navbar part */}
+						<NavbarRight properties={properties} navProps={{navigationState: navigationState, size: size}} />
+					</>
 				</Flex>
 				{props.children}
 			</Flex>
+			<Divider/>
 		</Box>
 	);
 }
