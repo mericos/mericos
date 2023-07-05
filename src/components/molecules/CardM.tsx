@@ -14,7 +14,7 @@ export interface CardMProps {
 
 export function CardM ({name, type = "default", image_shape = "square",image}: CardMProps) {
     return (
-        <Card minW={"32"} maxW={"full"}  color={"text_color_dark.normal"} height={"full"}>
+        <Card minW={"40"} maxW={"full"}  color={"text_color_dark.normal"}>
             <CardHeader>
                 <Flex justifyContent={"center"}>
                     <Image

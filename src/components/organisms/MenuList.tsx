@@ -8,7 +8,7 @@ export function MenuList (props:MenuListProps) {
     const { menuItems } = props
     const menuCards = menuItems.map((item, index) => <CardM key={index} {...item} image_shape="circle" />)
     return (
-        <SimpleGrid gap={4}  minChildWidth={"32"} width={"full"} maxW={"7xl"}>
+        <SimpleGrid gap={4}  minChildWidth={"40"} width={"full"} maxW={"7xl"}>
             {menuCards}
         </SimpleGrid>
     )
