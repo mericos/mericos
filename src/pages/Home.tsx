@@ -19,7 +19,7 @@ import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 
-export function Welcome() {
+export function Home() {
 
 
 const highlightedMeals: Array<MealCardProps> = [
