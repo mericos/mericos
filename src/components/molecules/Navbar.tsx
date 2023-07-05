@@ -69,7 +69,7 @@ function NavbarLeft({ navProps,properties }: { properties: PropertiesProps; navP
 			>
 				Mericos
 			</Text>
-			{size!=="phone" ? options.filter((item,index) => size === "laptop" || index < 2).map((item) => (
+			{size!=="phone" ? options.filter((item,index) => item === item && size === "laptop" || index < 2).map((item) => (
 				<NavItem
 					key={item.name}
 					text={item.name}
@@ -77,7 +77,7 @@ function NavbarLeft({ navProps,properties }: { properties: PropertiesProps; navP
 					color={properties.primaryColor}
 				/>
 			)) : ""}
-			{size === "tablet" && options.length > 1 ? <DropDown options={options.filter((item,index) => index >= 2)}/> :""}
+			{size === "tablet" && options.length > 1 ? <DropDown options={options.filter((item,index) =>  item === item && index >= 2)}/> :""}
 		</Flex>
 	);
 }

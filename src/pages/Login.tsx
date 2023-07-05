@@ -14,7 +14,6 @@ import * as Yup from "yup";
 import { ButtonM } from "../components/atoms/ButtonM";
 import { InputM } from "../components/atoms/InputM";
 import { Navbar } from "../components/molecules/Navbar";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
 
 
 export function Login() {
@@ -30,11 +29,10 @@ export function Login() {
 		'A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial'
 		),
 	});
-	const {size} = useDeviceContext();
 	return (
 		<>
 			<Flex width={"full"} flexDirection={"column"}>
-				<Navbar text="Mericos" size={size} navigationState={"goBack"} />{" "}
+				<Navbar text="Mericos" />
 				<Center>
 					<Flex
 						backgroundColor={"gray.50"}
