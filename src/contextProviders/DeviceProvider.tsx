@@ -1,8 +1,8 @@
 import { useBreakpointValue } from "@chakra-ui/react"
 import React, { Context, PropsWithChildren, useContext } from "react"
 
-type size = "phone" | "tablet" | "laptop" | "universal"
-type authentication = "authenticated" | "not_authenticated"
+export type size = "phone" | "tablet" | "laptop" | "universal"
+export type authentication = "authenticated" | "not_authenticated"
 const DeviceContext:Context<{size: "phone" | "tablet" | "laptop" | "universal", authentication: "authenticated" | "not_authenticated" }> = React.createContext<{size:size, authentication:authentication}>({size: "phone", authentication: "authenticated"})
 
 
@@ -13,7 +13,6 @@ export const DeviceProvider = ({children}: PropsWithChildren) => {
             base: 'phone',
             sm: 'tablet',
             md: 'laptop',
-            xl: "universal",
 		},
 		{
             // Breakpoint to use when media queries cannot be used, such as in server-side rendering
@@ -21,7 +20,7 @@ export const DeviceProvider = ({children}: PropsWithChildren) => {
             fallback: 'md',
 		},
         ) ?? "phone"
-    const authentication: authentication = "authenticated"
+    const authentication: authentication = "not_authenticated"
     return (
         <DeviceContext.Provider value={{size, authentication}}>
             {children}
