@@ -8,12 +8,11 @@ import { NavItem } from "../atoms/NaviItem";
 import { HamburguerMenu } from "./HamburguerMenu";
 import { DropdownList } from "./DropdownList";
 import { DropDown } from "../atoms/DropDown";
+import { authentication, size, useDeviceContext } from "../../contextProviders/DeviceProvider";
 
 interface NavbarProps {
 	text?: string;
 	type?: "primary" | "secondary";
-	size: "phone" | "laptop" | "tablet" | "universal";
-	navigationState: "authenticated" | "not_authenticated" | "goBack";
 	children? : JSX.Element[];
 }
 interface PropertiesProps {
@@ -23,19 +22,20 @@ interface PropertiesProps {
 	buttonType: "primary" | "secondary";
 }
 
-function getNavItems(navState: NavbarProps["navigationState"] , size: NavbarProps["size"]) {
+function getNavItems(navState: authentication , size: size) {
 	const navItems = [
-		{ name: "Menu", link: "/menu" },
-	];
-	const items = navState == "authenticated" ? [
 		{
 			name: "Home",
 			link: "/home",
 		},
+		{ name: "Menu", link: "/menu" },
 		{
 			name: "Sobre nós",
 			link: "/about",
 		},
+	];
+	const items = navState == "authenticated" ? [
+		
 		{
 			name: "Carrinha",
 			link: "/cart",
@@ -59,7 +59,7 @@ function getNavItems(navState: NavbarProps["navigationState"] , size: NavbarProp
 	return navItems.filter((navItem) => navItem.name);
 }
 
-function NavbarLeft({ properties, navProps }: { properties: PropertiesProps; navProps: NavbarProps }) {
+function NavbarLeft({ navProps,properties }: { properties: PropertiesProps; navProps: {navigationState: authentication, size: size} }) {
 	const { navigationState, size } = navProps;
 	const options = getNavItems(navigationState, size);
 	return (
@@ -67,7 +67,6 @@ function NavbarLeft({ properties, navProps }: { properties: PropertiesProps; nav
 			<img src={properties.image} alt="mericos-logo" />
 			<Text
 				fontSize="card_heading_size"
-				fontWeight="bold"
 				color={properties.primaryColor}
 			>
 				Mericos
@@ -90,7 +89,7 @@ function NavbarRight({
 	navProps,
 }: {
 	properties: PropertiesProps;
-	navProps: NavbarProps;
+	navProps: {navigationState: authentication, size: size};
 }) {
 	const { navigationState, size } = navProps;
 	const isPhone = size === "phone";
@@ -109,7 +108,6 @@ function NavbarRight({
 		);
 	}
 	if (navigationState === "not_authenticated") {
-
 		return (
 			<Flex direction="row" alignItems="center" gap={2}>
 				<ButtonM text="Login" type={properties.buttonType} onClick={()=> navigate("/login")} />
@@ -119,14 +117,16 @@ function NavbarRight({
 	}
 
 	return (
-		<Flex direction="row" alignItems="center" gap={4}>
-			buttons
+		<Flex direction="row" alignItems="center" gap={2}>
+			<ButtonM text="Order" type={properties.buttonType} onClick={()=> navigate("/order")} />
 		</Flex>
 	);
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type, navigationState } = props;
+	const { text, type } = props;
+	const { size } = useDeviceContext();
+	const navigationState = useDeviceContext().authentication
 	const isPrimaryType = type === "primary" || type === undefined;
 
 	const properties: PropertiesProps = {
@@ -179,24 +179,18 @@ export function Navbar(props: NavbarProps) {
 				justifyContent="space-between"
 				maxWidth={"7xl"}
 				marginX={"auto"}
-
+				gap={2}
 			>
 				<Flex
 					direction="row"
 					width={"full"}
 					justify={"space-between"}>
-					{navigationState !== "goBack" ? (
-						<>
-							{/* logo and company name */}
-							<NavbarLeft properties={properties} navProps={props} />
-							{/* right side navbar part */}
-							<NavbarRight properties={properties} navProps={props} />
-						</>
-					) : (
-						// go back Navbar
-						backArrow
-					)}
-
+					<>
+						{/* logo and company name */}
+						<NavbarLeft properties={properties} navProps={{navigationState: navigationState, size: size}} />
+						{/* right side navbar part */}
+						<NavbarRight properties={properties} navProps={{navigationState: navigationState, size: size}} />
+					</>
 				</Flex>
 				{props.children}
 			</Flex>

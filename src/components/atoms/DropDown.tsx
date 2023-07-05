@@ -10,7 +10,7 @@ export function DropDown ({options}: DropDownProps) {
     return(
         <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} bg={"inherit"} _active={{bg: "inherit"}} _hover={{bg: "inherit"}} color={"primary.500"}>
-                Actions
+                Páginas
             </MenuButton>
             <MenuList>
                 {options.map(option => <MenuItem as='a' href={option.link} color={"primary.500"}>{option.name}</MenuItem> )}
