@@ -14,7 +14,6 @@ import * as Yup from "yup";
 import { ButtonM } from "../components/atoms/ButtonM";
 import { InputM } from "../components/atoms/InputM";
 import { Navbar } from "../components/molecules/Navbar";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
 
 export function Register() {
 	const RegisterSchema = Yup.object().shape({
@@ -32,11 +31,10 @@ export function Register() {
 				"A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial"
 			),
 	});
-	const {size} = useDeviceContext();
 	return (
 		<>
 			<Flex width={"full"} flexDirection={"column"}>
-				<Navbar text="Mericos" size={size} navigationState={"goBack"} />{" "}
+				<Navbar text="Mericos" />{" "}
 				<Center>
 					<Flex
 						backgroundColor={"gray.50"}
@@ -136,75 +134,3 @@ export function Register() {
 		</>
 	);
 }
-
-// import {
-// 	Center,
-// 	Flex,
-// 	Heading,
-// 	Image,
-// 	Link,
-// 	Stack,
-// 	Text,
-// } from "@chakra-ui/react";
-// import { useDeviceContext } from "../contextProviders/DeviceProvider";
-// import { InputM } from "../components/atoms/InputM";
-// import { Navbar } from "../components/molecules/Navbar";
-// import { ButtonM } from "../components/atoms/ButtonM";
-// import { useFormik } from "formik";
-// import mericosLogo from "../assets/logo/lazyLogo.svg";
-
-// export function Register() {
-// 	const {size} = useDeviceContext();
-
-// 	return (
-// 		<>
-// 			<Flex width={"full"} flexDirection={"column"}>
-// 				<Navbar text="" size={size} navigationState={"goBack"} />{" "}
-// 				<Center>
-// 					<Flex
-// 						backgroundColor={"gray.100"}
-// 						backgroundPosition={"center"}
-// 						rounded={"md"}
-// 						width={"fit-content"}
-// 						padding={"16"}
-// 						h="max-content"
-// 						flexDirection={"column"}
-// 						gap={"4"}
-// 					>
-// 						<Heading color={"primary.500"}>Register</Heading>
-// 						<Text
-// 							fontSize="card_heading_size"
-// 							fontWeight="bold"
-// 							color={"primary.500"}
-// 						>
-// 							{" "}
-// 							{/* Mericos */}{" "}
-// 						</Text>{" "}
-// 						<InputM text={"Email"} />{" "}
-// 						<InputM input_type="password" text={"Passoword"} />{" "}
-// 						<InputM
-// 							input_type="password"
-// 							text={"Confirm Password"}
-// 						/>
-// 						<Text
-// 							color="primary.500"
-// 							align={"right"}
-// 							fontSize={"xs"}
-// 						>
-// 							Forgot?
-// 						</Text>
-// 						<Center>
-// 							<ButtonM text={"REGISTER"} />
-// 						</Center>
-// 						<Text align={"center"} fontSize={"sm"}>
-// 							{" "}
-// 							Já tem uma conta?{" "}
-// 							<Link color={"primary.500"}>Login</Link>
-// 						</Text>
-
-// 					</Flex>
-// 				</Center>
-// 			</Flex>
-// 		</>
-// 	);
-// }

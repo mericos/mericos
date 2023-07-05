@@ -1,4 +1,4 @@
-import { Box, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { Navbar } from "./molecules/Navbar";
 
