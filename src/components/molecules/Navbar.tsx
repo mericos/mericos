@@ -1,4 +1,3 @@
-import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import mericosLogoWhite from "../../assets/logo/only-logo-white.svg";
@@ -6,7 +5,6 @@ import mericosLogo from "../../assets/logo/only-logo.svg";
 import { ButtonM } from "../atoms/ButtonM";
 import { NavItem } from "../atoms/NaviItem";
 import { HamburguerMenu } from "./HamburguerMenu";
-import { DropdownList } from "./DropdownList";
 import { DropDown } from "../atoms/DropDown";
 import { authentication, size, useDeviceContext } from "../../contextProviders/DeviceProvider";
 
@@ -71,7 +69,7 @@ function NavbarLeft({ navProps,properties }: { properties: PropertiesProps; navP
 			>
 				Mericos
 			</Text>
-			{size!=="phone" ? options.filter((item,index) => size === "laptop" || index < 2).map((item, key) => (
+			{size!=="phone" ? options.filter((item,index) => size === "laptop" || index < 2).map((item) => (
 				<NavItem
 					key={item.name}
 					text={item.name}
@@ -124,7 +122,7 @@ function NavbarRight({
 }
 
 export function Navbar(props: NavbarProps) {
-	const { text, type } = props;
+	const { type } = props;
 	const { size } = useDeviceContext();
 	const navigationState = useDeviceContext().authentication
 	const isPrimaryType = type === "primary" || type === undefined;
@@ -135,36 +133,6 @@ export function Navbar(props: NavbarProps) {
 		image: isPrimaryType ? mericosLogo : mericosLogoWhite,
 		buttonType: type === "primary" ? "primary" : "secondary",
 	};
-	const navigate = useNavigate();
-	function handleBack() {
-		navigate(-1);
-	}
-	const backArrow = (
-		<Flex justify={"flex-start"} alignItems={"center"} gap={4}>
-			<ArrowBackIcon
-				background={properties.background}
-				_hover={{
-					background: properties.primaryColor,
-					color: properties.background,
-				}}
-				_active={{
-					background: properties.background,
-					color: properties.primaryColor,
-				}}
-				color={properties.primaryColor}
-				borderRadius={"full"}
-				boxSize={6}
-				onClick={() => handleBack()}
-			/>
-    
-			<Text
-				fontSize="card_heading_size"
-				fontWeight="bold"
-				color={properties.primaryColor}
-			>{text ? text : "Mericos"}</Text>
-		</Flex>
-	);
-
 	return (
 		<Box
 		bg={properties.background}

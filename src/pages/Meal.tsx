@@ -34,7 +34,7 @@ export function Meal () {2
     if (!id) return null
     const meal = new Meals().getMeal(id)
     if (!meal) return (<Error/>)
-    const { mealName, image, description, rating, ingredients, producer } = meal
+    const { mealName, image, description, ingredients, producer } = meal
 
     const ingredientsList = ingredients.map((ingredient) => {
         return (<CardIngredient key={ingredient.name} image={ingredient.image}name={ingredient.name}/>)
@@ -42,7 +42,7 @@ export function Meal () {2
 
     return (
         <Flex width={"full"} maxWidth={"7xl"} direction={"column"} align={"center"} margin={2} color={"text_color_dark.normal"} gap={4}>
-            <Navbar size={"phone"} navigationState={"goBack"} />
+            <Navbar/>
             <SimpleGrid columns={size === "phone" ? 1 : 2} spacingX={4} bg={"white"} gap={8} alignItems={"center"}>
                 <Flex direction={"column"} gap={"8"} alignItems={"center"}>
                     <Heading textAlign={"start"} w={"full"} fontWeight={"bold"} textTransform={"capitalize"} borderRadius={"full"}>{mealName}</Heading>

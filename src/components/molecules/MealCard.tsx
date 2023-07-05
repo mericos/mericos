@@ -23,7 +23,7 @@ export interface MealCardProps {
   rating?: number
 }
 
-export function MealCard({ id, image: imageUrl, mealName, price, type="primary" , rating=0 }: MealCardProps) {
+export function MealCard({ id, image: imageUrl, mealName, price, type="primary" }: MealCardProps) {
     const [primaryColor, setPrimaryColor] = useState(type === "primary" ? "white"  : "primary.500")
     const [background, setBackgroundColor ] = useState(type ==="primary" ? "primary.500" : "white")
     const [textColor, setTextColor] = useState(type === "primary" ? "white" : "text_color_dark.normal")
