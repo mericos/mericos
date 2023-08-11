@@ -1,17 +1,12 @@
 import {
-	Box,
-	Button,
-	Center,
-	Divider,
+	Box, Divider,
 	Flex,
 	FormControl,
 	FormErrorMessage,
 	FormLabel,
 	Heading,
-	Image,
-	Input,
-	Text,
-	VStack,
+	Image, Text,
+	VStack
 } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
