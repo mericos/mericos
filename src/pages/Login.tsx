@@ -53,7 +53,7 @@ export function Login() {
 					h={["", "50%", "20%"]}
 					transition={"ease 0.3s"}
 					css={{
-						clipPath: "circle(50% at 50% 50%)", // Apply circular clipping
+						clipPath: "circle(50% at 50% 50%)"
 					}}
 				/>
 				<Formik
