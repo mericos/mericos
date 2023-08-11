@@ -35,7 +35,7 @@ export function Login() {
 	return (
 		<>
 			<Flex
-				width={["full", "80%", "100%"]}
+				width={["", "80%", "100%"]}
 				py={"4rem"}
 				
 				alignItems={"center"}
@@ -66,7 +66,7 @@ export function Login() {
 					{({ handleSubmit, errors, touched }) => (
 						<form onSubmit={handleSubmit}>
 							<VStack
-								p={"2"}
+								p={"12"}
 								align="center"
 								marginX={"auto"}
 								w={["", "container.md", ""]}
@@ -93,7 +93,6 @@ export function Login() {
 										name="email"
 										input_type="email"
 									/>
-									
 									<FormErrorMessage>
 										{errors.email}
 									</FormErrorMessage>

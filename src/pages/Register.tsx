@@ -72,10 +72,11 @@ export function Register() {
 					{({ handleSubmit, errors, touched }) => (
 						<form onSubmit={handleSubmit}>
 							<VStack
-								p={"12"}
+								// p={"12"}
+								p={"2"}
 								align="center"
 								marginX={"auto"}
-								w={["container.sm", "container.md", ""]}
+								w={["", "container.md", ""]}
 								gap={"1.5rem"}
 							>
 								<Heading w={"full"} textAlign={"left"}>
