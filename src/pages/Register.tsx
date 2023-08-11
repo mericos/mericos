@@ -72,7 +72,6 @@ export function Register() {
 					{({ handleSubmit, errors, touched }) => (
 						<form onSubmit={handleSubmit}>
 							<VStack
-								// p={"12"}
 								p={"2"}
 								align="center"
 								marginX={"auto"}
