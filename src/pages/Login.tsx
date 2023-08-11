@@ -1,12 +1,14 @@
 import {
-	Box, Divider,
+	Box,
+	Divider,
 	Flex,
 	FormControl,
 	FormErrorMessage,
 	FormLabel,
 	Heading,
-	Image, Text,
-	VStack
+	Image,
+	Text,
+	VStack,
 } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
@@ -33,9 +35,9 @@ export function Login() {
 	return (
 		<>
 			<Flex
-				width={["", "80%", "100%"]}
+				width={["full", "80%", "100%"]}
 				py={"4rem"}
-				px={2}
+				
 				alignItems={"center"}
 				justifyContent={"center"}
 				flexDir={"column"}
@@ -48,7 +50,7 @@ export function Login() {
 					h={["", "50%", "20%"]}
 					transition={"ease 0.3s"}
 					css={{
-						clipPath: "circle(50% at 50% 50%)"
+						clipPath: "circle(50% at 50% 50%)",
 					}}
 				/>
 				<Formik
@@ -64,7 +66,7 @@ export function Login() {
 					{({ handleSubmit, errors, touched }) => (
 						<form onSubmit={handleSubmit}>
 							<VStack
-								p={"12"}
+								p={"2"}
 								align="center"
 								marginX={"auto"}
 								w={["", "container.md", ""]}
@@ -91,6 +93,7 @@ export function Login() {
 										name="email"
 										input_type="email"
 									/>
+									
 									<FormErrorMessage>
 										{errors.email}
 									</FormErrorMessage>
