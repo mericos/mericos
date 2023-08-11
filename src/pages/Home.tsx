@@ -17,6 +17,7 @@ import { CharacteristicsList } from "../components/organisms/CharacteristicsList
 import { MealsList } from "../components/organisms/MealsList";
 import { Link, useNavigate } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
+import { Navbar2 } from "../components/molecules/Navbar2";
 
 export function Home() {
 
@@ -82,7 +83,8 @@ const highlightedMeals: Array<MealCardProps> = [
     const navigate = useNavigate()
     return(
         <Box width={"full"} >
-            <Navbar type="primary"/>
+            <Navbar2/>
+            {/* <Navbar type="primary"/>
             <Flex direction={"column"}  padding={2} gap={8} justifyContent={"center"} maxW={"7xl"} marginX={"auto"}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
                     <Flex justifyContent={"center"} alignItems={"start"} direction={"column"} gap={8}>
@@ -120,7 +122,7 @@ const highlightedMeals: Array<MealCardProps> = [
                 <Text>Mericos - change the way we eat</Text>
                 <Text>@copyright-2023</Text>
 
-            </Flex>
+            </Flex> */}
         </Box>
     )
 }

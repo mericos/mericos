@@ -10,7 +10,7 @@ import { Home } from "../pages/Home";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to={"/register"} />,
+    element: <Navigate to={"/home"} />,
   },
   {
     path: "/home",
