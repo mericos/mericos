@@ -48,12 +48,13 @@ export function Login() {
 				className="form"
 			>
 				<Image
-					rounded={["full", "base", "base"]}
 					src={Logo}
 					w={["30%", "30%", "20%"]}
 					h={["", "50%", "20%"]}
-					transform={"auto-gpu"}
-					transformOrigin={"1"}
+					transition={"ease 0.3s"}
+					css={{
+						clipPath: "circle(50% at 50% 50%)", // Apply circular clipping
+					}}
 				/>
 				<Formik
 					initialValues={{
@@ -68,18 +69,22 @@ export function Login() {
 					{({ handleSubmit, errors, touched }) => (
 						<form onSubmit={handleSubmit}>
 							<VStack
-								// spacing={4}
 								p={"12"}
 								align="center"
 								marginX={"auto"}
-								// w="full"
-								// maxW={"xl"}
 								w={["", "container.md", ""]}
 								gap={"1.5rem"}
 							>
 								<Heading w={"full"} textAlign={"left"}>
 									Login
 								</Heading>
+								<Text
+									w={"full"}
+									textAlign={"left"}
+									color={"gray.500"}
+								>
+									Login to continue using the app
+								</Text>
 								<FormControl
 									isInvalid={!!errors.email && touched.email}
 									isRequired
@@ -144,24 +149,18 @@ export function Login() {
 									>
 										<Divider
 											border={"1px"}
-											w={"full"}
-											flexBasis={["", "14", "20"]}
+											w={["36", "", "full"]}
 										/>
 										<Text
 											fontSize={"sm"}
-											display={"inline-block"}
-											w={["","100%", "100%"]}
-											flexGrow={[""]}
-											flexShrink={"0"}
-											flexBasis={"2"}
+											w={["fit-content", "", "full"]}
 											textAlign={"center"}
 										>
 											Or login with
 										</Text>
 										<Divider
-											flexBasis={["", "14", "20"]}
 											border={"1px"}
-											w={"full"}
+											w={["36", "", "full"]}
 										/>
 									</Flex>
 									<Flex
@@ -173,6 +172,10 @@ export function Login() {
 											p={"1"}
 											rounded={"md"}
 											boxShadow={"dark-lg"}
+											_hover={{
+												bgColor: "gray.300",
+												cursor: "pointer",
+											}}
 										>
 											<FcGoogle size={45} />
 										</Box>
@@ -180,12 +183,20 @@ export function Login() {
 											p={"2"}
 											rounded={"md"}
 											boxShadow={"dark-lg"}
+											_hover={{
+												bgColor: "gray.300",
+												cursor: "pointer",
+											}}
 										>
 											<ImFacebook size={37} />
 										</Box>
 									</Flex>
 
-									<Flex color={"primary.500"} gap={"2"}>
+									<Flex
+										justifyContent={"center"}
+										color={"primary.500"}
+										gap={"2"}
+									>
 										<Text>Don't have an accout? </Text>
 										<Link
 											to={"/register"}
