@@ -6,25 +6,26 @@ import { Menu } from "../pages/Menu";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Introduction } from "../components/Introduction";
 import { Home } from "../pages/Home";
+import { GetStarted } from "../pages/GetStarted";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navigate to={"/home"} />,
-  },
-  {
-    path: "/home",
-    element : <Home/>
-  },
-  {
-    path: "/meal/:id",
-    element: <Meal/>
-  },
-  {
-    path: "/menu",
-    element: <Menu/>
-  },
-  {
+	{
+		path: "/",
+		element: <Navigate to={"/home"} />,
+	},
+	{
+		path: "/home",
+		element: <Home />,
+	},
+	{
+		path: "/meal/:id",
+		element: <Meal />,
+	},
+	{
+		path: "/menu",
+		element: <Menu />,
+	},
+	{
 		path: "/login",
 		element: <Login />,
 	},
@@ -32,13 +33,17 @@ export const router = createBrowserRouter([
 		path: "/register",
 		element: <Register />,
 	},
-  {
-    path: "/testing",
-    element: <Introduction/>
-  },
-  {
-	path: "/*",
-	element: <Error/>
-  }
+	{
+		path: "/testing",
+		element: <Introduction />,
+	},
+	{
+		path: "/getting_started",
+		element: <GetStarted />,
+	},
+	{
+		path: "/*",
+		element: <Error />,
+	},
 ]);
 

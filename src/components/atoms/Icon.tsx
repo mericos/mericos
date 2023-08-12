@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface IconProps {
@@ -7,16 +7,17 @@ interface IconProps {
 
 export function Icon(props: IconProps) {
 	return (
-		<Box
+		<Flex
 			p={"1"}
 			rounded={"md"}
-			boxShadow={"dark-lg"}
+			justifyContent={"center"}
+			// boxShadow={"dark-lg"}
 			_hover={{
-				bgColor: "gray.300",
+				// bgColor: "gray.300",
 				cursor: "pointer",
 			}}
 		>
 			{props.icon}
-		</Box>
+		</Flex>
 	);
 }

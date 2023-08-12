@@ -6,9 +6,9 @@ import { Icon } from "../atoms/Icon";
 export function Navbar2() {
 	return (
 		<>
-			<Flex alignItems={"center"}>
-				<Icon icon={<AiOutlineMenu size={35} />}/>
-				<Icon icon={<AiOutlineShoppingCart size={35} />}/>
+			<Flex color={"gray.500"} pt={"2"} alignItems={"center"} justifyContent={"space-between"}>
+				<Icon icon={<AiOutlineShoppingCart size={30} />}/>
+				<Icon icon={<AiOutlineMenu size={30} />}/>
 			</Flex>
 		</>
 	);
