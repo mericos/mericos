@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Input, Text } from "@chakra-ui/react";
+import { Flex, Grid, Heading, Image, Input, Text } from "@chakra-ui/react";
 import { Navbar2 } from "../components/molecules/Navbar2";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -8,6 +8,9 @@ import { AiFillForward } from "react-icons/ai";
 import { BsFilter } from "react-icons/bs";
 import { Icon } from "../components/atoms/Icon";
 import { MdOutlineMobileFriendly } from "react-icons/md";
+import { CardM2 } from "../components/molecules/CardM2";
+import { products_types } from "../utils/productTypes";
+import { ProductsMenu } from "../components/organisms/ProductsMenu";
 
 export function GetStarted() {
 	const company_values = [
@@ -57,27 +60,40 @@ export function GetStarted() {
 					text="Get started"
 				/>
 				<Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
-				<Heading>Just Relax, We will take care</Heading>
-				<Flex
-					color={"primary.500"}
-					justifyContent={"center"}
-					flexDirection={"column"}
-					gap={"3rem"}
-				>
-					{company_values.map((value) => (
-						<Flex
-							key={value.title}
-							gap={"1.5rem"}
-							flexDirection={"column"}
-						>
-							<Icon icon={value.icon} />
-							<Text textAlign={"center"} fontWeight={"semibold"}>{value.title}</Text>
-							<Text textAlign={"center"} color={"gray.500"}>
-								{value.description}
-							</Text>
-						</Flex>
-					))}
-				</Flex>
+				<section id="company-values">
+					<Heading fontSize={["2xl", "3xl", "4xl"]}>
+						Just Relax, We will take care
+					</Heading>
+					<Flex
+						color={"primary.500"}
+						justifyContent={"center"}
+						flexDirection={"column"}
+						gap={"3rem"}
+					>
+						{company_values.map((value) => (
+							<Flex
+								key={value.title}
+								gap={"1.5rem"}
+								flexDirection={"column"}
+							>
+								<Icon icon={value.icon} />
+								<Text
+									textAlign={"center"}
+									fontWeight={"semibold"}
+								>
+									{value.title}
+								</Text>
+								<Text textAlign={"center"} color={"gray.500"}>
+									{value.description}
+								</Text>
+							</Flex>
+						))}
+					</Flex>
+				</section>
+				<section id="menu">
+					<Heading>Our Menu</Heading>
+					<ProductsMenu/>
+				</section>
 			</Flex>
 		</>
 	);
