@@ -1,9 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
 
-// const customIcons = {
-
-// }
-
 const customColors = {
 	primary: {
 		50: "#ffeedc",
@@ -66,16 +62,6 @@ export const customTheme = extendTheme({
 	colors: {
 		...customColors,
 	},
-	fontSizes: {
-		heading_size: "3.053rem",
-		sub_heading_size: "2.441rem",
-		taglines_size: "1.953rem",
-		heading_for_pages_size: "1.263rem",
-		card_heading_size: "1.25rem",
-		body_size: "1rem",
-		sub_body_in_popovers_size: "1.25rem",
-		badges_tags_size: "0.64rem",
-	},
 	components: {
 		Button: {
 			// default styles for solid buttons
@@ -131,6 +117,7 @@ export const customTheme = extendTheme({
 		},
 		Heading: {
 			baseStyle: {
+				fontSize: ["sm", "md"],
 				fontWeight: "normal",
 				color: "primary.500",
 			},
@@ -138,6 +125,7 @@ export const customTheme = extendTheme({
 		Text: {
 			baseStyle: {
 				fontWeight: "light",
+				fontSize: ["sm", "lg"]
 			},
 		},
 	},

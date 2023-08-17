@@ -1,6 +1,7 @@
 import { Button, ButtonGroup, Card, CardBody, CardFooter, CardProps, Divider, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { SlArrowRight } from "react-icons/sl";
 import { ButtonM2 } from "../atoms/ButtonM2";
+import { BsCart } from "react-icons/bs";
 
 interface CardMProps extends CardProps {
     card_heading: string;
@@ -23,8 +24,9 @@ export function CardM2(props: CardMProps) {
 			</CardBody>
 			<CardFooter>
 				<ButtonM2
-					rightIcon={<SlArrowRight/>}
-					text={"Add to Cart"}
+					// rightIcon={<SlArrowRight/>}
+					rightIcon={<BsCart/>}
+					text={"Add to "}
 					variant={"primary"}
 				></ButtonM2>
 			</CardFooter>

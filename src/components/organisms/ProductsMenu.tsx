@@ -2,10 +2,11 @@ import { Flex, Grid, Text } from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 import { CardM2 } from "../molecules/CardM2";
 
+
 export function ProductsMenu() {
     return (
 		<>
-			<Flex justifyContent={"left"} gap={"1.5rem"} p="2">
+			<Flex justifyContent={"left"} gap={2} p="2">
                 {products_types.map((type) => (
                  
 					<Text fontWeight={"bold"} textColor={"gray.500"} key={type}>
