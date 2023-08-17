@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Heading, Image, Text } from "@chakra-ui/react";
 
 import { UnloggedNavbar } from "../components/molecules/UnloggedNavbar";
 import { ButtonM2 } from "../components/atoms/ButtonM2";
@@ -36,28 +36,53 @@ export function GetStarted() {
 				flexDirection={"column"}
 				maxW={["container.sm", "container.md", "full"]}
 				p={"4"}
-				gap={4}
+				gap={5}
 			>
 				<UnloggedNavbar />
-				<Flex>
-					<Heading fontSize={["xl", "3xl", "4xl"]}>
-						<Flex flexDirection={["column", "column", "row"]}>
-							<span>Hungry? You’re in the right </span>
-							<span>place</span>
-						</Flex>
-					</Heading>
+				<Flex flexDirection={["column"]} gap={2}>
+					<Grid
+						gap={4}
+						gridTemplateColumns={{ md: "repeat(2, 1fr)" }}
+					>
+						<GridItem
+							className="left-side"
+							display={"flex"}
+							justifyContent={"center"}
+							flexDirection={"column"}
+							gap={3}
+						>
+							<Heading fontSize={["xl", "3xl", "4xl"]}>
+								<Flex
+									flexDirection={[
+										"column",
+										"column",
+										"column",
+										"row",
+									]}
+									gap={1}
+								>
+									<span>Hungry? You’re in the right </span>
+									<span>place</span>
+								</Flex>
+							</Heading>
+							<Text>
+								Describe exactly what your product or service
+								does to solve this problem. Avoid using verbose
+								words or phrases.
+							</Text>
+							<ButtonM2
+								variant={"primary"}
+								w={"fit-content"}
+								p={["3", "6"]}
+								text="Get started"
+							/>
+						</GridItem>
+						<GridItem>
+							<Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
+						</GridItem>
+					</Grid>
 				</Flex>
-				<Text>
-					Describe exactly what your product or service does to solve
-					this problem. Avoid using verbose words or phrases.
-				</Text>
-				<ButtonM2
-					variant={"primary"}
-					w={"fit-content"}
-					p={"6"}
-					text="Get started"
-				/>
-				<Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
+
 				<section id="company-values">
 					<Heading fontSize={["xl", "3xl", "4xl"]}>
 						Just Relax, We will take care
@@ -65,7 +90,7 @@ export function GetStarted() {
 					<Flex
 						color={"primary.500"}
 						justifyContent={"center"}
-						flexDirection={"column"}
+						flexDirection={["column", "row"]}
 						gap={"3rem"}
 					>
 						{company_values.map((value) => (
