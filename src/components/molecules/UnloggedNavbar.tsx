@@ -15,7 +15,7 @@ export function UnloggedNavbar() {
 			>
 				<Image
                     src={Logo}
-					minW={["15%", "15%", "5%"]}
+					// minW={["15%", "15%", "5%"]}
 				/>
 				<Icon icon={<AiOutlineMenu size={30} />} />
 			</Flex>

@@ -35,31 +35,34 @@ const customColors = {
 };
 
 export const customTheme = extendTheme({
+	shadows: {
+		customShadow:
+			"0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);",
+	},
 	styles: {
-
-		global: () =>  ({
+		global: () => ({
 			/* width */
 			"::-webkit-scrollbar": {
 				width: "8px",
-				height:"4px"
+				height: "4px",
 			},
-			
+
 			/* Track */
 			"::-webkit-scrollbar-track": {
-        background: "gray.200",
-      },
+				background: "gray.200",
+			},
 
-      /* Handle */
-      "::-webkit-scrollbar-thumb": {
-		background: "primary.200",
-		},
-		
-		/* Handle on hover */
-		"::-webkit-scrollbar-thumb:hover": {
-			background: "primary.400",
-		},
-	}),
-},
+			/* Handle */
+			"::-webkit-scrollbar-thumb": {
+				background: "primary.200",
+			},
+
+			/* Handle on hover */
+			"::-webkit-scrollbar-thumb:hover": {
+				background: "primary.400",
+			},
+		}),
+	},
 	colors: {
 		...customColors,
 	},
@@ -126,16 +129,16 @@ export const customTheme = extendTheme({
 				},
 			},
 		},
-		Heading : {
+		Heading: {
 			baseStyle: {
 				fontWeight: "normal",
-				color: "primary.500"
-			}
+				color: "primary.500",
+			},
 		},
 		Text: {
 			baseStyle: {
-				fontWeight: "light"
-			}
-		}
+				fontWeight: "light",
+			},
+		},
 	},
 });

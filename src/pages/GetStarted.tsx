@@ -38,16 +38,17 @@ export function GetStarted() {
 			<Flex
 				flexDirection={"column"}
 				width={["container.sm", "container.md", "full"]}
-				m={"1.25rem"}
+				p={"4"}
 				gap={4}
 			>
 				<UnloggedNavbar />
 				<Flex
-					gap={["1", "3", "3"]}
 					flexDirection={["column", "column", "row"]}
 				>
-					<Heading>Hungry? You’re in the right </Heading>
-					<Heading> place</Heading>
+					<Heading fontSize={["2xl", "", ""]}>
+						Hungry? You’re in the right{" "}
+					</Heading>
+					<Heading fontSize={["2xl", "", ""]}> place</Heading>
 				</Flex>
 				<Text>
 					Describe exactly what your product or service does to solve
@@ -56,7 +57,7 @@ export function GetStarted() {
 				<ButtonM2
 					variant={"primary"}
 					w={"fit-content"}
-					p={"7"}
+					p={"6"}
 					text="Get started"
 				/>
 				<Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
@@ -92,7 +93,7 @@ export function GetStarted() {
 				</section>
 				<section id="menu">
 					<Heading>Our Menu</Heading>
-					<ProductsMenu/>
+					<ProductsMenu />
 				</section>
 			</Flex>
 		</>

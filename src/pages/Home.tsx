@@ -26,9 +26,10 @@ import { InputM } from "../components/atoms/InputM";
 import { AiOutlineSearch } from "react-icons/ai";
 import { CardM } from "../components/molecules/CardM";
 import { CardM2 } from "../components/molecules/CardM2";
+import { ProductsMenu } from "../components/organisms/ProductsMenu";
 
 export function Home() {
-    const products_types = ["Bread", "Sandwiches", "Drinks", "Snakcs"]
+   
 	// const highlightedMeals: Array<MealCardProps> = [
 	// 	{
 	// 		id: "70e4e12c-0f25-4a34-aa9e-34af44b32f7a",
@@ -101,38 +102,7 @@ export function Home() {
 				<Input border={"0"} focusBorderColor="white" placeholder="Search" />
 				<Icon icon={<AiOutlineSearch size={30} />} />
 			</Flex>
-			<Flex justifyContent={"left"} gap={"1.5rem"} p="2">
-				{products_types.map((type) => (
-					<Text fontWeight={"bold"} textColor={"gray.500"} key={type}>
-						{type}
-					</Text>
-				))}
-			</Flex>
-			<Grid
-				gap={2}
-				templateColumns={[
-					"repeat(2, 1fr)",
-					"repeat(3, 1fr)",
-					"repeat(5, 1fr)",
-				]}
-			>
-				<CardM2
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
-				<CardM2
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
-				<CardM2
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
-				<CardM2
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
-			</Grid>
+			<ProductsMenu/>
 			{/* <Navbar type="primary"/>
             <Flex direction={"column"}  padding={2} gap={8} justifyContent={"center"} maxW={"7xl"} marginX={"auto"}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >
