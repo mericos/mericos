@@ -7,7 +7,6 @@ import {
 	FormLabel,
 	Grid,
 	Heading,
-	Hide,
 	Image,
 	Show,
 	Text,

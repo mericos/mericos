@@ -1,6 +1,4 @@
-import { Flex, Grid, Heading, Image, Input, Text } from "@chakra-ui/react";
-import { Navbar2 } from "../components/molecules/Navbar2";
-import { AiOutlineSearch } from "react-icons/ai";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 import { UnloggedNavbar } from "../components/molecules/UnloggedNavbar";
 import { ButtonM2 } from "../components/atoms/ButtonM2";
@@ -8,8 +6,7 @@ import { AiFillForward } from "react-icons/ai";
 import { BsFilter } from "react-icons/bs";
 import { Icon } from "../components/atoms/Icon";
 import { MdOutlineMobileFriendly } from "react-icons/md";
-import { CardM2 } from "../components/molecules/CardM2";
-import { products_types } from "../utils/productTypes";
+
 import { ProductsMenu } from "../components/organisms/ProductsMenu";
 
 export function GetStarted() {
