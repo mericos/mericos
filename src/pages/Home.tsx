@@ -20,7 +20,7 @@ import { MealsList } from "../components/organisms/MealsList";
 import { Link, useNavigate } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 
-import { Navbar2 } from "../components/molecules/Navbar2";
+import { LoggedNavbar } from "../components/molecules/LoggedNavbar";
 import { Icon } from "../components/atoms/Icon";
 import { InputM } from "../components/atoms/InputM";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -90,19 +90,31 @@ export function Home() {
 	// ];
 	// const navigate = useNavigate();
 	return (
-		<Flex flexDirection={"column"} width={["container.sm", "container.md", "full"]} m={"1.25rem"} gap={4}>
-			<Navbar2 />
-			<Flex gap={["1", "3", "3"]} flexDirection={["column", "row", "row"]}>
+		<Flex
+			flexDirection={"column"}
+			width={["container.sm", "container.md", "full"]}
+			m={"1.25rem"}
+			gap={4}
+		>
+			<LoggedNavbar />
+			<Flex
+				gap={["1", "3", "3"]}
+				flexDirection={["column", "row", "row"]}
+			>
 				<Heading>Delicious food </Heading>
 				<Heading> for you</Heading>
 			</Flex>
 
 			<Flex>
 				<Icon icon={<BsFilter size={30} />} />
-				<Input border={"0"} focusBorderColor="white" placeholder="Search" />
+				<Input
+					border={"0"}
+					focusBorderColor="white"
+					placeholder="Search"
+				/>
 				<Icon icon={<AiOutlineSearch size={30} />} />
 			</Flex>
-			<ProductsMenu/>
+			<ProductsMenu />
 			{/* <Navbar type="primary"/>
             <Flex direction={"column"}  padding={2} gap={8} justifyContent={"center"} maxW={"7xl"} marginX={"auto"}>
                 <SimpleGrid spacing={"2"} minChildWidth={"xs"}   >

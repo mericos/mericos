@@ -4,8 +4,9 @@ import {
 	Hide,
 	IconButton,
 	Image,
-	List, Show,
-	UnorderedList
+	List,
+	Show,
+	UnorderedList,
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/logo/logo2.svg";
@@ -14,7 +15,7 @@ import { ButtonM2 } from "../atoms/ButtonM2";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function UnloggedNavbar() {
+export function LoggedNavbar() {
 	const [display, changeDisplay] = useState("none");
 	const nav_titles = [
 		<Link key={""} to={"/home"}>
@@ -46,7 +47,11 @@ export function UnloggedNavbar() {
 				color={"gray.500"}
 				pt={"2"}
 				alignItems={"center"}
-				justifyContent={"space-between"}
+				justifyContent={[
+					"space-between",
+					"space-between",
+					"flex-start",
+				]}
 			>
 				<Image
 					src={Logo}
@@ -76,7 +81,6 @@ export function UnloggedNavbar() {
 					color={"white"}
 					display={display}
 				>
-					
 					<Flex
 						m={"2"}
 						w={"100%"}
@@ -90,7 +94,7 @@ export function UnloggedNavbar() {
 							aria-label={"close_button"}
 							onClick={() => changeDisplay("none")}
 							backgroundColor={"transparent"}
-							_hover={{backgroundColor:"primary.300"}}
+							_hover={{ backgroundColor: "primary.300" }}
 						></IconButton>
 
 						<Heading fontSize={"2xl"} color={"white"}>
@@ -120,12 +124,45 @@ export function UnloggedNavbar() {
 
 				<Show above="md">
 					<Flex gap={3}>
-						<ButtonM2 variant={"primary"} text={"Login"} />
-						<ButtonM2
-							color={"primary.500"}
-							variant={"secondary"}
-							text={"Sign Up"}
-						/>
+						{
+							<UnorderedList
+								display={"flex"}
+								justifyContent={"flex-start"}
+								w={"100%"}
+							>
+								{nav_titles.map((link) => (
+									<List
+										// p={"3"}
+										m={"4"}
+										color="black"
+										pos={"relative"}
+										_after={{
+											content: '""',
+											position: "absolute",
+											width: "100%",
+											transform: "scaleX(0)",
+											height: "2px",
+											bottom: "0",
+											left: "0",
+											backgroundColor: "primary.500",
+											transformOrigin: "bottom right",
+											transition:
+												"transform 0.25s ease-out",
+										}}
+										_hover={{
+											_after: {
+												transform: "scaleX(1)",
+												transformOrigin: "bottom left",
+											},
+										}}
+										// rounded={"lg"}
+										key={""}
+									>
+										{link}
+									</List>
+								))}
+							</UnorderedList>
+						}
 					</Flex>
 				</Show>
 			</Flex>

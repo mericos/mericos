@@ -7,6 +7,8 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Introduction } from "../components/Introduction";
 import { Home } from "../pages/Home";
 import { GetStarted } from "../pages/GetStarted";
+import { FavoritesMenu } from "../components/organisms/FavoritesMenu";
+import { Favorites } from "../pages/Favorites";
 
 export const router = createBrowserRouter([
 	{
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
 	{
 		path: "/getting_started",
 		element: <GetStarted />,
+	},
+	{
+		path: "/favorites",
+		element: <Favorites/>,
 	},
 	{
 		path: "/*",
