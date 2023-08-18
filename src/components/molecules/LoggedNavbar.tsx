@@ -10,36 +10,13 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/logo/logo2.svg";
-import { ButtonM2 } from "../atoms/ButtonM2";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { nav_titles } from "../../utils/nav_titles";
 
 export function LoggedNavbar() {
 	const [display, changeDisplay] = useState("none");
-	const nav_titles = [
-		<Link key={""} to={"/home"}>
-			Home
-		</Link>,
-		<Link key={""} to={""}>
-			Favorites
-		</Link>,
-		<Link key={""} to={""}>
-			Profile
-		</Link>,
-		<Link key={""} to={""}>
-			Orders
-		</Link>,
-		<Link key={""} to={""}>
-			Custom Support
-		</Link>,
-		<Link key={""} to={""}>
-			About Us
-		</Link>,
-		<Link key={""} to={""}>
-			Mericos Carrers
-		</Link>,
-	];
+	
 
 	return (
 		<>
@@ -55,7 +32,6 @@ export function LoggedNavbar() {
 			>
 				<Image
 					src={Logo}
-					// minW={["15%", "15%", "5%"]}
 				/>
 				<Hide above="md">
 					<IconButton

@@ -1,6 +1,4 @@
-import { Flex, Grid, Text } from "@chakra-ui/react";
-import { products_types } from "../../utils/productTypes";
-import { CardM2 } from "../molecules/CardM2";
+import { Grid } from "@chakra-ui/react";
 import { CardFavorite } from "../molecules/CardFavorite";
 
 export function FavoritesMenu() {
