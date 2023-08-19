@@ -50,11 +50,11 @@ export function Profile() {
 						alignItems={"center"}
 					>
 						<Image
-							src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+							src="https://img2.gratispng.com/20200625/pzy/transparent-friendship-friends-5ef56cb6b9f165.7293367915931424547616.jpg"
 							alt="Green double couch with wooden legs"
 							borderRadius="full"
-							w={"24"}
-							h={"24"}
+                            maxW={"28"}
+                            h={"auto"}
 						/>
 						<Stack spacing="3">
 							<Heading fontSize="md">
@@ -77,7 +77,7 @@ export function Profile() {
 				<Text my={"2"} fontWeight={"bold"} color={"gray.500"}>
 					General
 				</Text>
-				<ProfileMenu  />
+				<ProfileMenu />
 			</Flex>
 		</>
 	);

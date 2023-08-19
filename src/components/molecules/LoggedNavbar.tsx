@@ -110,9 +110,8 @@ export function LoggedNavbar() {
 							>
 								{nav_titles.map((link) => (
 									<List
-										// p={"3"}
 										m={"4"}
-										color="black"
+										color="gray.500"
 										pos={"relative"}
 										_after={{
 											content: '""',
