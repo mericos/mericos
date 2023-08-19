@@ -16,7 +16,6 @@ import { nav_titles } from "../../utils/nav_titles";
 
 export function LoggedNavbar() {
 	const [display, changeDisplay] = useState("none");
-	
 
 	return (
 		<>
@@ -30,9 +29,7 @@ export function LoggedNavbar() {
 					"flex-start",
 				]}
 			>
-				<Image
-					src={Logo}
-				/>
+				<Image src={Logo} />
 				<Hide above="md">
 					<IconButton
 						backgroundColor={"white"}
@@ -44,13 +41,13 @@ export function LoggedNavbar() {
 
 				<Flex
 					flexDirection={"column"}
+					textColor={"gray.500"}
 					alignItems={"center"}
 					w={"full"}
 					h={"full"}
 					zIndex={20}
 					pos={"absolute"}
-					bgColor={"gray.500"}
-					opacity={"100%"}
+					backgroundColor={"white"}
 					top={"0"}
 					left={"0"}
 					overflow={"auto"}
@@ -67,35 +64,40 @@ export function LoggedNavbar() {
 					>
 						<IconButton
 							icon={<AiOutlineClose size={30} />}
+							color={"gray.500"}
 							aria-label={"close_button"}
 							onClick={() => changeDisplay("none")}
 							backgroundColor={"transparent"}
-							_hover={{ backgroundColor: "primary.300" }}
+							_hover={{
+								backgroundColor: "primary.300",
+								color: "white",
+							}}
 						></IconButton>
 
-						<Heading fontSize={"2xl"} color={"white"}>
+						<Heading fontSize={"2xl"} color={"gray.500"}>
 							Mericos
 						</Heading>
 					</Flex>
 
 					<UnorderedList w={"100%"}>
 						{nav_titles.map((link) => (
-							<List
-								p={"3"}
-								m={"4"}
-								_hover={{ backgroundColor: "primary.300" }}
-								rounded={"lg"}
-								key={""}
-							>
-								{link}
-							</List>
+							<>
+								<List
+									p={"3"}
+									m={"4"}
+									color={"gray.500"}
+									_hover={{
+										backgroundColor: "primary.300",
+										color: "white",
+									}}
+									rounded={"lg"}
+									key={""}
+								>
+									{link}
+								</List>
+							</>
 						))}
 					</UnorderedList>
-					<Flex
-						flexDir={"column"}
-						color={"white"}
-						alignItems={"center"}
-					></Flex>
 				</Flex>
 
 				<Show above="md">

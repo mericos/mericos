@@ -25,9 +25,7 @@ export function UnloggedNavbar() {
 				alignItems={"center"}
 				justifyContent={"space-between"}
 			>
-				<Image
-					src={Logo}
-				/>
+				<Image src={Logo} />
 				<Hide above="md">
 					<IconButton
 						backgroundColor={"white"}
@@ -44,15 +42,13 @@ export function UnloggedNavbar() {
 					h={"full"}
 					zIndex={20}
 					pos={"absolute"}
-					bgColor={"gray.500"}
-					opacity={"100%"}
+					backgroundColor={"white"}
 					top={"0"}
 					left={"0"}
 					overflow={"auto"}
 					color={"white"}
 					display={display}
 				>
-					
 					<Flex
 						m={"2"}
 						w={"100%"}
@@ -66,7 +62,10 @@ export function UnloggedNavbar() {
 							aria-label={"close_button"}
 							onClick={() => changeDisplay("none")}
 							backgroundColor={"transparent"}
-							_hover={{backgroundColor:"primary.300"}}
+							_hover={{
+								backgroundColor: "primary.300",
+								color: "white",
+							}}
 						></IconButton>
 
 						<Heading fontSize={"2xl"} color={"white"}>
@@ -79,7 +78,10 @@ export function UnloggedNavbar() {
 							<List
 								p={"3"}
 								m={"4"}
-								_hover={{ backgroundColor: "primary.300" }}
+								_hover={{
+									backgroundColor: "primary.300",
+									color: "white",
+								}}
 								rounded={"lg"}
 								key={""}
 							>
