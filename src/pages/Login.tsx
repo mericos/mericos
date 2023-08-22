@@ -51,11 +51,7 @@ export function Login() {
 					p={"20"}
 					w="full"
 				>
-					<Image
-						src={Logo}
-						w={["30%", "30%", "20%"]}
-						h={["", "50%", "20%"]}
-					/>
+					<Image src={Logo} maxW={"100%"} h={["", "50%", "20%"]} />
 					<Formik
 						initialValues={{
 							email: "",
@@ -141,11 +137,13 @@ export function Login() {
 										rounded={"md"}
 										w={"full"}
 										flexDir={"column"}
+										p={"1"}
 									>
 										<Flex
 											flexDirection={"row"}
 											alignItems={"center"}
 											justifyContent={"center"}
+											p={"1"}
 										>
 											<Divider
 												border={"1px"}

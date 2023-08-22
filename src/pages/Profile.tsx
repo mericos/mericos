@@ -39,7 +39,6 @@ export function Profile() {
 				<Card
 					maxW="full"
 					mb={"4"}
-					// minW={"sm"}
 					flexDir={["column", "row", "row"]}
 					align={"center"}
 				>
@@ -53,8 +52,8 @@ export function Profile() {
 							src="https://img2.gratispng.com/20200625/pzy/transparent-friendship-friends-5ef56cb6b9f165.7293367915931424547616.jpg"
 							alt="Green double couch with wooden legs"
 							borderRadius="full"
-                            maxW={"28"}
-                            h={"auto"}
+							maxW={"28"}
+							h={"auto"}
 						/>
 						<Stack spacing="3">
 							<Heading fontSize="md">
