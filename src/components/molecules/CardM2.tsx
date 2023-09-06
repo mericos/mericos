@@ -1,26 +1,30 @@
-import { Button, ButtonGroup, Card, CardBody, CardFooter, CardProps, Divider, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import {
+	Card,
+	CardBody,
+	CardProps,
+	Flex,
+	Heading,
+	Image,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
 import { SlArrowRight } from "react-icons/sl";
 import { ButtonM2 } from "../atoms/ButtonM2";
-import { BsCart } from "react-icons/bs";
-import ImageT from "../../assets/Image.png";
 import ImagePC from "../../assets/ImagePC.png";
 interface CardMProps extends CardProps {
-    card_heading: string;
-    card_caption: string;
+	card_heading: string;
+	card_caption: string;
 }
 
 export function CardM2(props: CardMProps) {
 	return (
 		<Flex flexDir={"column"}>
 			<Image
-				// src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-				// alt="Green double couch with wooden legs"
 				src={ImagePC}
 				borderRadius={"lg"}
 				borderEndEndRadius={"none"}
 				borderEndStartRadius={"none"}
 				w={"full"}
-				// height={"48"}
 			/>
 			<Card
 				borderStartEndRadius={"none"}
@@ -39,7 +43,6 @@ export function CardM2(props: CardMProps) {
 						></ButtonM2>
 					</Stack>
 				</CardBody>
-				
 			</Card>
 		</Flex>
 	);

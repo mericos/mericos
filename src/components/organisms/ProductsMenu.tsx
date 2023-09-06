@@ -1,4 +1,4 @@
-import { Button, Divider, Flex, Grid, Text, border } from "@chakra-ui/react";
+import { Button, Divider, Flex, Grid} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 import { CardM2 } from "../molecules/CardM2";
 import { useState } from "react";
