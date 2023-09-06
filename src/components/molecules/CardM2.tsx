@@ -2,34 +2,45 @@ import { Button, ButtonGroup, Card, CardBody, CardFooter, CardProps, Divider, Fl
 import { SlArrowRight } from "react-icons/sl";
 import { ButtonM2 } from "../atoms/ButtonM2";
 import { BsCart } from "react-icons/bs";
-
+import ImageT from "../../assets/Image.png";
+import ImagePC from "../../assets/ImagePC.png";
 interface CardMProps extends CardProps {
     card_heading: string;
     card_caption: string;
 }
 
 export function CardM2(props: CardMProps) {
-    return (
-		<Card maxW="sm" align={"center"}>
-			<CardBody>
-				<Image
-					src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-					alt="Green double couch with wooden legs"
-					borderRadius="lg"
-				/>
-				<Stack mt="6" spacing="3">
-					<Heading size="md">{props.card_heading}</Heading>
-					<Text>{props.card_caption}</Text>
-				</Stack>
-			</CardBody>
-			<CardFooter>
-				<ButtonM2
-					// rightIcon={<SlArrowRight/>}
-					rightIcon={<BsCart/>}
-					text={"Add to "}
-					variant={"primary"}
-				></ButtonM2>
-			</CardFooter>
-		</Card>
+	return (
+		<Flex flexDir={"column"}>
+			<Image
+				// src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+				// alt="Green double couch with wooden legs"
+				src={ImagePC}
+				borderRadius={"lg"}
+				borderEndEndRadius={"none"}
+				borderEndStartRadius={"none"}
+				w={"full"}
+				// height={"48"}
+			/>
+			<Card
+				borderStartEndRadius={"none"}
+				borderStartStartRadius={"none"}
+				maxW="sm"
+				align={"center"}
+			>
+				<CardBody textAlign={"center"}>
+					<Stack>
+						<Heading size="md">{props.card_heading}</Heading>
+						<Text>{props.card_caption}</Text>
+						<ButtonM2
+							rightIcon={<SlArrowRight />}
+							text={"Add to Cart"}
+							variant={"primary"}
+						></ButtonM2>
+					</Stack>
+				</CardBody>
+				
+			</Card>
+		</Flex>
 	);
 }

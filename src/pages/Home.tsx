@@ -105,7 +105,7 @@ export function Home() {
 				<Heading> for you</Heading>
 			</Flex>
 
-			<Flex>
+			<Flex borderRadius={"lg"} p={"1"} backgroundColor={"pink.50"}>
 				<Icon icon={<BsFilter size={30} />} />
 				<Input
 					border={"0"}
