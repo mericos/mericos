@@ -1,7 +1,6 @@
 import {
 	Card,
 	CardBody,
-	CardFooter,
 	Flex,
 	Heading,
 	IconButton,
