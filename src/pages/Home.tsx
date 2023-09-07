@@ -15,7 +15,7 @@ export function Home() {
 	return (
 		<Flex
 			flexDirection={"column"}
-			width={["container.sm", "container.md", "full"]}
+			maxWidth={"7xl"}
 			m={"1.25rem"}
 			gap={4}
 		>
@@ -28,14 +28,14 @@ export function Home() {
 				<Heading> for you</Heading>
 			</Flex>
 
-			<Flex borderRadius={"lg"} p={"1"} backgroundColor={"pink.50"}>
-				<Icon icon={<BsFilter size={30} />} />
+			<Flex borderRadius={"lg"} p={"1"} backgroundColor={"pink.50"} alignItems={"center"}>
+				<Icon icon={<BsFilter size={24} />} />
 				<Input
 					border={"0"}
 					focusBorderColor="white"
 					placeholder="Search"
 				/>
-				<Icon icon={<AiOutlineSearch size={30} />} />
+				<Icon icon={<AiOutlineSearch size={24} />} />
 			</Flex>
 			<ProductsMenu />
 			
