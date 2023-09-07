@@ -16,7 +16,7 @@ export function ProductsMenu() {
 				<Flex>
 					{products_types.map((type) => (
 						<Button
-							fontWeight={"bold"}
+							fontWeight={"medium"}
 							backgroundColor={"transparent"}
 							color={
 								selectedType === type ? "primary.500" : "gray"
