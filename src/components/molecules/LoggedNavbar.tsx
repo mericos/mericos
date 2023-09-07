@@ -1,4 +1,5 @@
 import {
+	Divider,
 	Flex,
 	Heading,
 	Hide,
@@ -22,7 +23,6 @@ export function LoggedNavbar() {
 		<>
 			<Flex
 				color={"gray.500"}
-				pt={"2"}
 				alignItems={"center"}
 				justifyContent={[
 					"space-between",
@@ -145,6 +145,7 @@ export function LoggedNavbar() {
 					</Flex>
 				</Show>
 			</Flex>
+			<Divider/>
 		</>
 	);
 }
