@@ -31,10 +31,10 @@ export function LoggedNavbar() {
 				]}
 			>
 				<Hide above="md">
-					<BsCart size={30} />
+					<BsCart size={24} />
 					<IconButton
 						backgroundColor={"white"}
-						icon={<AiOutlineMenu size={30} />}
+						icon={<AiOutlineMenu size={24} />}
 						aria-label="hamburguer_menu"
 						onClick={() => changeDisplay("flex")}
 					/>
@@ -64,7 +64,7 @@ export function LoggedNavbar() {
 						justifyContent={"flex-start"}
 					>
 						<IconButton
-							icon={<AiOutlineClose size={30} />}
+							icon={<AiOutlineClose size={24} />}
 							color={"gray.500"}
 							aria-label={"close_button"}
 							onClick={() => changeDisplay("none")}
