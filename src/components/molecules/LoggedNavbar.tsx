@@ -13,6 +13,7 @@ import Logo from "../../assets/logo/logo2.svg";
 
 import { useState } from "react";
 import { nav_titles } from "../../utils/nav_titles";
+import { BsCart } from "react-icons/bs";
 
 export function LoggedNavbar() {
 	const [display, changeDisplay] = useState("none");
@@ -29,8 +30,8 @@ export function LoggedNavbar() {
 					"flex-start",
 				]}
 			>
-				<Image src={Logo} />
 				<Hide above="md">
+					<BsCart size={30} />
 					<IconButton
 						backgroundColor={"white"}
 						icon={<AiOutlineMenu size={30} />}
@@ -101,6 +102,7 @@ export function LoggedNavbar() {
 				</Flex>
 
 				<Show above="md">
+					<Image src={Logo} />
 					<Flex gap={3}>
 						{
 							<UnorderedList

@@ -12,6 +12,7 @@ import {
 import { AiOutlineHeart } from "react-icons/ai";
 import ImageT from "../../assets/ImagePC.png"
 
+
 interface CardMProps extends CardProps {
 	card_heading: string;
 	card_caption: string;
