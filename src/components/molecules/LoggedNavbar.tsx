@@ -8,7 +8,6 @@ import {
 	Link,
 	List,
 	Show,
-	Text,
 	UnorderedList,
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -24,11 +23,11 @@ interface Navbar {
 
 export function LoggedNavbar({ page_title }: Navbar) {
 	const [display, changeDisplay] = useState("none");
-	const [selectedType, setSelectedType] = useState("Home");
+	// const [selectedType, setSelectedType] = useState("Home");
 
-	const handleTypeClick = (type: string) => {
-		setSelectedType(type);
-	};
+	// const handleTypeClick = (type: string) => {
+	// 	setSelectedType(type);
+	// };
 	return (
 		<>
 			<Flex
@@ -129,17 +128,20 @@ export function LoggedNavbar({ page_title }: Navbar) {
 										m={"4"}
 										color="gray.500"
 										pos={"relative"}
-										onClick={() => handleTypeClick(link.props.children)}
+										// onClick={() =>
+										// 	handleTypeClick(link.props.children)
+										// }
 										_after={{
 											content: '""',
 											position: "absolute",
 											width: "100%",
-											transform: `${
-												selectedType ===
-												link.props.children
-													? "scaleX(1)"
-													: "scaleX(0)"
-											}`,
+											transform: "scaleX(0)",
+											// transform: `${
+											// 	selectedType ===
+											// 	link.props.children
+											// 		? "scaleX(1)"
+											// 		: "scaleX(0)"
+											// }`,
 											height: "2px",
 											bottom: "0",
 											left: "0",
@@ -165,7 +167,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 					</Flex>
 				</Show>
 			</Flex>
-			<Divider />
+			<Divider mb={4} />
 		</>
 	);
 }

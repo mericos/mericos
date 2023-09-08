@@ -16,7 +16,7 @@ export function Profile() {
 	
 	return (
 		<>
-			<Flex flexDir={"column"} p={"2"} mx={"2"} w={"full"}>
+			<Flex maxWidth={"7xl"} flexDir={"column"} w={"full"}>
 				<LoggedNavbar />
 				<Flex
 					width={"full"}
@@ -32,8 +32,9 @@ export function Profile() {
 						borderRadius="full"
 						w={"32"}
 						h={"32"}
+						objectFit={"cover"}
 					/>
-					<Heading fontSize="md">Celio Cumba</Heading>
+					<Heading color={"black"} fontSize="md">Celio Cumba</Heading>
 					<Text fontSize="md">celio.joaquim.cumba@gmail.com</Text>
 				</Flex>
 				<Card
@@ -41,6 +42,8 @@ export function Profile() {
 					mb={"4"}
 					flexDir={["column", "row", "row"]}
 					align={"center"}
+					_hover={{ cursor: "pointer", backgroundColor: "gray.50" }}
+					
 				>
 					<CardBody
 						display={"flex"}

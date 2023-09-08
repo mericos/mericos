@@ -26,16 +26,16 @@ export function CardFavorite(props: CardMProps) {
 					src={ImageT}
 					alt="Green double couch with wooden legs"
 					borderRadius="full"
-					w={"24"}
-					h={"24"}
+					w={"20"}
+					h={"20"}
 					objectFit={"cover"}
 				/>
-				<Stack spacing="3">
+				<Stack spacing="2">
 					<Heading color={"black"} fontSize={["sm", "md"]}>{props.card_heading}</Heading>
 					<Text fontSize={["sm", "md"]}>{props.card_caption}</Text>
 				</Stack>
 			</CardBody>
-			<CardFooter>
+			<CardFooter >
 				<IconButton
 					bgColor={"white"}
 					icon={<AiOutlineHeart size={30} />}

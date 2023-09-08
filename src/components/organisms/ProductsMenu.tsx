@@ -1,14 +1,17 @@
-import { Button, Divider, Flex, Grid } from "@chakra-ui/react";
+import { Button, Divider, Flex, Grid} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 
 import { useState } from "react";
 import { CardMeal } from "../molecules/CardMeal";
+
 
 export function ProductsMenu() {
 	const [selectedType, setSelectedType] = useState("Bread");
 
 	const handleTypeClick = (type: string) => {
 		setSelectedType(type);
+		
+		
 	};
 	return (
 		<>
