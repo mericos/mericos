@@ -16,12 +16,17 @@ import { useState } from "react";
 import { nav_titles } from "../../utils/nav_titles";
 import { BsCart } from "react-icons/bs";
 
-export function LoggedNavbar() {
+interface Navbar {
+	page_title?: string;
+}
+
+export function LoggedNavbar({ page_title }: Navbar) {
 	const [display, changeDisplay] = useState("none");
 
 	return (
 		<>
 			<Flex
+				pt={2}
 				color={"gray.500"}
 				alignItems={"center"}
 				justifyContent={[
@@ -32,6 +37,7 @@ export function LoggedNavbar() {
 			>
 				<Hide above="md">
 					<BsCart size={24} />
+					<Heading color={"black"}>{ page_title }</Heading>
 					<IconButton
 						backgroundColor={"white"}
 						icon={<AiOutlineMenu size={24} />}

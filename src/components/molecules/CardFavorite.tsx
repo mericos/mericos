@@ -28,10 +28,11 @@ export function CardFavorite(props: CardMProps) {
 					borderRadius="full"
 					w={"24"}
 					h={"24"}
+					objectFit={"cover"}
 				/>
 				<Stack spacing="3">
-					<Heading fontSize="md">{props.card_heading}</Heading>
-					<Text fontSize="md">{props.card_caption}</Text>
+					<Heading color={"black"} fontSize={["sm", "md"]}>{props.card_heading}</Heading>
+					<Text fontSize={["sm", "md"]}>{props.card_caption}</Text>
 				</Stack>
 			</CardBody>
 			<CardFooter>
