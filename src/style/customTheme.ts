@@ -1,9 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
 
-// const customIcons = {
-
-// }
-
 const customColors = {
 	primary: {
 		50: "#ffeedc",
@@ -35,43 +31,36 @@ const customColors = {
 };
 
 export const customTheme = extendTheme({
+	shadows: {
+		customShadow:
+			"0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);",
+	},
 	styles: {
-
-		global: () =>  ({
+		global: () => ({
 			/* width */
 			"::-webkit-scrollbar": {
 				width: "8px",
-				height:"4px"
+				height: "4px",
 			},
-			
+
 			/* Track */
 			"::-webkit-scrollbar-track": {
-        background: "gray.200",
-      },
+				background: "gray.200",
+			},
 
-      /* Handle */
-      "::-webkit-scrollbar-thumb": {
-		background: "primary.200",
-		},
-		
-		/* Handle on hover */
-		"::-webkit-scrollbar-thumb:hover": {
-			background: "primary.400",
-		},
-	}),
-},
+			/* Handle */
+			"::-webkit-scrollbar-thumb": {
+				background: "primary.200",
+			},
+
+			/* Handle on hover */
+			"::-webkit-scrollbar-thumb:hover": {
+				background: "primary.400",
+			},
+		}),
+	},
 	colors: {
 		...customColors,
-	},
-	fontSizes: {
-		heading_size: "3.053rem",
-		sub_heading_size: "2.441rem",
-		taglines_size: "1.953rem",
-		heading_for_pages_size: "1.263rem",
-		card_heading_size: "1.25rem",
-		body_size: "1rem",
-		sub_body_in_popovers_size: "1.25rem",
-		badges_tags_size: "0.64rem",
 	},
 	components: {
 		Button: {
@@ -126,16 +115,18 @@ export const customTheme = extendTheme({
 				},
 			},
 		},
-		Heading : {
+		Heading: {
 			baseStyle: {
+				fontSize: ["sm", "md"],
 				fontWeight: "normal",
-				color: "primary.500"
-			}
+				color: "primary.500",
+			},
 		},
 		Text: {
 			baseStyle: {
-				fontWeight: "light"
-			}
-		}
+				fontWeight: "light",
+				fontSize: ["sm", "lg"]
+			},
+		},
 	},
 });

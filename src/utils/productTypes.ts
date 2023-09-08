@@ -1,0 +1,1 @@
+export const products_types = ["Bread", "Sandwiches", "Drinks", "Snacks"]
