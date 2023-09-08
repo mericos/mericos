@@ -1,4 +1,4 @@
-import { Button, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { CardProfile } from "../molecules/CardProfile";
 import ImageT from "../../assets/ImagePC.png";
 import { useState } from "react";

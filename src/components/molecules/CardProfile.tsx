@@ -8,8 +8,7 @@ import {
 	Image,
 } from "@chakra-ui/react";
 import { IoIosArrowForward } from "react-icons/io";
-import ImageT from "../../assets/ImagePC.png";
-import { useState } from "react";
+
 
 interface CardMProps extends CardProps {
 	card_heading: string;
@@ -18,13 +17,7 @@ interface CardMProps extends CardProps {
 }
 
 export function CardProfile(props: CardMProps) {
-	const [selectedType, setSelectedType] = useState("");
-
-	const handleTypeClick = (title: string) => {
-		setSelectedType(title);
-		alert(title)
-		console.log(title);
-	};
+	
 	return (
 		<Card
 			{...props}
