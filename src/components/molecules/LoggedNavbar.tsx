@@ -5,8 +5,10 @@ import {
 	Hide,
 	IconButton,
 	Image,
+	Link,
 	List,
 	Show,
+	Text,
 	UnorderedList,
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -22,7 +24,11 @@ interface Navbar {
 
 export function LoggedNavbar({ page_title }: Navbar) {
 	const [display, changeDisplay] = useState("none");
+	const [selectedType, setSelectedType] = useState("Home");
 
+	const handleTypeClick = (type: string) => {
+		setSelectedType(type);
+	};
 	return (
 		<>
 			<Flex
@@ -37,7 +43,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 			>
 				<Hide above="md">
 					<BsCart size={24} />
-					<Heading color={"black"}>{ page_title }</Heading>
+					<Heading color={"black"}>{page_title}</Heading>
 					<IconButton
 						backgroundColor={"white"}
 						icon={<AiOutlineMenu size={24} />}
@@ -118,14 +124,22 @@ export function LoggedNavbar({ page_title }: Navbar) {
 							>
 								{nav_titles.map((link) => (
 									<List
+										as={Link}
+										fontSize={["md"]}
 										m={"4"}
 										color="gray.500"
 										pos={"relative"}
+										onClick={() => handleTypeClick(link.props.children)}
 										_after={{
 											content: '""',
 											position: "absolute",
 											width: "100%",
-											transform: "scaleX(0)",
+											transform: `${
+												selectedType ===
+												link.props.children
+													? "scaleX(1)"
+													: "scaleX(0)"
+											}`,
 											height: "2px",
 											bottom: "0",
 											left: "0",
@@ -135,12 +149,12 @@ export function LoggedNavbar({ page_title }: Navbar) {
 												"transform 0.25s ease-out",
 										}}
 										_hover={{
+											textDecoration: "none",
 											_after: {
 												transform: "scaleX(1)",
 												transformOrigin: "bottom left",
 											},
 										}}
-										// rounded={"lg"}
 										key={""}
 									>
 										{link}
@@ -151,7 +165,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 					</Flex>
 				</Show>
 			</Flex>
-			<Divider/>
+			<Divider />
 		</>
 	);
 }
