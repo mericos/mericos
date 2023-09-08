@@ -16,6 +16,7 @@ export function ProductsMenu() {
 				<Flex>
 					{products_types.map((type) => (
 						<Button
+							borderRadius={"none"}
 							fontWeight={"medium"}
 							backgroundColor={"transparent"}
 							color={

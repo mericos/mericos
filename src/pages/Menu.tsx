@@ -3,7 +3,7 @@ import { BiCross, BiDish } from "react-icons/bi"
 import { InputM } from "../components/atoms/InputM"
 import { CardMProps } from "../components/molecules/CardM"
 import { Navbar } from "../components/molecules/Navbar"
-import { CategoriesList } from "../components/organisms/CategoriesList"
+
 import { MenuList } from "../components/organisms/MenuList"
 import { GiCakeSlice, GiCandyCanes, GiFullPizza, GiHamburger, GiTacos } from "react-icons/gi"
 
@@ -152,7 +152,7 @@ export function Menu () {
                 <Flex w={"full"} maxW={"7xl"} direction={"column"}>
                     <InputM text="search" isSearchBar></InputM>
                 </Flex>
-                <CategoriesList categories={categories}/>
+                {/* <CategoriesList categories={categories}/> */}
             </Navbar>
             <MenuList menuItems={menuItems} />
         </Flex>
