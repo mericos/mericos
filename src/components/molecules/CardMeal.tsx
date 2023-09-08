@@ -11,12 +11,12 @@ import {
 import { SlArrowRight } from "react-icons/sl";
 import { ButtonM2 } from "../atoms/ButtonM2";
 import ImagePC from "../../assets/ImagePC.png";
-interface CardMProps extends CardProps {
+interface CardMealProps extends CardProps {
 	card_heading: string;
 	card_caption: string;
 }
 
-export function CardM2(props: CardMProps) {
+export function CardMeal(props: CardMealProps) {
 	return (
 		<Flex flexDir={"column"}>
 			<Image
@@ -34,7 +34,7 @@ export function CardM2(props: CardMProps) {
 			>
 				<CardBody textAlign={"center"}>
 					<Stack>
-						<Heading size="md">{props.card_heading}</Heading>
+						<Heading color={"black"} size="md">{props.card_heading}</Heading>
 						<Text>{props.card_caption}</Text>
 						<ButtonM2
 							rightIcon={<SlArrowRight />}

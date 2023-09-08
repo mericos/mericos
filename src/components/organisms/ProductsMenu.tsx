@@ -1,7 +1,8 @@
 import { Button, Divider, Flex, Grid} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
-import { CardM2 } from "../molecules/CardM2";
+
 import { useState } from "react";
+import { CardMeal } from "../molecules/CardMeal";
 
 
 export function ProductsMenu() {
@@ -63,23 +64,23 @@ export function ProductsMenu() {
 					"repeat(5, 1fr)",
 				]}
 			>
-				<CardM2
+				<CardMeal
 					card_heading={"Card heading"}
 					card_caption={"Card caption"}
 				/>
-				<CardM2
+				<CardMeal
 					card_heading={"Card heading"}
 					card_caption={"Card caption"}
 				/>
-				<CardM2
+				<CardMeal
 					card_heading={"Card heading"}
 					card_caption={"Card caption"}
 				/>
-				<CardM2
+				<CardMeal
 					card_heading={"Card heading"}
 					card_caption={"Card caption"}
 				/>
-				<CardM2
+				<CardMeal
 					card_heading={"Card heading"}
 					card_caption={"Card caption"}
 				/>
