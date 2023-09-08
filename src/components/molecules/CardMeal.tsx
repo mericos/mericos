@@ -1,4 +1,5 @@
 import {
+	Box,
 	Card,
 	CardBody,
 	CardProps,
@@ -25,6 +26,8 @@ export function CardMeal(props: CardMealProps) {
 				borderEndEndRadius={"none"}
 				borderEndStartRadius={"none"}
 				w={"full"}
+				h={"2xs"}
+				objectFit={"cover"}
 			/>
 			<Card
 				borderStartEndRadius={"none"}
@@ -34,9 +37,12 @@ export function CardMeal(props: CardMealProps) {
 			>
 				<CardBody textAlign={"center"}>
 					<Stack>
-						<Heading color={"black"} size="md">{props.card_heading}</Heading>
-						<Text>{props.card_caption}</Text>
+						<Heading color={"black"} size={["sm", "md"]}>
+							{props.card_heading}
+						</Heading>
+						<Text size={["sm", "md"]}>{props.card_caption}</Text>
 						<ButtonM2
+							size={["sm", "md"]}
 							rightIcon={<SlArrowRight />}
 							text={"Add to Cart"}
 							variant={"primary"}
