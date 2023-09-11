@@ -11,6 +11,7 @@ import { Icon } from "../components/atoms/Icon";
 import { AiOutlineSearch } from "react-icons/ai";
 import { ProductsMenu } from "../components/organisms/ProductsMenu";
 import "../index.css"
+import { SearchBar } from "../components/molecules/SeachBar";
 
 
 export function Home() {
@@ -29,24 +30,11 @@ export function Home() {
 					flexDirection={["column", "row", "row"]}
 				>
 					
-					<Heading >Delicious food </Heading>
+					<Heading color={"primary.500"} >Delicious food </Heading>
 					<Heading> for you</Heading>
 				</Flex>
 
-				<Flex
-					borderRadius={"lg"}
-					p={"1"}
-					backgroundColor={"pink.50"}
-					alignItems={"center"}
-				>
-					<Icon icon={<BsFilter size={24} />} />
-					<Input
-						border={"0"}
-						focusBorderColor="white"
-						placeholder="Search"
-					/>
-					<Icon icon={<AiOutlineSearch size={24} />} />
-				</Flex>
+				<SearchBar/>
 				<ProductsMenu />
 			</Flex>
 		</Box>

@@ -28,6 +28,9 @@ const customColors = {
 	text_color_dark: {
 		normal: "#6A6A6A",
 	},
+	light_surface: {
+		normal: "#FBE9E7",
+	}
 };
 
 export const customTheme = extendTheme({

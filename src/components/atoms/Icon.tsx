@@ -3,9 +3,10 @@ import { ReactNode } from "react";
 
 interface IconProps {
 	icon: ReactNode;
+	color?: string;
 }
 
-export function Icon(props: IconProps) {
+export function Icon({icon, color="pink.50"}: IconProps) {
 	return (
 		<Flex
 			p={"1"}
@@ -13,11 +14,14 @@ export function Icon(props: IconProps) {
 			justifyContent={"center"}
 			// boxShadow={"dark-lg"}
 			_hover={{
-				// bgColor: "gray.300",
+				backgroundColor: "white",
 				cursor: "pointer",
 			}}
+			_active={{
+				backgroundColor: color,
+			}}
 		>
-			{props.icon}
+			{icon}
 		</Flex>
 	);
 }
