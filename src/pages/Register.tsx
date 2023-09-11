@@ -1,6 +1,5 @@
 import {
 	Box,
-	Center,
 	Divider,
 	Flex,
 	FormControl,
@@ -15,9 +14,9 @@ import {
 import { Formik } from "formik";
 import Logo from "../assets/logo/logo2.svg";
 import * as Yup from "yup";
-import { ButtonM } from "../components/atoms/ButtonM";
+
 import { InputM } from "../components/atoms/InputM";
-import { Navbar } from "../components/molecules/Navbar";
+
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook } from "react-icons/im";
 import { ButtonM2 } from "../components/atoms/ButtonM2";
