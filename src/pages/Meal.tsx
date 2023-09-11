@@ -1,20 +1,20 @@
 // import { useParams } from "react-router-dom";
 // // import { RatingsIcons } from "../components/atoms/Ratings";
-// import { MealCardProps } from "../components/molecules/MealCard";
+import { MealCardProps } from "../components/molecules/MealCard";
 // import { useDeviceContext } from "../contextProviders/DeviceProvider";
 // import { Meals } from "../utils/Meals";
 // import { Error } from "./Error";
 // import { CardIngredient } from "../components/molecules/CardIngredient";
 
 
-// interface ingredient {
-//     name: string, 
-//     image: string
-// }
-// interface producer {
-//     name: string, 
-//     avatar: string
-// }
+interface ingredient {
+    name: string, 
+    image: string
+}
+interface producer {
+    name: string, 
+    avatar: string
+}
 export interface DetailedMealCardProps extends MealCardProps {
     description: string,
     rating: number,
