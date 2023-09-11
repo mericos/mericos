@@ -5,7 +5,7 @@ import {
 	IconButton,
 	Image,
 	Link,
-	List, Show,
+	Show,
 	UnorderedList
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";

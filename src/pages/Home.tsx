@@ -2,13 +2,9 @@ import {
 	Box,
 	Flex,
 	Heading,
-	Input,
 } from "@chakra-ui/react";
-import { BsFilter } from "react-icons/bs";
 
 import { LoggedNavbar } from "../components/molecules/LoggedNavbar";
-import { Icon } from "../components/atoms/Icon";
-import { AiOutlineSearch } from "react-icons/ai";
 import { ProductsMenu } from "../components/organisms/ProductsMenu";
 import "../index.css"
 import { SearchBar } from "../components/molecules/SeachBar";

@@ -3,7 +3,6 @@ import {
 	CardBody,
 	CardHeader,
 	CardProps,
-	Flex,
 	Heading,
 	Image,
 	Stack,

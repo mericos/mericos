@@ -1,16 +1,16 @@
-import { Box, Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import { BsCart } from "react-icons/bs";
 import { useParams } from "react-router-dom";
-import { ButtonM } from "../components/atoms/ButtonM";
 // import { RatingsIcons } from "../components/atoms/Ratings";
-import { CartInfoContainer } from "../components/molecules/CartInfoContainer";
 import { MealCardProps } from "../components/molecules/MealCard";
-import { Navbar } from "../components/molecules/Navbar";
-import { useDeviceContext } from "../contextProviders/DeviceProvider";
 import { Meals } from "../utils/Meals";
 import { Error } from "./Error";
-import { CardIngredient } from "../components/molecules/CardIngredient";
-import { CardSupplier } from "../components/molecules/CardSupplier";
+// import { useDeviceContext } from "../contextProviders/DeviceProvider";
+// import { CardIngredient } from "../components/molecules/CardIngredient";
+// import { BsCart } from "react-icons/bs";
+// import { Box, Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+// import { ButtonM } from "../components/atoms/ButtonM";
+// import { CartInfoContainer } from "../components/molecules/CartInfoContainer";
+// import { Navbar } from "../components/molecules/Navbar";
+// import { CardSupplier } from "../components/molecules/CardSupplier";
 
 
 interface ingredient {
@@ -29,16 +29,16 @@ export interface DetailedMealCardProps extends MealCardProps {
 }
 
 export function Meal () {
-    const {size} = useDeviceContext()
     const { id } = useParams()
     if (!id) return null
     const meal = new Meals().getMeal(id)
     if (!meal) return (<Error/>)
-    const { mealName, image, description, ingredients, producer } = meal
+    // const {size} = useDeviceContext()
+    // const { mealName, image, description, ingredients, producer } = meal
 
-    const ingredientsList = ingredients.map((ingredient) => {
-        return (<CardIngredient key={ingredient.name} image={ingredient.image}name={ingredient.name}/>)
-    })
+    // const ingredientsList = ingredients.map((ingredient) => {
+    //     return (<CardIngredient key={ingredient.name} image={ingredient.image}name={ingredient.name}/>)
+    // })
 
     return (
         <div>Hello</div>

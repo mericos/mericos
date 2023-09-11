@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export const nav_titles = [
   { name: "Home", path: "/home" },
   { name: "Favorites", path: "/favorites" },

@@ -6,7 +6,6 @@ import {
 	IconButton,
 	Image,
 	Link,
-	List,
 	Show,
 	UnorderedList,
 } from "@chakra-ui/react";
