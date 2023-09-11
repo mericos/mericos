@@ -1,6 +1,6 @@
 import { Register } from "../pages/Register";
 import { Login } from "../pages/Login";
-import { Meal } from "../pages/Meal";
+// import { Meal } from "../pages/Meal";
 import { Error } from "../pages/Error";
 
 import { createBrowserRouter, Navigate } from "react-router-dom";
@@ -19,10 +19,10 @@ export const router = createBrowserRouter([
 		path: "/home",
 		element: <Home />,
 	},
-	{
-		path: "/meal/:id",
-		element: <Meal />,
-	},
+	// {
+	// 	path: "/meal/:id",
+	// 	element: <Meal />,
+	// },
 	
 	{
 		path: "/login",

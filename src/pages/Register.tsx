@@ -14,7 +14,9 @@ import {
 import { Formik } from "formik";
 import Logo from "../assets/logo/logo2.svg";
 import * as Yup from "yup";
+
 import { InputM } from "../components/atoms/InputM";
+
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook } from "react-icons/im";
 import { ButtonM2 } from "../components/atoms/ButtonM2";
