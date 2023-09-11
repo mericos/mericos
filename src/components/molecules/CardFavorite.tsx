@@ -20,14 +20,14 @@ interface CardMProps extends CardProps {
 
 export function CardFavorite(props: CardMProps) {
 	return (
-		<Card maxW="sm" flexDir={"row"} align={"center"}>
+		<Card flexGrow={1} flexDir={"row"} align={"center"}>
 			<CardBody display={"flex"} gap={4} alignItems={"center"}>
 				<Image
 					src={ImageT}
 					alt="Green double couch with wooden legs"
 					borderRadius="full"
-					w={"20"}
-					h={"20"}
+					w={"16"}
+					h={"16"}
 					objectFit={"cover"}
 				/>
 				<Stack spacing="2">
@@ -38,7 +38,7 @@ export function CardFavorite(props: CardMProps) {
 			<CardFooter >
 				<IconButton
 					bgColor={"white"}
-					icon={<AiOutlineHeart size={30} />}
+					icon={<AiOutlineHeart size={30} color="gray.500" />}
 					aria-label="heart"
 				/>
 			</CardFooter>
