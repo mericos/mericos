@@ -45,7 +45,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 					<Heading color={"black"}>{page_title}</Heading>
 					<IconButton
 						backgroundColor={"white"}
-						icon={<AiOutlineMenu size={24} />}
+						icon={<AiOutlineMenu size={24} color={"gray.500"} />}
 						aria-label="hamburguer_menu"
 						onClick={() => changeDisplay("flex")}
 					/>
