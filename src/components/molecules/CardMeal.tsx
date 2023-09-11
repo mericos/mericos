@@ -1,6 +1,7 @@
 import {
 	Card,
 	CardBody,
+	CardHeader,
 	CardProps,
 	Flex,
 	Heading,
@@ -18,37 +19,36 @@ interface CardMealProps extends CardProps {
 
 export function CardMeal(props: CardMealProps) {
 	return (
-		<Flex flexDir={"column"}>
-			<Image
-				src={ImagePC}
-				borderRadius={"lg"}
-				borderEndEndRadius={"none"}
-				borderEndStartRadius={"none"}
-				w={"full"}
-				h={"2xs"}
-				objectFit={"cover"}
-			/>
-			<Card
-				borderStartEndRadius={"none"}
-				borderStartStartRadius={"none"}
-				maxW="sm"
-				align={"center"}
-			>
-				<CardBody textAlign={"center"}>
-					<Stack>
-						<Heading color={"black"} size={["sm", "md"]}>
-							{props.card_heading}
-						</Heading>
-						<Text size={["sm", "md"]}>{props.card_caption}</Text>
-						<ButtonM2
-							size={["sm", "md"]}
-							rightIcon={<SlArrowRight />}
-							text={"Add to Cart"}
-							variant={"primary"}
-						></ButtonM2>
-					</Stack>
-				</CardBody>
-			</Card>
-		</Flex>
+		<Card
+			display={"flex"}
+			borderStartEndRadius={"none"}
+			borderStartStartRadius={"none"}
+			height={["xs", "fit-content", "fit-content"]}
+			align={"center"}
+		>
+			<CardHeader padding={0} flexGrow={"2"} display={"flex"}>
+				<Image
+					src={ImagePC}
+					borderRadius={"lg"}
+					borderEndEndRadius={"none"}
+					borderEndStartRadius={"none"}
+					objectFit={"cover"}
+				/>
+			</CardHeader>
+			<CardBody textAlign={"center"}>
+				<Stack>
+					<Heading color={"black"} size={["xs", "sm"]}>
+						{props.card_heading}
+					</Heading>
+					<Text size={["sm", "md"]}>{props.card_caption}</Text>
+					<ButtonM2
+						size={["sm", "md"]}
+						rightIcon={<SlArrowRight />}
+						text={"Add to Cart"}
+						variant={"primary"}
+					></ButtonM2>
+				</Stack>
+			</CardBody>
+		</Card>
 	);
 }
