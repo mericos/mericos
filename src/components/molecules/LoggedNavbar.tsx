@@ -65,15 +65,19 @@ export function LoggedNavbar({ page_title }: Navbar) {
 					overflow={"auto"}
 					color={"white"}
 					display={display}
+					gap={"2rem"}
 				>
 					<Flex
-						m={"2"}
-						w={"100%"}
-						p={"4"}
+						w={"full"}
+						flexDir={"row"}
 						alignItems={"center"}
 						gap={"4"}
 						justifyContent={"flex-start"}
+						padding={"0.5rem 1rem"}
 					>
+						<Heading flexGrow={1} fontSize={"2xl"} color={"primary.500"}>
+							Mericos
+						</Heading>
 						<IconButton
 							icon={<AiOutlineClose size={24} />}
 							color={"gray.500"}
@@ -85,18 +89,14 @@ export function LoggedNavbar({ page_title }: Navbar) {
 								color: "white",
 							}}
 						></IconButton>
-
-						<Heading fontSize={"2xl"} color={"gray.500"}>
-							Mericos
-						</Heading>
 					</Flex>
 
-					<UnorderedList w={"100%"}>
-						{nav_titles.map((link) => (
-							<>
-								<List
-									p={"3"}
-									m={"4"}
+					<Flex flexDir={"column"} w={"full"} padding={"0rem 1rem"} gap={"1rem"}>
+						{nav_titles.map(({name, path}) => (
+								<Link
+									w={"full"}
+									href={path}
+									p={"1rem"}
 									color={"gray.500"}
 									_hover={{
 										backgroundColor: "primary.300",
@@ -105,11 +105,10 @@ export function LoggedNavbar({ page_title }: Navbar) {
 									rounded={"lg"}
 									key={""}
 								>
-									{link}
-								</List>
-							</>
+									{name}
+								</Link>
 						))}
-					</UnorderedList>
+					</Flex>
 				</Flex>
 
 				<Show above="md">
@@ -121,9 +120,9 @@ export function LoggedNavbar({ page_title }: Navbar) {
 								justifyContent={"flex-start"}
 								w={"100%"}
 							>
-								{nav_titles.map((link) => (
-									<List
-										as={Link}
+								{nav_titles.map(({name, path}) => (
+									<Link
+										href={path}
 										fontSize={["md"]}
 										m={"4"}
 										color="gray.500"
@@ -158,9 +157,10 @@ export function LoggedNavbar({ page_title }: Navbar) {
 											},
 										}}
 										key={""}
+										
 									>
-										{link}
-									</List>
+										{name}
+									</Link>
 								))}
 							</UnorderedList>
 						}

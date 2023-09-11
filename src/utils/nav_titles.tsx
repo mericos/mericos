@@ -1,25 +1,14 @@
 import { Link } from "react-router-dom";
 
 export const nav_titles = [
-	<Link key={""} to={"/home"}>
-		Home
-	</Link>,
-	<Link key={""} to={"/favorites"}>
-		Favorites
-	</Link>,
-	<Link key={""} to={"/profile"}>
-		Profile
-	</Link>,
-	<Link key={""} to={"/orders"}>
-		Orders
-	</Link>,
-	<Link key={""} to={"/custom-support"}>
-		Custom Support
-	</Link>,
-	<Link key={""} to={"/about-us"}>
-		About Us
-	</Link>,
-	<Link key={""} to={"/carrers"}>
-		Mericos Carrers
-	</Link>,
+  { name: "Home", path: "/home" },
+  { name: "Favorites", path: "/favorites" },
+  { name: "Profile", path: "/profile" },
+  { name: "Orders", path: "/orders" },
+  { name: "Custom Support", path: "/custom-support" },
+  { name: "About Us", path: "/about-us" },
+  { name: "Mericos Carrers", path: "/carrers" },
 ];
+
+
+

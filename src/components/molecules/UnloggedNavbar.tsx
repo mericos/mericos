@@ -4,6 +4,7 @@ import {
 	Hide,
 	IconButton,
 	Image,
+	Link,
 	List, Show,
 	UnorderedList
 } from "@chakra-ui/react";
@@ -74,19 +75,20 @@ export function UnloggedNavbar() {
 					</Flex>
 
 					<UnorderedList w={"100%"}>
-						{nav_titles.map((link) => (
-							<List
+						{nav_titles.map(({name, path}) => (
+							<Link
+							margin={"4"}
 								p={"3"}
-								m={"4"}
 								_hover={{
 									backgroundColor: "primary.300",
 									color: "white",
 								}}
 								rounded={"lg"}
 								key={""}
+								href={path}
 							>
-								{link}
-							</List>
+								{name}
+							</Link>
 						))}
 					</UnorderedList>
 					<Flex
