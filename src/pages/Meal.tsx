@@ -15,14 +15,14 @@
 //     name: string, 
 //     avatar: string
 // }
-// export interface DetailedMealCardProps extends MealCardProps {
-//     description: string,
-//     rating: number,
-//     ingredients: Array<ingredient>,
-//     producer: producer
-// }
+export interface DetailedMealCardProps extends MealCardProps {
+    description: string,
+    rating: number,
+    ingredients: Array<ingredient>,
+    producer: producer
+ }
 
-// export function Meal () {
+ export function Meal () {
 //     const {size} = useDeviceContext()
 //     const { id } = useParams()
 //     if (!id) return null
@@ -34,7 +34,7 @@
 //         return (<CardIngredient key={ingredient.name} image={ingredient.image}name={ingredient.name}/>)
 //     })
 
-//     return (
+     return ( <h1>meal</h1>
 //         <div>Hello</div>
 //         // <Flex width={"full"} maxWidth={"7xl"} direction={"column"} align={"center"} margin={2} color={"text_color_dark.normal"} gap={4}>
 //         //     <Navbar/>
@@ -85,5 +85,5 @@
 //         //         </Flex>
 //         //     </SimpleGrid>
 //         // </Flex>
-//     )
-// }
+     )
+}
