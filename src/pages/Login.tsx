@@ -58,7 +58,7 @@ export function Login() {
 				</Flex>
 				<Flex flexDir={"column"} gap={"0.625rem"}>
 					<Heading>Login</Heading>
-					<Text color={"gray.400"}>Login to continue using the app</Text>
+					<Text color={"gray.400"}>Autentica-te para acessar ao site</Text>
 				</Flex>
 				<form onSubmit={handleSubmit}>
 					<Flex flexDir={"column"} gap={"1rem"} alignItems={"end"}>
@@ -82,16 +82,16 @@ export function Login() {
 								onChange={handleChange}
 								value={values.password}
 								/>
-							<FormLabel>Password</FormLabel>
+							<FormLabel>Palavra-passe</FormLabel>
 							<FormErrorMessage>{errors.password}</FormErrorMessage>
 							</FormControl>
-						<Link to={"/new-password"}><Text fontSize={"sm"} color={"gray.500"}>Forgot Password?</Text></Link>
+						<Link to={"/new-password"}><Text fontSize={"sm"} color={"gray.500"}>Esqueceu a palavra-passe?</Text></Link>
 						<Button type="submit" colorScheme="primary" w={"full"}>Login</Button>
 					</Flex>
 					</form>
 					<Flex flexDir={"row"} alignItems={"center"} gap={"0.625rem"}>
 						<Divider/>
-						<Text whiteSpace="nowrap">or login with</Text>
+						<Text whiteSpace="nowrap">ou autentica-te com</Text>
 						<Divider/>
 					</Flex>
 					<Flex flexDir={"row"} gap={"1.5rem"} justifyContent={"center"}>
@@ -103,8 +103,8 @@ export function Login() {
 							</Button>
 					</Flex>
 					<Flex justifyContent={"center"} wrap={"wrap"}>
-						<Text textAlign={"center"}>Don't have an account?</Text>
-						<Link to={"/register"}><Text color={"primary.500"}>Register</Text></Link>
+						<Text textAlign={"center"}>Não tem uma conta?</Text>
+						<Link to={"/register"}><Text color={"primary.500"}>Registra-te</Text></Link>
 					</Flex>
 			</Flex>
 			<Flex  w={["0%","0%","50%"]}>
