@@ -6,12 +6,13 @@ import {
 	FormErrorMessage,
 	FormLabel,
 	Heading,
-	Link,
 	Text,
 	Image,
 	VStack,
+	Button,
+	Input,
 } from "@chakra-ui/react";
-import { Formik } from "formik";
+import { Formik, useFormik } from "formik";
 import Logo from "../assets/logo/logo2.svg";
 import * as Yup from "yup";
 
@@ -20,207 +21,118 @@ import { InputM } from "../components/atoms/InputM";
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook } from "react-icons/im";
 import { ButtonM2 } from "../components/atoms/ButtonM2";
+import { Link } from "react-router-dom";
 
 export function Register() {
-	const RegisterSchema = Yup.object().shape({
+	const registerSchema = Yup.object().shape({
+		username: Yup.string()
+			.required("Nome é obrigatória")
+			.min(3, "O nome deve ter pelo menos 3 caracteres"),
 		email: Yup.string()
 			.email("E-mail inválido")
 			.required("Email é obrigatória"),
-		name: Yup.string()
-			.required("nome é obrigatória")
-			.min(3, "O nome deve ter pelo menos 3 caracteres"),
 		password: Yup.string()
 			.required("Palavra-passe é obrigatória")
 			.min(8, "A palavra-passe deve ter pelo menos 8 caracteres")
 			.matches(
-				/^(?=.[A-Za-z])(?=.\d)(?=.[@$!%#?&.])[A-Za-z\d@$!%*#?&.]+$/,
+				/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&.])[A-Za-z\d@$!%*#?&.]+$/,
 				"A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial"
 			),
 	});
+	const {values, errors, touched, handleChange, handleSubmit} = useFormik({
+		initialValues: {
+			username:"",
+			email:"",
+			password:""
+		},
+		onSubmit: (values) => {
+			alert(JSON.stringify(values, null, 2));
+		},
+		validationSchema: registerSchema
+	})
 	return (
-		<>
-			<Flex
-				width={["", "80%", "100%"]}
-				py={"4rem"}
-				alignItems={"center"}
-				justifyContent={"center"}
-				flexDir={"column"}
-				gap={"1.5rem"}
-				className="form"
-			>
-				<Image
-					src={Logo}
-					w={["30%", "30%", "20%"]}
-					transition={"ease 0.3s"}
-					css={{
-						clipPath: "circle(50% at 50% 50%)"
-					}}
-				/>
-				<Formik
-					initialValues={{
-						email: "",
-						name: "",
-						password: "",
-						confirm_password: "",
-					}}
-					onSubmit={(values) => {
-						alert(JSON.stringify(values, null, 2));
-					}}
-					validationSchema={RegisterSchema}
-				>
-					{({ handleSubmit, errors, touched }) => (
-						<form onSubmit={handleSubmit}>
-							<VStack
-								p={"2"}
-								align="center"
-								marginX={"auto"}
-								w={["", "container.md", ""]}
-								gap={"1.5rem"}
-							>
-								<Heading w={"full"} textAlign={"left"}>
-									Register
-								</Heading>
-								<Text
-									w={"full"}
-									textAlign={"left"}
-									color={"gray.500"}
-								>
-									Enter Your Personal Information
-								</Text>
-								<FormControl
-									isInvalid={!!errors.email && touched.email}
-									isRequired
-								>
-									<FormLabel htmlFor="email">Email</FormLabel>
-									<InputM
-										text="email"
-										id="email"
-										name="email"
-										input_type="email"
-									/>
-									<FormErrorMessage>
-										{errors.email}
-									</FormErrorMessage>
-								</FormControl>
-								<FormControl
-									isInvalid={!!errors.name}
-									isRequired
-								>
-									<FormLabel htmlFor="name">Nome</FormLabel>
-									<InputM
-										text="nome"
-										id="name"
-										name="name"
-										input_type="name"
-									/>
-									<FormErrorMessage>
-										{errors.name}
-									</FormErrorMessage>
-								</FormControl>
-								<FormControl
-									isInvalid={
-										!!errors.password && touched.password
-									}
-									isRequired
-								>
-									<FormLabel htmlFor="password">
-										Palavra-passe
-									</FormLabel>
-									<InputM
-										text="password"
-										id="password"
-										name="password"
-										input_type="password"
-									/>
-									<FormErrorMessage>
-										{errors.password}
-									</FormErrorMessage>
-								</FormControl>
-
-								<ButtonM2
-									width={"full"}
-									variant={"primary"}
-									text="Register"
+		<Flex w={"full"} h={"100vh"}>
+			<Flex flexDir={"column"} w={"full"}  maxW={"2xl"} width={["100%", "100%", "50%"]} padding={"0rem 4rem"} gap={"1rem"} margin={"auto"}>
+				<Flex justifyContent={"center"}>
+					<Image
+							src={Logo}
+							w={["30%", "15%", "15%"]}
+							transition={"ease 0.3s"}
+							css={{
+								clipPath: "circle(50% at 50% 50%)"
+							}}
+						/>
+				</Flex>
+				<Flex flexDir={"column"} gap={"0.625rem"}>
+					<Heading>Register</Heading>
+					<Text color={"gray.400"}>Registra-te a nossa família da Mericos</Text>
+				</Flex>
+				<form onSubmit={handleSubmit}>
+					<Flex flexDir={"column"} gap={"1rem"} alignItems={"end"}>
+						<FormControl variant={"floating"} id="firstName" isRequired isInvalid={!!errors.username && touched.username}>
+							<Input
+								type="text"
+								name="username"
+								placeholder=""
+								onChange={handleChange}
+								value={values.username}
 								/>
-								<Flex
-									rounded={"md"}
-									p={4}
-									w={"full"}
-									flexDir={"column"}
-									gap={"1.5rem"}
-								>
-									<Flex
-										flexDirection={"row"}
-										alignItems={"center"}
-										justifyContent={"center"}
-									>
-										<Divider
-											border={"1px"}
-											w={["36", "", "full"]}
-										/>
-										<Text
-											fontSize={"sm"}
-											w={["fit-content", "", "full"]}
-											textAlign={"center"}
-										>
-											Or login with
-										</Text>
-										<Divider
-											border={"1px"}
-											w={["36", "", "full"]}
-										/>
-									</Flex>
-									<Flex
-										align={"center"}
-										justifyContent={"center"}
-										gap={"1.5rem"}
-									>
-										<Box
-											p={"1"}
-											rounded={"md"}
-											boxShadow={"dark-lg"}
-											_hover={{
-												bgColor: "gray.300",
-												cursor: "pointer",
-											}}
-										>
-											<FcGoogle size={45} />
-										</Box>
-										<Box
-											p={"2"}
-											rounded={"md"}
-											boxShadow={"dark-lg"}
-											_hover={{
-												bgColor: "gray.300",
-												cursor: "pointer",
-											}}
-										>
-											<ImFacebook size={37} />
-										</Box>
-									</Flex>
+							<FormLabel>Nome</FormLabel>
+							<FormErrorMessage>{errors.username}</FormErrorMessage>
+							</FormControl>
+						<FormControl variant={"floating"} id="firstName" isRequired isInvalid={!!errors.email && touched.email}>
+							<Input
+								type="email"
+								name="email"
+								placeholder=""
+								onChange={handleChange}
+								value={values.email}
+								/>
+							<FormLabel>Email</FormLabel>
+							<FormErrorMessage>{errors.email}</FormErrorMessage>
+							</FormControl>
 
-									<Flex
-										justifyContent={"center"}
-										color={"primary.500"}
-										gap={"2"}
-									>
-										<Text>Do you have an account? </Text>
-										<Link
-											href={"/login"}
-											color={"primary.500"}
-										>
-											<Text textDecoration={"underline"}>
-												{" "}
-												Login
-											</Text>
-										</Link>
-									</Flex>
-								</Flex>
-							</VStack>
-						</form>
-					)}
-				</Formik>
+							<FormControl variant={"floating"} id="lastName" isInvalid={!!errors.password && touched.password} isRequired>
+							<Input
+								placeholder=""
+								type="password"
+								name="password"
+								onChange={handleChange}
+								value={values.password}
+								/>
+							<FormLabel>Palavra-passe</FormLabel>
+							<FormErrorMessage>{errors.password}</FormErrorMessage>
+							</FormControl>
+						<Button type="submit" colorScheme="primary" w={"full"}>Registrar</Button>
+					</Flex>
+					</form>
+					<Flex flexDir={"row"} alignItems={"center"} gap={"0.625rem"}>
+						<Divider/>
+						<Text whiteSpace="nowrap">ou registrar com</Text>
+						<Divider/>
+					</Flex>
+					<Flex flexDir={"row"} gap={"1.5rem"} justifyContent={"center"}>
+							<Button borderRadius={"1rem"} variant={"solid"} colorScheme={"google"} boxShadow={"lg"}>
+								<FcGoogle size={24} />
+							</Button>
+							<Button borderRadius={"1rem"} variant={"solid"} colorScheme={"facebook"} boxShadow={"lg"}>
+								<ImFacebook size={24} />
+							</Button>
+					</Flex>
+					<Flex justifyContent={"center"} wrap={"wrap"}>
+						<Text textAlign={"center"}>Já tem uma conta?</Text>
+						<Link to={"/login"}><Text color={"primary.500"}>Login</Text></Link>
+					</Flex>
 			</Flex>
-		</>
+			<Flex  w={["0%","0%","50%"]}>
+				<Image 
+				background={"gray.100"}
+				objectFit={"cover"}
+				w={"full"}
+				src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+				filter={"blur(0px)"}
+				alt=""/>
+			</Flex>
+		</Flex>
 	);
 }
