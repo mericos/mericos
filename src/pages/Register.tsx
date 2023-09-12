@@ -51,7 +51,7 @@ export function Register() {
 		validationSchema: registerSchema
 	})
 	return (
-		<Flex w={"full"} h={"100vh"}>
+		<Flex w={"full"} h={"100vh"} flexDir={"row-reverse"}>
 			<Flex flexDir={"column"} w={"full"}  maxW={"2xl"} width={["100%", "100%", "50%"]} padding={"0rem 4rem"} gap={"1rem"} margin={"auto"}>
 				<Flex justifyContent={"center"}>
 					<Image
