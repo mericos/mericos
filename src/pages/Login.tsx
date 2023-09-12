@@ -1,20 +1,17 @@
 import {
-	Box,
 	Button,
 	Divider,
 	Flex,
 	FormControl,
 	FormErrorMessage,
 	FormLabel,
-	Grid,
 	Heading,
 	Image,
 	Input,
-	Show,
 	Text
 } from "@chakra-ui/react";
-import { Formik, useFormik } from "formik";
-import { Form, Link } from "react-router-dom";
+import { useFormik } from "formik";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { ImFacebook } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
