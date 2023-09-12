@@ -37,7 +37,7 @@ export function Login() {
 	// });
 	return (
 		<Flex w={"full"} h={"100vh"}>
-			<Flex flexDir={"column"} w={"full"} width={["100%", "100%", "50%"]} padding={"8rem 4rem"} gap={"1rem"}>
+			<Flex flexDir={"column"} w={"full"}  maxW={"2xl"} width={["100%", "100%", "50%"]} padding={"8rem 4rem"} gap={"1rem"} margin={"auto"}>
 				<Flex justifyContent={"center"}>
 					<Image
 							src={Logo}
@@ -53,42 +53,49 @@ export function Login() {
 					<Text color={"gray.400"}>Login to continue using the app</Text>
 				</Flex>
 				<form>
-					<Flex flexDir={"column"} gap={"0.625rem"} alignItems={"end"}>
-						<FormControl id="firstName">
-							<FormLabel>First Name</FormLabel>
-							<Input
-								type="text"
-								name="firstName"
-							/>
-							</FormControl>
-
-							<FormControl id="lastName">
-							<FormLabel>Last Name</FormLabel>
-							<Input
-								type="text"
-								name="lastName"
-							/>
-							</FormControl>
-
-							<FormControl id="email">
-							<FormLabel>Email</FormLabel>
+					<Flex flexDir={"column"} gap={"1rem"} alignItems={"end"}>
+						<FormControl variant={"floating"} id="firstName">
 							<Input
 								type="email"
 								name="email"
-							/>
-						</FormControl>
-						<Link to={"/new-password"}><Text fontSize={"sm"}>Forgot Password?</Text></Link>
+								placeholder=""
+								/>
+							<FormLabel>Email</FormLabel>
+							</FormControl>
+
+							<FormControl variant={"floating"} id="lastName">
+							<Input
+								placeholder=""
+								type="password"
+								name="password"
+								/>
+							<FormLabel>Password</FormLabel>
+							</FormControl>
+						<Link to={"/new-password"}><Text fontSize={"sm"} color={"gray.500"}>Forgot Password?</Text></Link>
 						<Button colorScheme="primary" w={"full"}>Login</Button>
 					</Flex>
 					</form>
+					<Flex flexDir={"row"} alignItems={"center"} gap={"0.625rem"}>
+						<Divider/>
+						<Text whiteSpace="nowrap">or login with</Text>
+						<Divider/>
+					</Flex>
+					<Flex flexDir={"row"} gap={"1.5rem"} justifyContent={"center"}>
+							<Button borderRadius={"1rem"} variant={"solid"} colorScheme={"google"} boxShadow={"lg"}>
+								<FcGoogle size={24} />
+							</Button>
+							<Button borderRadius={"1rem"} variant={"solid"} colorScheme={"facebook"} boxShadow={"lg"}>
+								<ImFacebook size={24} />
+							</Button>
+					</Flex>
 			</Flex>
-				<Flex  w={["0%","0%","50%"]}>
-					<Image 
-					background={"gray.100"}
-					objectFit={"cover"}
-					src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" 
-					alt=""/>
-				</Flex>
+			<Flex  w={["0%","0%","50%"]}>
+				<Image 
+				background={"gray.100"}
+				objectFit={"cover"}
+				src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" 
+				alt=""/>
+			</Flex>
 		</Flex>
 	);
 }
