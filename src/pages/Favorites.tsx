@@ -4,7 +4,7 @@ import { FavoritesMenu } from "../components/organisms/FavoritesMenu";
 
 export function Favorites() {
     return (
-		<Flex flexDir={"column"} maxWidth={"7xl"} >
+		<Flex flexDir={"column"}>
 			<LoggedNavbar page_title="Favorites" />
 			<FavoritesMenu />
 		</Flex>

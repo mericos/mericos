@@ -17,8 +17,6 @@ export function Home() {
 			<LoggedNavbar />
 			<Flex
 				flexDirection={"column"}
-				maxWidth={"7xl"}
-				
 				gap={4}
 			>
 				<Flex
