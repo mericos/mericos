@@ -9,6 +9,7 @@ import { Home } from "../pages/Home";
 import { GetStarted } from "../pages/GetStarted";
 import { Favorites } from "../pages/Favorites";
 import { Profile } from "../pages/Profile";
+import { Orders } from "../pages/Orders";
 
 export const router = createBrowserRouter([
 	{
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
 	{
 		path: "/profile",
 		element: <Profile />,
+	},
+	{
+		path: "/orders",
+		element: <Orders/>
 	},
 	{
 		path: "/*",
