@@ -26,13 +26,14 @@ export function OrderStatus({status, text}:orderStatusProps) {
         }
         if (status === "in place") {
             icon = <HiLocationMarker boxSize={4}/>
+            bgColor="primary.500"
         }
         if (status === "delivered") {
             icon = <BsCheck boxSize={4}/>
         }
     }
     return(
-        <Card color={status === "canceled" ? "red.400" : "primary.500"} bg={bgColor} variant={"outline"} w={"min-content"} as={Flex} flexDir={"row"} padding={"0.375rem 1rem"} gap={"0.5rem"} alignItems={"center"}>
+        <Card flexGrow={[0,1,1]} color={status === "canceled" ? "red.400" : "primary.600"} bg={bgColor} variant={"outline"} w={"min-content"} as={Flex} flexDir={"row"} padding={"0.375rem 1rem"} gap={"0.5rem"} alignItems={"center"} justifyContent={"center"}>
             {icon}
             <Text color={status ==="canceled"?"red.400":"gray.700"} fontSize={"sm"} whiteSpace={"nowrap"}>{text}</Text>
         </Card>

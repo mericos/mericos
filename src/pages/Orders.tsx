@@ -7,6 +7,7 @@ import {
 import { LoggedNavbar } from "../components/molecules/LoggedNavbar";
 import { InviteCard } from "../components/atoms/InviteCard";
 import { CardOrder, cardOrderProps } from "../components/molecules/CardOrder";
+import { OrderStatus } from "../components/atoms/OrderStatus";
 
 
 export function Orders() {
@@ -36,32 +37,65 @@ export function Orders() {
     timestamp: "2023-09-13T14:15:00Z",
     status: "canceled",
   },
+  {
+    id: "6",
+    timestamp: "2023-09-13T13:00:00Z",
+    status: "in place",
+  },
     ];
-    const done = ["canceled", "delivered"];
-    const inProgress = ["preparing", "travelling", "in place"];
+    const done:Array<cardOrderProps["status"]> = [ "delivered", "canceled"];
+    const inProgress:Array<cardOrderProps["status"]> = ["preparing", "travelling", "in place"];
 	return (
 		<Flex w={"full"} maxW={"6xl"} paddingX={"1rem"} flexDir={"column"}>
 			<LoggedNavbar />
             {/* body */}
-            <Flex flexDir={"column"} padding={"2rem 0rem"} gap={"0.625rem"}>
+            <Flex flexDir={"column"} padding={"0rem 0rem"} gap={"0.625rem"}>
                 <InviteCard/>
                 {/* In progress */}
                 <Flex alignItems={"center"} gap={"0.625rem"}>
                     <Divider/>
-                    <Text whiteSpace={"nowrap"}>Em Andamento</Text>
+                    <Text whiteSpace={"nowrap"}>em andamento</Text>
                     <Divider/>
                 </Flex>
-                {foodOrders.filter(({status}) => inProgress.includes(status)).map(({id, timestamp, status}) => (
-                    <CardOrder key={id} id={id} timestamp={timestamp} status={status}/>
-                ))}
+                <Flex flexDir={["column","row","row"]} gap={"0.625rem"} flexShrink={2}>
+                  {inProgress.map(
+                    (Mstatus)=>
+                      {return(
+                        <Flex flexDir={"column"} gap={"0.625rem"} flexGrow={"1"}>
+                          <Flex display={["none","flex","flex"]}>
+                            <OrderStatus status={Mstatus} text={Mstatus}/>
+                          </Flex>
+                          {foodOrders.filter(
+                          ({status}) => status === Mstatus).map(
+                            ({id, timestamp, status}) =>(<CardOrder hideStatus={true} key={id} id={id} timestamp={timestamp} status={status}/>)
+                          )}
+                        </Flex>
+                        )
+                      }
+                  )}
+                </Flex>
                 <Flex alignItems={"center"} gap={"0.625rem"}>
                     <Divider/>
                     <Text whiteSpace={"nowrap"}>histórico </Text>
                     <Divider/>
                 </Flex>
-                {foodOrders.filter(({status}) => done.includes(status)).map(({id, timestamp, status}) => (
-                    <CardOrder key={id} id={id} timestamp={timestamp} status={status}/>
-                ))}
+                <Flex flexDir={["column","column","row"]} gap={"0.625rem"}>
+                  {done.map(
+                    (Mstatus)=>
+                        {return(
+                          <Flex flexDir={"column"} gap={"0.625rem"} flexGrow={"1"}>
+                            <Flex display={["none","none","flex"]}>
+                              <OrderStatus status={Mstatus} text={Mstatus}/>
+                            </Flex>
+                            {foodOrders.filter(
+                            ({status}) => status === Mstatus).map(
+                              ({id, timestamp, status}) =>(<CardOrder  key={id} id={id} timestamp={timestamp} status={status}/>)
+                            )}
+                          </Flex>
+                          )
+                        }
+                  )}
+                </Flex>
             </Flex>
 
 
