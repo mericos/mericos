@@ -44,6 +44,7 @@ export function Login() {
 			password:""
 		},
 		onSubmit: (values) => {
+			console.log(values.email)
 			toast({
 				title: "Sucesso",
 				description: "Autenticação feita com sucesso",

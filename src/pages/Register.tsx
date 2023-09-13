@@ -20,7 +20,7 @@ import * as Yup from "yup";
 
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook } from "react-icons/im";
-import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export function Register() {
@@ -50,6 +50,7 @@ export function Register() {
 			password:""
 		},
 		onSubmit: (values) => {
+			console.log(values.email)
 			toast({
 				title: "Sucesso",
 				description: "Conta registrada com sucesso",
