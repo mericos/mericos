@@ -14,7 +14,7 @@ import Logo from "../../assets/logo/logo2.svg";
 
 import { useState } from "react";
 import { nav_titles } from "../../utils/nav_titles";
-import { BsCart } from "react-icons/bs";
+import { Cart } from "./Cart";
 
 interface Navbar {
 	page_title?: string;
@@ -22,11 +22,7 @@ interface Navbar {
 
 export function LoggedNavbar({ page_title }: Navbar) {
 	const [display, changeDisplay] = useState("none");
-	// const [selectedType, setSelectedType] = useState("Home");
 
-	// const handleTypeClick = (type: string) => {
-	// 	setSelectedType(type);
-	// };
 	return (
 		<>
 			<Flex
@@ -40,7 +36,8 @@ export function LoggedNavbar({ page_title }: Navbar) {
 				]}
 			>
 				<Hide above="md">
-					<BsCart size={24} />
+					<Cart />
+
 					<Heading color={"black"}>{page_title}</Heading>
 					<IconButton
 						backgroundColor={"white"}
@@ -74,7 +71,11 @@ export function LoggedNavbar({ page_title }: Navbar) {
 						justifyContent={"flex-start"}
 						padding={"0.5rem 1rem"}
 					>
-						<Heading flexGrow={1} fontSize={"2xl"} color={"primary.500"}>
+						<Heading
+							flexGrow={1}
+							fontSize={"2xl"}
+							color={"primary.500"}
+						>
 							Mericos
 						</Heading>
 						<IconButton
@@ -89,25 +90,30 @@ export function LoggedNavbar({ page_title }: Navbar) {
 							}}
 						></IconButton>
 					</Flex>
-
-					<Flex flexDir={"column"} w={"full"} padding={"0rem 1rem"} gap={"1rem"}>
-						{nav_titles.map(({name, path}) => (
-								<Link
-									w={"full"}
-									href={path}
-									p={"1rem"}
-									color={"gray.500"}
-									_hover={{
-										backgroundColor: "primary.300",
-										color: "white",
-									}}
-									rounded={"lg"}
-									key={""}
-								>
-									{name}
-								</Link>
+					<Flex
+						flexDir={"column"}
+						w={"full"}
+						padding={"0rem 1rem"}
+						gap={"1rem"}
+					>
+						{nav_titles.map(({ name, path }) => (
+							<Link
+								w={"full"}
+								href={path}
+								p={"1rem"}
+								color={"gray.500"}
+								_hover={{
+									backgroundColor: "primary.300",
+									color: "white",
+								}}
+								rounded={"lg"}
+								key={""}
+							>
+								{name}
+							</Link>
 						))}
 					</Flex>
+					
 				</Flex>
 
 				<Show above="md">
@@ -119,7 +125,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 								justifyContent={"flex-start"}
 								w={"100%"}
 							>
-								{nav_titles.map(({name, path}) => (
+								{nav_titles.map(({ name, path }) => (
 									<Link
 										href={path}
 										fontSize={["md"]}
@@ -156,7 +162,6 @@ export function LoggedNavbar({ page_title }: Navbar) {
 											},
 										}}
 										key={""}
-										
 									>
 										{name}
 									</Link>
