@@ -82,7 +82,7 @@ export function Register() {
 				</Flex>
 				<form onSubmit={handleSubmit}>
 					<Flex flexDir={"column"} gap={"1rem"} alignItems={"end"}>
-						<FormControl variant={"floating"} id="firstName" isRequired isInvalid={!!errors.username && touched.username}>
+						<FormControl variant={"floating"} id="firstName"  isInvalid={!!errors.username && touched.username}>
 							<Input
 								type="text"
 								name="username"
@@ -93,7 +93,7 @@ export function Register() {
 							<FormLabel>Nome</FormLabel>
 							<FormErrorMessage>{errors.username}</FormErrorMessage>
 							</FormControl>
-						<FormControl variant={"floating"} id="firstName" isRequired isInvalid={!!errors.email && touched.email}>
+						<FormControl variant={"floating"} id="firstName"  isInvalid={!!errors.email && touched.email}>
 							<Input
 								type="email"
 								name="email"
@@ -105,7 +105,7 @@ export function Register() {
 							<FormErrorMessage>{errors.email}</FormErrorMessage>
 							</FormControl>
 
-							<FormControl variant={"floating"} id="lastName" isInvalid={!!errors.password && touched.password} isRequired>
+							<FormControl variant={"floating"} id="lastName" isInvalid={!!errors.password && touched.password} >
 							<InputGroup>
 									<Input
 										placeholder=""
