@@ -30,24 +30,25 @@ export function CardProfile(props: CardMProps) {
 			align={"center"}
 			cursor={"pointer"}
 		>
-			<CardBody display={"flex"} gap={4} alignItems={"center"}>
+			<CardBody display={"flex"} gap={2} padding={"0.25rem 1rem"}
+				alignItems={"center"}>
 				<Image
 					src={props.card_image}
 					alt="Green double couch with wooden legs"
 					borderRadius="full"
-					w={"20"}
-					h={"20"}
+					w={"3.75rem"}
+					h={"3.75rem"}
 					objectFit={"cover"}
 				/>
-				<Heading color={props.text_color} fontSize="md">
+				<Heading color={props.text_color} fontSize="sm">
 					{props.card_heading}
 				</Heading>
 			</CardBody>
 			<CardFooter>
 				<IconButton
-					color={"gray.500"}
-					bgColor={"white"}
-					icon={<IoIosArrowForward size={30} />}
+					color={props.text_color}
+					bgColor={"transparent"}
+					icon={<IoIosArrowForward size={24} />}
 					aria-label="heart"
 				/>
 			</CardFooter>

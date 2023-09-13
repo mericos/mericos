@@ -13,17 +13,16 @@ export function ProfileMenu() {
 	};
 	return (
 		<>
-			<Flex w={"full"} gap={2} flexDir={"column"}>
+			<Flex w={"full"} flexDir={"column"} padding={"0.25rem 0rem"}>
 				{card_titles.map((title) => (
 					<CardProfile
-						text_color={title === selectedType ? "white" : "black"}
+						text_color={title === selectedType ? "white" : "gray.500"}
 						onClick={() => handleTypeClick(title)}
 						backgroundColor={
 							title === selectedType
 								? "primary.500"
 								: "transparent"
 						}
-						h={"fit-content"}
 						_hover={
 							title !== selectedType
 								? { backgroundColor: "gray.50" }
