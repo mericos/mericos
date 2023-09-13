@@ -1,4 +1,4 @@
-import { Flex, Stack, Heading, Card, CardBody, IconButton, Image, Text, CardHeader } from "@chakra-ui/react";
+import { Flex, Heading, Card, CardBody, Text, CardHeader } from "@chakra-ui/react";
 import { OrderStatus } from "../atoms/OrderStatus";
 import { getTimeAgoMessage } from "../../utils/getTimeAgo";
 

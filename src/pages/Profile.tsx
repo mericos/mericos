@@ -1,20 +1,14 @@
 import {
-	Card,
-	CardBody,
 	Flex,
 	Heading,
-	IconButton,
 	Text,
 	Image,
-	Stack,
 } from "@chakra-ui/react";
 import { ProfileMenu } from "../components/organisms/ProfileMenu";
-import { IoIosArrowForward } from "react-icons/io";
 import { LoggedNavbar } from "../components/molecules/LoggedNavbar";
 import { InviteCard } from "../components/atoms/InviteCard";
 
 export function Profile() {
-	
 	return (
 		<>
 			<Flex flexDir={"column"} w={"full"} maxW={"6xl"} padding={"0rem 1rem"}>

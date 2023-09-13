@@ -1,10 +1,8 @@
 import { MinusIcon } from "@chakra-ui/icons";
 import { Card, Flex, Text } from "@chakra-ui/react";
-import { ReactNode } from "react";
-import { BsBagX, BsCarFront, BsCheck } from "react-icons/bs";
-import { FcCancel, FcMinus } from "react-icons/fc";
+import { BsCheck } from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
-import { MdCancel, MdDeliveryDining, MdOutlineCancel, MdRadioButtonChecked } from "react-icons/md";
+import { MdDeliveryDining, MdOutlineCancel } from "react-icons/md";
 
 interface orderStatusProps {
     status: "preparing"|"travelling"|"in place"|"delivered"|"canceled"
