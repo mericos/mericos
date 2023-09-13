@@ -5,7 +5,6 @@ import {
 	CardFooter,
 	CardProps,
 	Flex,
-	HStack,
 	Heading,
 	IconButton,
 	Image,
