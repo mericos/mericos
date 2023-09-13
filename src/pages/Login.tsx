@@ -8,14 +8,18 @@ import {
 	Heading,
 	Image,
 	Input,
-	Text
+	InputGroup,
+	InputRightElement,
+	Text,
+	useToast
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { ImFacebook } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
 import Logo from "../assets/logo/logo2.svg";
+import { useState } from "react";
 
 export function Login() {
 	const loginSchema = Yup.object().shape({
@@ -30,13 +34,24 @@ export function Login() {
 				"A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial"
 			),
 	});
+	const toast = useToast()
+	const navigate = useNavigate()
+	const [show, setShow] = useState(false)
+	const handleShow = () => setShow(!show)
 	const {values, errors, touched, handleChange, handleSubmit} = useFormik({
 		initialValues: {
 			email:"",
 			password:""
 		},
 		onSubmit: (values) => {
-			alert(JSON.stringify(values, null, 2));
+			toast({
+				title: "Sucesso",
+				description: "Autenticação feita com sucesso",
+				status: "success",
+				duration: 3000,
+				isClosable: true
+			})
+			navigate("/home")
 		},
 		validationSchema: loginSchema
 	})
@@ -72,14 +87,23 @@ export function Login() {
 							</FormControl>
 
 							<FormControl variant={"floating"} id="lastName" isInvalid={!!errors.password && touched.password} isRequired>
-							<Input
-								placeholder=""
-								type="password"
-								name="password"
-								onChange={handleChange}
-								value={values.password}
-								/>
-							<FormLabel>Palavra-passe</FormLabel>
+								<InputGroup>
+									<Input
+										placeholder=""
+										type={show? "text" : "password"}
+										name="password"
+										onChange={handleChange}
+										value={values.password}
+										/>
+										<FormLabel>Palavra-passe</FormLabel>
+										<InputRightElement>
+											<Button variant={"ghost"} size={"sm"} onClick={handleShow} borderRadius={"0.5rem"}>
+												<Text>
+													{show ? 'Hide' : 'Show'}
+												</Text>
+											</Button>
+										</InputRightElement>
+								</InputGroup>
 							<FormErrorMessage>{errors.password}</FormErrorMessage>
 							</FormControl>
 						<Link to={"/new-password"}><Text fontSize={"sm"} color={"gray.500"}>Esqueceu a palavra-passe?</Text></Link>

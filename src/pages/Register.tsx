@@ -9,6 +9,9 @@ import {
 	Image,
 	Button,
 	Input,
+	useToast,
+	InputGroup,
+	InputRightElement,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import Logo from "../assets/logo/logo2.svg";
@@ -17,7 +20,8 @@ import * as Yup from "yup";
 
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function Register() {
 	const registerSchema = Yup.object().shape({
@@ -35,6 +39,10 @@ export function Register() {
 				"A palavra-passe deve conter pelo menos uma letra, um número e um caractere especial"
 			),
 	});
+	const toast = useToast()
+	const navigate = useNavigate()
+	const [show, setShow] = useState(false)
+	const handleShow = () => setShow(!show)
 	const {values, errors, touched, handleChange, handleSubmit} = useFormik({
 		initialValues: {
 			username:"",
@@ -42,7 +50,15 @@ export function Register() {
 			password:""
 		},
 		onSubmit: (values) => {
-			alert(JSON.stringify(values, null, 2));
+			toast({
+				title: "Sucesso",
+				description: "Conta registrada com sucesso",
+				status: "success",
+				duration: 3000,
+				isClosable: true
+			})
+			navigate("/home")
+
 		},
 		validationSchema: registerSchema
 	})
@@ -89,14 +105,23 @@ export function Register() {
 							</FormControl>
 
 							<FormControl variant={"floating"} id="lastName" isInvalid={!!errors.password && touched.password} isRequired>
-							<Input
-								placeholder=""
-								type="password"
-								name="password"
-								onChange={handleChange}
-								value={values.password}
-								/>
-							<FormLabel>Palavra-passe</FormLabel>
+							<InputGroup>
+									<Input
+										placeholder=""
+										type={show? "text" : "password"}
+										name="password"
+										onChange={handleChange}
+										value={values.password}
+										/>
+										<FormLabel>Palavra-passe</FormLabel>
+										<InputRightElement>
+											<Button variant={"ghost"} size={"sm"} onClick={handleShow} borderRadius={"0.5rem"}>
+												<Text>
+													{show ? 'Hide' : 'Show'}
+												</Text>
+											</Button>
+										</InputRightElement>
+								</InputGroup>
 							<FormErrorMessage>{errors.password}</FormErrorMessage>
 							</FormControl>
 						<Button type="submit" colorScheme="primary" w={"full"}>Registrar</Button>
