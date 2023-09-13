@@ -1,8 +1,6 @@
 import { Flex, Heading, Card, CardBody, Text, CardHeader } from "@chakra-ui/react";
 import { OrderStatus } from "../atoms/OrderStatus";
 import { getTimeAgoMessage } from "../../utils/getTimeAgo";
-import { FcRightUp } from "react-icons/fc";
-import { ArrowRightIcon } from "@chakra-ui/icons";
 import { IoIosArrowForward } from "react-icons/io";
 
 export interface cardOrderProps {
