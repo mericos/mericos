@@ -16,7 +16,7 @@ export function Profile() {
 	
 	return (
 		<>
-			<Flex flexDir={"column"} w={"full"} maxW={"6xl"}>
+			<Flex flexDir={"column"} w={"full"} maxW={"6xl"} padding={"1rem"}>
 				<LoggedNavbar />
 				<Flex
 					width={"full"}
