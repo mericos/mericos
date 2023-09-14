@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { IoIosArrowForward } from "react-icons/io";
 
-
 interface CardMProps extends CardProps {
 	card_heading: string;
 	card_image: string;
@@ -17,7 +16,6 @@ interface CardMProps extends CardProps {
 }
 
 export function CardProfile(props: CardMProps) {
-	
 	return (
 		<Card
 			{...props}

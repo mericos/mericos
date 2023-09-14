@@ -109,6 +109,7 @@ export const customTheme = extendTheme({
 				},
 			},
 		},
+
 		Input: {
 			baseStyle: {
 				borderColor: "gray.300",

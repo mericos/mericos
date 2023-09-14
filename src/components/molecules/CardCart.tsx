@@ -17,7 +17,6 @@ import ImageT from "../../assets/ImagePC.png";
 import { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 
-
 interface CardMProps extends CardProps {
 	card_heading: string;
 	card_caption: string;

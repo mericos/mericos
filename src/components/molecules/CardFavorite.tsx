@@ -10,9 +10,8 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import { AiOutlineHeart } from "react-icons/ai";
-import ImageT from "../../assets/ImagePC.png"
+import ImageT from "../../assets/ImagePC.png";
 import { useState } from "react";
-
 
 interface CardMProps extends CardProps {
 	card_heading: string;
@@ -25,7 +24,6 @@ export function CardFavorite(props: CardMProps) {
 	function handleClick() {
 		setIsClicked(!isClicked);
 		console.log(isClicked);
-		
 	}
 	return (
 		<Card flexGrow={1} flexDir={"row"} align={"center"}>

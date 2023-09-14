@@ -4,7 +4,6 @@ import { Login } from "../pages/Login";
 import { Error } from "../pages/Error";
 
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Introduction } from "../components/Introduction";
 import { Home } from "../pages/Home";
 import { GetStarted } from "../pages/GetStarted";
 import { Favorites } from "../pages/Favorites";
@@ -23,7 +22,7 @@ export const router = createBrowserRouter([
 	// 	path: "/meal/:id",
 	// 	element: <Meal />,
 	// },
-	
+
 	{
 		path: "/login",
 		element: <Login />,
@@ -31,10 +30,6 @@ export const router = createBrowserRouter([
 	{
 		path: "/register",
 		element: <Register />,
-	},
-	{
-		path: "/testing",
-		element: <Introduction />,
 	},
 	{
 		path: "/getting_started",
@@ -53,4 +48,3 @@ export const router = createBrowserRouter([
 		element: <Error />,
 	},
 ]);
-

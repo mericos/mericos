@@ -1,12 +1,12 @@
-import { Divider, Flex, Heading, IconButton, Link} from "@chakra-ui/react";
+import { Divider, Flex, Heading, IconButton, Link } from "@chakra-ui/react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 import { nav_titles } from "../../utils/nav_titles";
 import { useState } from "react";
 
 export function SideNavBar() {
-    const [display, changeDisplay] = useState("none");
-    return (
+	const [display, changeDisplay] = useState("none");
+	return (
 		<>
 			<IconButton
 				backgroundColor={"white"}
@@ -57,11 +57,7 @@ export function SideNavBar() {
 						}}
 					></IconButton>
 				</Flex>
-				<Flex
-					flexDir={"column"}
-					w={"full"}
-					padding={"0rem 1rem"}
-				>
+				<Flex flexDir={"column"} w={"full"} padding={"0rem 1rem"}>
 					{nav_titles.map(({ name, path }) => (
 						<>
 							<Link

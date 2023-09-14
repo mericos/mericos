@@ -6,7 +6,7 @@ import {
 	Image,
 	Link,
 	Show,
-	UnorderedList
+	UnorderedList,
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/logo/logo2.svg";
@@ -75,9 +75,9 @@ export function UnloggedNavbar() {
 					</Flex>
 
 					<UnorderedList w={"100%"}>
-						{nav_titles.map(({name, path}) => (
+						{nav_titles.map(({ name, path }) => (
 							<Link
-							margin={"4"}
+								margin={"4"}
 								p={"3"}
 								_hover={{
 									backgroundColor: "primary.300",
