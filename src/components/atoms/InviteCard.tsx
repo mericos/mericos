@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 export function InviteCard () {
     return (
        <Card
+            variant={"outline"}
             maxW="full"
             flexDir={["column", "row", "row"]}
             align={"center"}
