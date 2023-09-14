@@ -11,13 +11,12 @@ export interface cardOrderProps {
 }
 export function CardOrder ({id, timestamp, hideStatus=false,status}: cardOrderProps) {
     return (
-        <Card as={Flex} flexShrink={1} flexDir={"row"} justifyContent={"space-between"} alignItems={"center"} p={"0rem 1rem"} variant={"outline"} color={"gray.500"}>
-            <CardHeader flexGrow={1} p={"1rem"} gap={"1rem"}>
-                <Heading fontSize={"lg"}>Order {id}</Heading>
-                <Text fontSize={"x-small"}>Ordered:</Text>
-                <Text fontSize={"small"} whiteSpace={"normal"} overflow={"clip"} textOverflow={"ellipsis"}>{getTimeAgoMessage(timestamp)}</Text>
+        <Card as={Flex} flexShrink={1} flexDir={"row"} justifyContent={"space-between"} alignItems={"center"} p={"0rem rem"} variant={"outline"} color={"gray.500"} >
+            <CardHeader flexGrow={1} p={"0.5rem 0.625rem"} gap={"1rem"}>
+                <Heading fontSize={"1rem"}>Order {id}</Heading>
+                <Text fontSize={"0.75rem"} whiteSpace={"normal"} overflow={"clip"} textOverflow={"ellipsis"}>{getTimeAgoMessage(timestamp)}</Text>
             </CardHeader>
-            <CardBody as={Flex} justifyContent={"end"} p={"1rem"} display={["flex", hideStatus?"none":"flex", "none"]}>
+            <CardBody as={Flex} justifyContent={"end"} p={"0rem"} display={["flex", hideStatus?"none":"flex", "none"]}>
                 <OrderStatus status={status} text={status}/>
             </CardBody>
             <IoIosArrowForward  size={24}  />

@@ -47,6 +47,7 @@ export function Orders() {
     const inProgress:Array<cardOrderProps["status"]> = ["preparing", "travelling", "in place"];
 	return (
 		<Flex w={"full"} maxW={"6xl"} paddingX={"1rem"} flexDir={"column"}>
+      
 			<LoggedNavbar />
             {/* body */}
             <Flex flexDir={"column"} padding={"0rem 0rem"} gap={"0.625rem"}>
@@ -54,7 +55,7 @@ export function Orders() {
                 {/* In progress */}
                 <Flex alignItems={"center"} gap={"0.625rem"}>
                     <Divider/>
-                    <Text whiteSpace={"nowrap"}>em andamento</Text>
+                    <Text whiteSpace={"nowrap"}>Pendente</Text>
                     <Divider/>
                 </Flex>
                 <Flex flexDir={["column","row","row"]} gap={"0.625rem"} flexShrink={2}>
@@ -76,7 +77,7 @@ export function Orders() {
                 </Flex>
                 <Flex alignItems={"center"} gap={"0.625rem"}>
                     <Divider/>
-                    <Text whiteSpace={"nowrap"}>histórico </Text>
+                    <Text whiteSpace={"nowrap"}>Histórico </Text>
                     <Divider/>
                 </Flex>
                 <Flex flexDir={["column","column","row"]} gap={"0.625rem"}>
