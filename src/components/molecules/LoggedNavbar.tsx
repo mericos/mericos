@@ -19,8 +19,6 @@ interface Navbar {
 }
 
 export function LoggedNavbar({ page_title }: Navbar) {
-	
-
 	return (
 		<>
 			<Flex
@@ -34,12 +32,11 @@ export function LoggedNavbar({ page_title }: Navbar) {
 				]}
 			>
 				<Hide above="md">
-					<Cart/>
+					<Cart />
 					<Heading color={"black"}>{page_title}</Heading>
-					<SideNavBar/>
+					<SideNavBar />
 				</Hide>
 
-				
 				<Show above="md">
 					<Image src={Logo} />
 					<Flex gap={3}>
@@ -56,20 +53,11 @@ export function LoggedNavbar({ page_title }: Navbar) {
 										m={"4"}
 										color="gray.500"
 										pos={"relative"}
-										// onClick={() =>
-										// 	handleTypeClick(link.props.children)
-										// }
 										_after={{
 											content: '""',
 											position: "absolute",
 											width: "100%",
 											transform: "scaleX(0)",
-											// transform: `${
-											// 	selectedType ===
-											// 	link.props.children
-											// 		? "scaleX(1)"
-											// 		: "scaleX(0)"
-											// }`,
 											height: "2px",
 											bottom: "0",
 											left: "0",

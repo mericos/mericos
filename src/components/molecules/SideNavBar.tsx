@@ -61,7 +61,6 @@ export function SideNavBar() {
 					flexDir={"column"}
 					w={"full"}
 					padding={"0rem 1rem"}
-					// gap={"1rem"}
 				>
 					{nav_titles.map(({ name, path }) => (
 						<>
