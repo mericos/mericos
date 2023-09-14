@@ -1,4 +1,5 @@
 import {
+	Button,
 	Card,
 	CardBody,
 	CardHeader,
@@ -9,7 +10,6 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import { SlArrowRight } from "react-icons/sl";
-import { ButtonM2 } from "../atoms/ButtonM2";
 import ImagePC from "../../assets/ImagePC.png";
 interface CardMealProps extends CardProps {
 	card_heading: string;
@@ -40,12 +40,9 @@ export function CardMeal(props: CardMealProps) {
 						{props.card_heading}
 					</Heading>
 					<Text size={["sm", "md"]}>{props.card_caption}</Text>
-					<ButtonM2
-						size={["sm", "md"]}
-						rightIcon={<SlArrowRight />}
-						text={"Add to Cart"}
-						variant={"primary"}
-					></ButtonM2>
+					<Button colorScheme={"primary"} variant={"solid"} rightIcon={<SlArrowRight/>}>
+						Add to Cart
+					</Button>
 				</Stack>
 			</CardBody>
 		</Card>
