@@ -27,10 +27,10 @@ export function InviteCard () {
                         h={"3.75rem"}
                     />
                     <Stack>
-                        <Heading fontSize={["sm", "sm", "md"]}>
+                        <Heading fontSize={"0.875rem"}>
                             Invite friends and pay less
                         </Heading>
-                        <Text>
+                        <Text fontSize={"0.6875rem"}>
                             invite a friend and ear free credits with
                             their first order
                         </Text>
@@ -39,7 +39,7 @@ export function InviteCard () {
                 <IconButton
                     bgColor={"white"}
                     color={"gray.500"}
-                    icon={<IoIosArrowForward size={24}  />}
+                    icon={<IoIosArrowForward size={"1rem"}  />}
                     aria-label="heart"
                 />
             </CardBody>
