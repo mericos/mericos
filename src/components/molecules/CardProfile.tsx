@@ -29,8 +29,9 @@ export function CardProfile(props: CardMProps) {
 			flexDir={"row"}
 			align={"center"}
 			cursor={"pointer"}
+			padding={"0.5rem 1rem"}
 		>
-			<CardBody display={"flex"} gap={2} padding={"0.25rem 1rem"}
+			<CardBody display={"flex"} gap={2} p={0}
 				alignItems={"center"}>
 				<Image
 					src={props.card_image}
@@ -40,15 +41,15 @@ export function CardProfile(props: CardMProps) {
 					h={"3.75rem"}
 					objectFit={"cover"}
 				/>
-				<Heading color={props.text_color} fontSize="sm">
+				<Heading color={props.text_color} fontSize="0.875rem">
 					{props.card_heading}
 				</Heading>
 			</CardBody>
-			<CardFooter>
+			<CardFooter p={0}>
 				<IconButton
 					color={props.text_color}
 					bgColor={"transparent"}
-					icon={<IoIosArrowForward size={24} />}
+					icon={<IoIosArrowForward size={"1rem"} />}
 					aria-label="heart"
 				/>
 			</CardFooter>
