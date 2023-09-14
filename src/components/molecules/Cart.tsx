@@ -11,7 +11,7 @@ export function Cart() {
 			<IconButton
 				backgroundColor={"white"}
 				icon={<BsCart size={24} />}
-				aria-label="hamburguer_menu"
+				aria-label="cart_icon"
 				onClick={() => changeDisplayCart("flex")}
 			/>
 			<Flex

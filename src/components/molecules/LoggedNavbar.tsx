@@ -3,25 +3,23 @@ import {
 	Flex,
 	Heading,
 	Hide,
-	IconButton,
 	Image,
 	Link,
 	Show,
 	UnorderedList,
 } from "@chakra-ui/react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/logo/logo2.svg";
 
-import { useState } from "react";
 import { nav_titles } from "../../utils/nav_titles";
 import { Cart } from "./Cart";
+import { SideNavBar } from "./SideNavBar";
 
 interface Navbar {
 	page_title?: string;
 }
 
 export function LoggedNavbar({ page_title }: Navbar) {
-	const [display, changeDisplay] = useState("none");
+	
 
 	return (
 		<>
@@ -36,86 +34,12 @@ export function LoggedNavbar({ page_title }: Navbar) {
 				]}
 			>
 				<Hide above="md">
-					<Cart  />
-
+					<Cart/>
 					<Heading color={"black"}>{page_title}</Heading>
-					<IconButton
-						backgroundColor={"white"}
-						icon={<AiOutlineMenu size={24} color={"gray.500"} />}
-						aria-label="hamburguer_menu"
-						onClick={() => changeDisplay("flex")}
-					/>
+					<SideNavBar/>
 				</Hide>
 
-				<Flex
-					flexDirection={"column"}
-					textColor={"gray.500"}
-					alignItems={"center"}
-					w={"full"}
-					h={"full"}
-					zIndex={20}
-					pos={"absolute"}
-					backgroundColor={"white"}
-					top={"0"}
-					left={"0"}
-					overflow={"auto"}
-					color={"white"}
-					display={display}
-					gap={"2rem"}
-				>
-					<Flex
-						w={"full"}
-						flexDir={"row"}
-						alignItems={"center"}
-						gap={"4"}
-						justifyContent={"flex-start"}
-						padding={"0.5rem 1rem"}
-					>
-						<Heading
-							flexGrow={1}
-							fontSize={"2xl"}
-							color={"primary.500"}
-						>
-							Mericos
-						</Heading>
-						<IconButton
-							icon={<AiOutlineClose size={24} />}
-							color={"gray.500"}
-							aria-label={"close_button"}
-							onClick={() => changeDisplay("none")}
-							backgroundColor={"transparent"}
-							_hover={{
-								backgroundColor: "primary.300",
-								color: "white",
-							}}
-						></IconButton>
-					</Flex>
-					<Flex
-						flexDir={"column"}
-						w={"full"}
-						padding={"0rem 1rem"}
-						gap={"1rem"}
-					>
-						{nav_titles.map(({ name, path }) => (
-							<Link
-								w={"full"}
-								href={path}
-								p={"1rem"}
-								color={"gray.500"}
-								_hover={{
-									backgroundColor: "primary.300",
-									color: "white",
-								}}
-								rounded={"lg"}
-								key={""}
-							>
-								{name}
-							</Link>
-						))}
-					</Flex>
-					
-				</Flex>
-
+				
 				<Show above="md">
 					<Image src={Logo} />
 					<Flex gap={3}>
