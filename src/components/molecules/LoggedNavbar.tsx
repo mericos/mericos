@@ -36,7 +36,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 				]}
 			>
 				<Hide above="md">
-					<Cart />
+					<Cart  />
 
 					<Heading color={"black"}>{page_title}</Heading>
 					<IconButton

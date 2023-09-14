@@ -42,14 +42,22 @@ export function CardCart(props: CardMProps) {
 		console.log(isClicked);
 	}
 	return (
-		<Card size={"sm"} flexGrow={1} flexDir={"row"} align={"center"}>
-			<CardBody display={"flex"} gap={4} alignItems={"center"}>
+		<Card
+			variant={"outline"}
+			size={"sm"}
+			flexGrow={1}
+			flexDir={"row"}
+			align={"center"}
+			p={2}
+			borderRadius={"lg"}
+		>
+			<CardBody display={"flex"} gap={4} alignItems={"center"} p={0}>
 				<Image
 					src={ImageT}
 					alt="Green double couch with wooden legs"
 					borderRadius="full"
-					w={"16"}
-					h={"16"}
+					w={"14"}
+					h={"14"}
 					objectFit={"cover"}
 				/>
 				<Stack spacing="2">
@@ -59,18 +67,18 @@ export function CardCart(props: CardMProps) {
 					<Text fontSize={["sm", "md"]}>{props.card_caption}</Text>
 				</Stack>
 			</CardBody>
-			<CardFooter display={"flex"} flexDir={"column"}>
+			<CardFooter display={"flex"} flexDir={"column"} p={0}>
 				<IconButton
 					justifyContent={"flex-end"}
 					color={isClicked ? "primary.500" : "gray.700"}
 					bgColor={"white"}
-					icon={<BsTrash size={24} />}
+					icon={<BsTrash size={16} />}
 					aria-label="heart"
 					onClick={handleClick}
 					_hover={{ backgroundColor: "transparent" }}
 				/>
-				<Flex alignItems={"center"}>
-					<Button borderRadius={"base"} {...dec}>
+				<Flex alignItems={"center"} color={"primary.500"}>
+					<Button size={"xs"} borderRadius={"base"} {...dec}>
 						-
 					</Button>
 					<Input
@@ -81,7 +89,7 @@ export function CardCart(props: CardMProps) {
 						border={"none"}
 						{...input}
 					/>
-					<Button borderRadius={"base"} {...inc}>
+					<Button size={"xs"} borderRadius={"base"} {...inc}>
 						+
 					</Button>
 				</Flex>
