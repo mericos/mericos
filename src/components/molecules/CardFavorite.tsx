@@ -9,36 +9,44 @@ import {
 	Stack,
 	Text,
 } from "@chakra-ui/react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import ImageT from "../../assets/ImagePC.png"
+import { useState } from "react";
 
 
 interface CardMProps extends CardProps {
-	card_heading: string;
-	card_caption: string;
+	heading: string;
+	caption: string;
+	liked: boolean;
 }
 
-export function CardFavorite(props: CardMProps) {
+export function CardFavorite({heading, caption, liked}: CardMProps) {
+	const [like, setLike] = useState(liked)
+	const handleLike = ()=>{
+		setLike(like => !like)
+	}
 	return (
-		<Card flexGrow={1} flexDir={"row"} align={"center"}>
-			<CardBody display={"flex"} gap={4} alignItems={"center"}>
+		<Card variant={"outline"} flexGrow={1} flexDir={"row"} justifyContent={"center"} p={"0.5rem 1rem"} maxW={"md"} >
+			<CardBody display={"flex"} gap={4} alignItems={"center"} p={0}>
 				<Image
 					src={ImageT}
-					alt="Green double couch with wooden legs"
+					alt="heading"
 					borderRadius="full"
-					w={"16"}
-					h={"16"}
+					w={"12"}
+					h={"12"}
 					objectFit={"cover"}
 				/>
 				<Stack spacing="2">
-					<Heading color={"black"} fontSize={["sm", "md"]}>{props.card_heading}</Heading>
-					<Text fontSize={["sm", "md"]}>{props.card_caption}</Text>
+					<Heading color={"black"} fontSize={"1rem"}>{heading}</Heading>
+					<Text fontSize={"0.875rem"}>{caption}</Text>
 				</Stack>
 			</CardBody>
-			<CardFooter >
+			<CardFooter p={"0"} >
 				<IconButton
+					onClick={handleLike}
 					bgColor={"white"}
-					icon={<AiOutlineHeart size={30} color="gray.500" />}
+					color={like? "red.400" :"gray.500"}
+					icon={like ? <AiFillHeart size={24}/> : <AiOutlineHeart size={24} />}
 					aria-label="heart"
 				/>
 			</CardFooter>

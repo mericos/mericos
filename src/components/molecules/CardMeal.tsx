@@ -20,8 +20,8 @@ export function CardMeal(props: CardMealProps) {
 	return (
 		<Card
 			display={"flex"}
-			borderStartEndRadius={"none"}
-			borderStartStartRadius={"none"}
+			borderStartEndRadius={"lg"}
+			borderStartStartRadius={"lg"}
 			height={["xs", "fit-content", "fit-content"]}
 			align={"center"}
 		>
