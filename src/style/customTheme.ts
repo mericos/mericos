@@ -75,6 +75,7 @@ export const customTheme = extendTheme({
 			baseStyle: {
 				borderRadius: "6.25rem",
 				padding: "0.3125rem 1.5rem",
+				
 			},
 			variants: {
 				// styles for solid buttons with brand color
@@ -161,7 +162,7 @@ export const customTheme = extendTheme({
 		Text: {
 			baseStyle: {
 				fontWeight: "light",
-				fontSize: ["sm", "md"],
+				fontSize: "0.875rem",
 				color:"gray.500",
 			},
 		},

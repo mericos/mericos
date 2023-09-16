@@ -20,8 +20,9 @@ export function ProductsMenu() {
 					{products_types.map((type) => (
 						<Button
 							borderRadius={"none"}
-							fontWeight={"medium"}
+							fontWeight={"500"}
 							backgroundColor={"transparent"}
+							fontSize={"0.875rem"}
 							color={
 								selectedType === type ? "primary.500" : "gray"
 							}

@@ -41,7 +41,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 			>
 				<Hide above="md">
 					<BsCart size={24} />
-					<Heading color={"black"}>{page_title}</Heading>
+					<Heading fontSize={"1.375rem"} color={"primary.500"} fontWeight={"400"}>{page_title}</Heading>
 					<IconButton
 						backgroundColor={"white"}
 						icon={<AiOutlineMenu size={24} color={"gray.500"} />}
@@ -103,6 +103,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
 									}}
 									rounded={"lg"}
 									key={""}
+									fontSize={"0.875rem"}
 								>
 									{name}
 								</Link>

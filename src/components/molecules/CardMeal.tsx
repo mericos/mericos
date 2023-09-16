@@ -40,7 +40,7 @@ export function CardMeal(props: CardMealProps) {
 						{props.card_heading}
 					</Heading>
 					<Text size={["sm", "md"]}>{props.card_caption}</Text>
-					<Button colorScheme={"primary"} variant={"solid"} rightIcon={<SlArrowRight/>}>
+					<Button fontSize={"0.875rem"} colorScheme={"primary"} variant={"solid"} rightIcon={<SlArrowRight/>}>
 						Add to Cart
 					</Button>
 				</Stack>

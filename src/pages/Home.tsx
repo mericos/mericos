@@ -23,7 +23,6 @@ export function Home() {
 					gap={["1", "3", "3"]}
 					flexDirection={["column", "row", "row"]}
 				>
-					
 					<Heading color={"primary.500"} >Delicious food </Heading>
 					<Heading> for you</Heading>
 				</Flex>
