@@ -1,5 +1,5 @@
-import { Flex, Button, Input, VStack, CheckboxGroup, Checkbox, Text, Spacer, HStack, Select } from "@chakra-ui/react";
-import { useAnimation, AnimatePresence, motion, Box } from "framer-motion";
+import { Flex, Button, Input, CheckboxGroup, Checkbox, Text, Select } from "@chakra-ui/react";
+import { useAnimation, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFilter } from "react-icons/bs";
@@ -30,7 +30,7 @@ export function SearchBar() {
     } else {
       animationControls.start({ opacity: 0, height: 0 });
     }
-  }, [showFilter]);
+  }, [animationControls, showFilter]);
 
   return (
     <Flex flexDir={"column"}>
