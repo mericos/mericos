@@ -46,6 +46,7 @@ export function SearchBar() {
         <Button
           onClick={toggleFilter}
           colorScheme="primary"
+          borderRadius={"6.25rem"}
         >
           <BsFilter size={24} />
         </Button>
@@ -55,7 +56,7 @@ export function SearchBar() {
           placeholder="Search"
           _focus={{ backgroundColor: "white" }}
         />
-        <Button colorScheme="primary">
+        <Button colorScheme="primary" borderRadius={"6.25rem"}>
           <AiOutlineSearch size={24} />
         </Button>
       </Flex>

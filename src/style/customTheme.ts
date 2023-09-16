@@ -73,7 +73,7 @@ export const customTheme = extendTheme({
 		Button: {
 			// default styles for solid buttons
 			baseStyle: {
-				borderRadius: "6.25rem",
+				borderRadius: "0.5rem",
 				padding: "0.3125rem 1.5rem",
 				
 			},

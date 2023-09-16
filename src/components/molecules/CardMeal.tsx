@@ -6,10 +6,8 @@ import {
 	CardProps,
 	Heading,
 	Image,
-	Stack,
 	Text,
 } from "@chakra-ui/react";
-import { SlArrowRight } from "react-icons/sl";
 import ImagePC from "../../assets/ImagePC.png";
 interface CardMealProps extends CardProps {
 	card_heading: string;
@@ -34,16 +32,14 @@ export function CardMeal(props: CardMealProps) {
 					objectFit={"cover"}
 				/>
 			</CardHeader>
-			<CardBody textAlign={"center"}>
-				<Stack>
+			<CardBody textAlign={"center"} m={0} p={"1rem 1.25rem"} w={"full"}>
 					<Heading color={"black"} size={["xs", "sm"]}>
 						{props.card_heading}
 					</Heading>
 					<Text size={["sm", "md"]}>{props.card_caption}</Text>
-					<Button fontSize={"0.875rem"} colorScheme={"primary"} variant={"solid"} rightIcon={<SlArrowRight/>}>
+					<Button fontSize={"0.875rem"} colorScheme={"primary"} variant={"solid"} w={"full"} >
 						Add to Cart
 					</Button>
-				</Stack>
 			</CardBody>
 		</Card>
 	);
