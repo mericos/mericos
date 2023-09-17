@@ -40,14 +40,18 @@ export function LoggedNavbar({ page_title }: Navbar) {
 				]}
 			>
 				<Hide above="md">
-					<BsCart size={24} />
-					<Heading fontSize={"1.375rem"} color={"primary.500"} fontWeight={"400"}>{page_title}</Heading>
-					<IconButton
-						backgroundColor={"white"}
-						icon={<AiOutlineMenu size={24} color={"gray.500"} />}
-						aria-label="hamburguer_menu"
-						onClick={() => changeDisplay("flex")}
-					/>
+					<Flex w={"full"}>
+						<Image src={Logo} alt="Mericos logo" boxSize={"2rem"} />
+					</Flex>
+					<Flex w={"full"} justifyContent={"end"} alignItems={"center"} gap={"1rem"}>
+						<BsCart size={24} />
+						<IconButton
+							backgroundColor={"white"}
+							icon={<AiOutlineMenu size={24} color={"gray.500"} />}
+							aria-label="hamburguer_menu"
+							onClick={() => changeDisplay("flex")}
+						/>
+					</Flex>
 				</Hide>
 
 				<Flex
