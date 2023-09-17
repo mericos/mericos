@@ -66,7 +66,7 @@ export function LoggedNavbar({ page_title }: Navbar) {
                   animate="visible"
                   exit="hidden"
                   variants={menuVariants}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.3 }}
                   style={{
                     position: "fixed",
                     top: 0,
