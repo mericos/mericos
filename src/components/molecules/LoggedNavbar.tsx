@@ -7,6 +7,7 @@ import {
 	Image,
 	Link,
 	Show,
+	Text,
 	UnorderedList,
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -40,8 +41,10 @@ export function LoggedNavbar({ page_title }: Navbar) {
 				]}
 			>
 				<Hide above="md">
-					<Flex w={"full"}>
+					<Flex w={"full"} alignItems={"center"}>
 						<Image src={Logo} alt="Mericos logo" boxSize={"2rem"} />
+						<Heading size={"md"}>Mericos</Heading>
+						<Text fontSize={"0.75rem"} alignSelf={"end"}>{page_title}</Text>
 					</Flex>
 					<Flex w={"full"} justifyContent={"end"} alignItems={"center"} gap={"1rem"}>
 						<BsCart size={24} />
