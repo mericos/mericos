@@ -16,18 +16,23 @@ import Logo from "../../assets/logo/logo2.svg";
 import { useState } from "react";
 import { nav_titles } from "../../utils/nav_titles";
 import { BsCart } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface Navbar {
 	page_title?: string;
 }
 
 export function LoggedNavbar({ page_title }: Navbar) {
-	const [display, changeDisplay] = useState("none");
+	const [menuHidden, changeMenuHidden] = useState(true);
 	// const [selectedType, setSelectedType] = useState("Home");
 
 	// const handleTypeClick = (type: string) => {
 	// 	setSelectedType(type);
 	// };
+  const menuVariants = {
+    hidden: { x: "100%", opacity: 1 },
+    visible: { x: 0, opacity: 1 },
+  };
 	return (
 		<>
 			<Flex
@@ -52,71 +57,96 @@ export function LoggedNavbar({ page_title }: Navbar) {
 							backgroundColor={"white"}
 							icon={<AiOutlineMenu size={24} color={"gray.500"} />}
 							aria-label="hamburguer_menu"
-							onClick={() => changeDisplay("flex")}
+							onClick={() => changeMenuHidden(false)}
 						/>
+            <AnimatePresence>
+              {!menuHidden && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={menuVariants}
+                  transition={{ duration: 0.5 }}
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "white",
+                    zIndex: 20,
+                    color: "white",
+                    overflow: "auto",
+                  }}
+                >
+                  {/* ... Your menu content ... */}
+                  <Flex
+                    flexDirection={"column"}
+                    textColor={"gray.500"}
+                    alignItems={"center"}
+                    w={"full"}
+                    h={"full"}
+                    zIndex={20}
+                    pos={"absolute"}
+                    backgroundColor={"white"}
+                    top={"0"}
+                    left={"0"}
+                    overflow={"auto"}
+                    color={"white"}
+                    hidden={menuHidden}
+                    gap={"2rem"}
+                  >
+                    <Flex
+                      w={"full"}
+                      flexDir={"row"}
+                      alignItems={"center"}
+                      gap={"4"}
+                      justifyContent={"flex-start"}
+                      padding={"0.5rem 1rem"}
+                    >
+                      <Heading flexGrow={1} fontSize={"2xl"} color={"primary.500"}>
+                        Mericos
+                      </Heading>
+                      <IconButton
+                        icon={<AiOutlineClose size={24} />}
+                        color={"gray.500"}
+                        aria-label={"close_button"}
+                        onClick={() => changeMenuHidden(true)}
+                        backgroundColor={"transparent"}
+                        _hover={{
+                          backgroundColor: "primary.300",
+                          color: "white",
+                        }}
+                      ></IconButton>
+                    </Flex>
+
+                    <Flex flexDir={"column"} w={"full"} padding={"0rem 1rem"} gap={"1rem"}>
+                      {nav_titles.map(({name, path}) => (
+                        <Link
+                          w={"full"}
+                          href={path}
+                          p={"1rem"}
+                          color={"gray.500"}
+                          _hover={{
+                            backgroundColor: "primary.300",
+                            color: "white",
+                          }}
+                          rounded={"lg"}
+                          key={""}
+                          fontSize={"0.875rem"}
+                        >
+                          {name}
+                        </Link>
+                      ))}
+                    </Flex>
+                  </Flex>
+                </motion.div>
+              )}
+            </AnimatePresence>
 					</Flex>
 				</Hide>
 
-				<Flex
-					flexDirection={"column"}
-					textColor={"gray.500"}
-					alignItems={"center"}
-					w={"full"}
-					h={"full"}
-					zIndex={20}
-					pos={"absolute"}
-					backgroundColor={"white"}
-					top={"0"}
-					left={"0"}
-					overflow={"auto"}
-					color={"white"}
-					display={display}
-					gap={"2rem"}
-				>
-					<Flex
-						w={"full"}
-						flexDir={"row"}
-						alignItems={"center"}
-						gap={"4"}
-						justifyContent={"flex-start"}
-						padding={"0.5rem 1rem"}
-					>
-						<Heading flexGrow={1} fontSize={"2xl"} color={"primary.500"}>
-							Mericos
-						</Heading>
-						<IconButton
-							icon={<AiOutlineClose size={24} />}
-							color={"gray.500"}
-							aria-label={"close_button"}
-							onClick={() => changeDisplay("none")}
-							backgroundColor={"transparent"}
-							_hover={{
-								backgroundColor: "primary.300",
-								color: "white",
-							}}
-						></IconButton>
-					</Flex>
-
-					<Flex flexDir={"column"} w={"full"} padding={"0rem 1rem"} gap={"1rem"}>
-						{nav_titles.map(({name, path}) => (
-								<Link
-									w={"full"}
-									href={path}
-									p={"1rem"}
-									color={"gray.500"}
-									_hover={{
-										backgroundColor: "primary.300",
-										color: "white",
-									}}
-									rounded={"lg"}
-									key={""}
-									fontSize={"0.875rem"}
-								>
-									{name}
-								</Link>
-						))}
-					</Flex>
-				</Flex>
+				
 
 				<Show above="md">
 					<Image src={Logo} />
