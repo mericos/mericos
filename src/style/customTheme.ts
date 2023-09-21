@@ -33,7 +33,9 @@ const customColors = {
 		normal: "#6A6A6A",
 	},
 	light_surface: {
-		normal: "#FBE9E7",
+		500: "#FBE9E7",
+		600: "#ffccbc",
+		700: "#ff8a65"
 	}
 };
 

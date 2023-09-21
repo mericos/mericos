@@ -38,17 +38,19 @@ export function SearchBar() {
         flexDir={"row"}
         w={"full"}
         borderRadius={"1rem"}
-        backgroundColor={"light_surface.normal"}
+        backgroundColor={"light_surface.500"}
         alignItems={"center"}
         gap={"0.25rem"}
         p={"0.25rem 0.25rem"}
+        color={"primary.500"}
       >
         <Button
           onClick={toggleFilter}
-          colorScheme="primary"
+          colorScheme="light_surface"
           borderRadius={"6.25rem"}
+          color={"primary.500"}
         >
-          <BsFilter size={24} />
+          <BsFilter size={28} />
         </Button>
         <Input
           border={"0"}
@@ -56,8 +58,8 @@ export function SearchBar() {
           placeholder="Search"
           _focus={{ backgroundColor: "white" }}
         />
-        <Button colorScheme="primary" borderRadius={"6.25rem"}>
-          <AiOutlineSearch size={24} />
+        <Button colorScheme="light_surface" color={"primary.500"} borderRadius={"6.25rem"}>
+          <AiOutlineSearch size={28} />
         </Button>
       </Flex>
 
