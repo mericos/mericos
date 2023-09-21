@@ -1,6 +1,5 @@
 import {
 	Flex,
-	Heading,
 } from "@chakra-ui/react";
 
 import { LoggedNavbar } from "../components/molecules/LoggedNavbar";
