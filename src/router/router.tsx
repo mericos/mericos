@@ -1,6 +1,6 @@
 import { Register } from "../pages/Register";
 import { Login } from "../pages/Login";
-// import { Meal } from "../pages/Meal";
+
 import { Error } from "../pages/Error";
 
 import { createBrowserRouter, Navigate } from "react-router-dom";
