@@ -18,14 +18,6 @@ export function Home() {
 				flexDirection={"column"}
 				gap={4}
 			>
-				<Flex
-					gap={["1", "3", "3"]}
-					flexDirection={["column", "row", "row"]}
-				>
-					<Heading color={"primary.500"} >Delicious food </Heading>
-					<Heading> for you</Heading>
-				</Flex>
-
 				<SearchBar/>
 				<ProductsMenu />
 			</Flex>
