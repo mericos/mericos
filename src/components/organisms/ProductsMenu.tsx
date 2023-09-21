@@ -1,4 +1,4 @@
-import { Button, Divider, Flex, Grid} from "@chakra-ui/react";
+import { Button, Divider, Flex} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 
 import { useState } from "react";
@@ -64,25 +64,20 @@ export function ProductsMenu() {
 				overflow={"auto"}
 			>
 				<CardMeal
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
+					heading={"Card heading"}
+					caption={"Card caption"} image={""}				/>
 				<CardMeal
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
+					heading={"Card heading"}
+					caption={"Card caption"} image={""}				/>
 				<CardMeal
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
+					heading={"Card heading"}
+					caption={"Card caption"} image={""}				/>
 				<CardMeal
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
+					heading={"Card heading"}
+					caption={"Card caption"} image={""}				/>
 				<CardMeal
-					card_heading={"Card heading"}
-					card_caption={"Card caption"}
-				/>
+					heading={"Card heading"}
+					caption={"Card caption"} image={""}				/>
 			</Flex>
 		</Flex>
 	);
