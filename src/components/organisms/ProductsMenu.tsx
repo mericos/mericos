@@ -14,7 +14,7 @@ export function ProductsMenu() {
 		
 	};
 	return (
-		<>
+		<Flex flexDir={"column"} w={"full"}>
 			<Flex flexDir={"column"} justifyContent={"left"}>
 				<Flex>
 					{products_types.map((type) => (
@@ -58,14 +58,10 @@ export function ProductsMenu() {
 				<Divider />
 			</Flex>
 
-			<Grid
+			<Flex
 				pt={3}
 				gap={2}
-				templateColumns={[
-					"repeat(2, 1fr)",
-					"repeat(3, 1fr)",
-					"repeat(5, 1fr)",
-				]}
+				overflow={"auto"}
 			>
 				<CardMeal
 					card_heading={"Card heading"}
@@ -87,7 +83,7 @@ export function ProductsMenu() {
 					card_heading={"Card heading"}
 					card_caption={"Card caption"}
 				/>
-			</Grid>
-		</>
+			</Flex>
+		</Flex>
 	);
 }

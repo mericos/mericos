@@ -13,7 +13,7 @@ import { SearchBar } from "../components/molecules/SeachBar";
 export function Home() {
    
 	return (
-		<Box maxW={"6xl"} paddingX={"1rem"}>
+		<Flex flexDir={"column"} w={"full"} maxW={"6xl"} paddingX={"1rem"}>
 			<LoggedNavbar />
 			<Flex
 				flexDirection={"column"}
@@ -30,6 +30,6 @@ export function Home() {
 				<SearchBar/>
 				<ProductsMenu />
 			</Flex>
-		</Box>
+		</Flex>
 	);
 }

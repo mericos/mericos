@@ -17,6 +17,7 @@ interface CardMealProps extends CardProps {
 export function CardMeal(props: CardMealProps) {
 	return (
 		<Card
+			minWidth={"3xs"}
 			display={"flex"}
 			borderStartEndRadius={"lg"}
 			borderStartStartRadius={"lg"}

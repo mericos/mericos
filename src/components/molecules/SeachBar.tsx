@@ -33,7 +33,7 @@ export function SearchBar() {
   }, [animationControls, showFilter]);
 
   return (
-    <Flex flexDir={"column"}>
+    <Flex flexDir={"column"} w={"full"}>
       <Flex
         flexDir={"row"}
         w={"full"}
