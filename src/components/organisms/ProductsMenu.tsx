@@ -1,8 +1,9 @@
-import {  Divider, Flex, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
+import { Divider, Flex, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 
 import { useState } from "react";
 import { CardMeal } from "../molecules/CardMeal";
+import { motion } from "framer-motion";
 
 
 export function ProductsMenu() {
@@ -18,12 +19,17 @@ export function ProductsMenu() {
 		setTabIndex(index);
 	}
 	return (
-		<Tabs index={tabIndex} onChange={handleTabsChange} as={Flex} flexDir={"column"} w={"full"}>
-			<Flex flexDir={"column"} justifyContent={"left"}>
-				<TabList>
-					{products_types.map((type) => (
-						<Tab
-							borderBottom={0}
+		<Tabs index={tabIndex} onChange={handleTabsChange} isLazy>
+			<TabList>
+			{products_types.map((type) => (
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					whileHover={{ scale: 1.05 }}
+				>
+					<Tab
+					borderBottom={0}
 							borderRadius={"none"}
 							fontWeight={"500"}
 							backgroundColor={"transparent"}
@@ -55,39 +61,44 @@ export function ProductsMenu() {
 								// transformOrigin: "bottom left",
 								transition: "transform 0.25s ease-out",
 							}}
-						>
-							{type}
-						</Tab>
-					))}
-				</TabList>
-				<Divider />
-			</Flex>
+					>{type}</Tab>
+				</motion.div>
+			))}
+			</TabList>
 
-			<TabPanels
-			>
-				{products_types.map(() => (
-					<TabPanel as={Flex}
+        <TabPanels>
+			{products_types.map((type) => (
+				<TabPanel>
+					<motion.div
+					initial={{ opacity: 0,}}
+					animate={{ opacity: 1 }}
+					transition={{duration: 0.5}}
+					>
+						<Flex
 						pt={3}
 						gap={2}
 						overflow={"auto"}>
-						<CardMeal
+							<CardMeal
 							heading={"Card heading"}
-							caption={"Card caption"} image={""}				/>
-						<CardMeal
+							caption={"Card caption"} image={""}/>
+							<CardMeal
 							heading={"Card heading"}
-							caption={"Card caption"} image={""}				/>
-						<CardMeal
+							caption={"Card caption"} image={""}/>
+							<CardMeal
 							heading={"Card heading"}
-							caption={"Card caption"} image={""}				/>
-						<CardMeal
+							caption={"Card caption"} image={""}/>
+							<CardMeal
 							heading={"Card heading"}
-							caption={"Card caption"} image={""}				/>
-						<CardMeal
+							caption={"Card caption"} image={""}/>
+							<CardMeal
 							heading={"Card heading"}
-							caption={"Card caption"} image={""}				/>
-					</TabPanel>
-				))}
-			</TabPanels>
-		</Tabs>
+							caption={"Card caption"} image={""}/>
+
+						</Flex>
+					</motion.div>
+				</TabPanel>
+			))}
+        </TabPanels>
+      </Tabs>
 	);
 }
