@@ -19,7 +19,7 @@ export function ProductsMenu() {
 		setTabIndex(index);
 	}
 	return (
-		<Tabs index={tabIndex} onChange={handleTabsChange} isLazy>
+		<Tabs index={tabIndex} onChange={handleTabsChange}>
 			<TabList>
 			{products_types.map((type) => (
 				<motion.div
@@ -29,7 +29,7 @@ export function ProductsMenu() {
 					whileHover={{ scale: 1.05 }}
 				>
 					<Tab
-					borderBottom={0}
+							borderBottom={0}
 							borderRadius={"none"}
 							fontWeight={"500"}
 							backgroundColor={"transparent"}
@@ -68,7 +68,7 @@ export function ProductsMenu() {
 
         <TabPanels>
 			{products_types.map(() => (
-				<TabPanel>
+				<TabPanel p={0}>
 					<motion.div
 					initial={{ opacity: 0,}}
 					animate={{ opacity: 1 }}
