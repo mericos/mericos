@@ -1,4 +1,4 @@
-import { Button, Divider, Flex} from "@chakra-ui/react";
+import {  Divider, Flex, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 
 import { useState } from "react";
@@ -10,15 +10,20 @@ export function ProductsMenu() {
 
 	const handleTypeClick = (type: string) => {
 		setSelectedType(type);
-		
-		
 	};
+
+	const [ tabIndex, setTabIndex ] = useState(0);
+
+	const handleTabsChange = (index: number) => {
+		setTabIndex(index);
+	}
 	return (
-		<Flex flexDir={"column"} w={"full"}>
+		<Tabs index={tabIndex} onChange={handleTabsChange} as={Flex} flexDir={"column"} w={"full"}>
 			<Flex flexDir={"column"} justifyContent={"left"}>
-				<Flex>
+				<TabList>
 					{products_types.map((type) => (
-						<Button
+						<Tab
+							borderBottom={0}
 							borderRadius={"none"}
 							fontWeight={"500"}
 							backgroundColor={"transparent"}
@@ -52,33 +57,37 @@ export function ProductsMenu() {
 							}}
 						>
 							{type}
-						</Button>
+						</Tab>
 					))}
-				</Flex>
+				</TabList>
 				<Divider />
 			</Flex>
 
-			<Flex
-				pt={3}
-				gap={2}
-				overflow={"auto"}
+			<TabPanels
 			>
-				<CardMeal
-					heading={"Card heading"}
-					caption={"Card caption"} image={""}				/>
-				<CardMeal
-					heading={"Card heading"}
-					caption={"Card caption"} image={""}				/>
-				<CardMeal
-					heading={"Card heading"}
-					caption={"Card caption"} image={""}				/>
-				<CardMeal
-					heading={"Card heading"}
-					caption={"Card caption"} image={""}				/>
-				<CardMeal
-					heading={"Card heading"}
-					caption={"Card caption"} image={""}				/>
-			</Flex>
-		</Flex>
+				{products_types.map(() => (
+					<TabPanel as={Flex}
+						pt={3}
+						gap={2}
+						overflow={"auto"}>
+						<CardMeal
+							heading={"Card heading"}
+							caption={"Card caption"} image={""}				/>
+						<CardMeal
+							heading={"Card heading"}
+							caption={"Card caption"} image={""}				/>
+						<CardMeal
+							heading={"Card heading"}
+							caption={"Card caption"} image={""}				/>
+						<CardMeal
+							heading={"Card heading"}
+							caption={"Card caption"} image={""}				/>
+						<CardMeal
+							heading={"Card heading"}
+							caption={"Card caption"} image={""}				/>
+					</TabPanel>
+				))}
+			</TabPanels>
+		</Tabs>
 	);
 }
