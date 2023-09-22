@@ -1,4 +1,4 @@
-import { Divider, Flex, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
+import { Flex, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
 import { products_types } from "../../utils/productTypes";
 
 import { useState } from "react";
@@ -67,7 +67,7 @@ export function ProductsMenu() {
 			</TabList>
 
         <TabPanels>
-			{products_types.map((type) => (
+			{products_types.map(() => (
 				<TabPanel>
 					<motion.div
 					initial={{ opacity: 0,}}
